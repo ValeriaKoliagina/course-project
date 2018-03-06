@@ -33,9 +33,8 @@
     width: 100%;
 	height: 100%;
 }
-.container-fluid .row a, 
-.nav-item.dropdown a {
-	text-decoration: none;
+a {
+	text-decoration: none !important;
 }
 .menu-post {
 	position: relative;
@@ -85,7 +84,7 @@
     z-index: 100;
 }
 .form-signin,
-.form-login {
+.form-signup {
     width: 100%;
     max-width: 330px;
     padding: 15px;
