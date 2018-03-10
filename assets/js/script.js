@@ -1,7 +1,22 @@
 "use strict";
 //controller
+let teideController;
+let gMenuView;
+
 window.onload = function() {
-	let teideController = new TeideController();
+	teideController = new TeideController();
+	teideController.getToken()
+		.then(result => {
+			teideController.accessToken = result.access_token;
+			teideController.instanceUrl = result.instance_url;
+			teideController.tokenType = result.token_type;
+			teideController.createModel('menuModel', new MenuModel());	
+			teideController.menuModel.init(gMenuView);
+			gMenuView.init(teideController.menuModel);
+		})
+		.catch(error => console.error(error));
+		
+	gMenuView = new GlobalMenuView();
 }
 
 
@@ -26,7 +41,9 @@ function switchToStateFromURLHash() {
 			$('#slider').show('drop', null, 500);
 			break;
 		case 'Menu':
-			$('#menuCategories').show('drop', null, 500);
+			teideController.menuModel.receiveCategories().then(function() {
+					$('#menuCategories').show('drop', null, 500)
+			});
 			break;
 		case 'Starter':
 			$('#starter').show('drop', null, 500);

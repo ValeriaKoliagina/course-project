@@ -26,23 +26,13 @@ function TeideController() {
 			});
         })
 	}
-	this.getToken()
-		.then(result => {
-			this.accessToken = result.access_token;
-			this.instanceUrl = result.instance_url;
-			this.tokenType = result.token_type;
-			this.createModel('menuModel', new MenuModel());
-			
-		})
-		.catch(error => console.error(error))
-		
-		
 	this.createModel = function(each, model) {
 		this[each] = model;
 		this[each].accessToken = this.accessToken;
 		this[each].instanceUrl = this.instanceUrl;
 		this[each].tokenType = this.tokenType;
 	}
+
 }
 	
 		

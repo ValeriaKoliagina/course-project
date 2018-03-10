@@ -156,55 +156,18 @@
 			<div class="container-fluid">
 				<h2 class="text-center display-3">Меню</h2>
 				<div class="row">
-					
-					<div class="col-lg-4 col-md-6">
-						<a href="#Starter">
-							<div class="category-title text-center my-3">
-								<div class="h3 text-dark my-2">Закуски</div>
-								<img src="assets/img/menu/starter.png" width="300" height="200" alt="Закуски">
+					<script id="globalMenu" type="text/x-handlebars-template">
+						{{#each categories}}
+							<div class="col-lg-4 col-md-6">
+								<a href="#{{this.hash}}">
+									<div class="category-title text-center my-3">
+										<div class="h3 text-dark my-2">{{this.title}}</div>
+										<img src="assets/img/menu/{{this.imgUrl}}" width="300" height="200" alt="Закуски">
+									</div>
+								</a>
 							</div>
-						</a>
-					</div>
-					<div class="col-lg-4 col-md-6">
-						<a href="#Soup">
-							<div class="category-title text-center my-3">
-								<div class="h3 text-dark my-2">Паста и супы</div>
-								<img src="assets/img/menu/soup.png" width="300" height="200" alt="Паста и супы">
-							</div>
-						</a>
-					</div>
-					<div class="col-lg-4 col-md-6">
-						<a href="#Fish">
-							<div class="category-title text-center my-3">
-								<div class="h3 text-dark my-2">Блюда из рыбы</div>
-								<img src="assets/img/menu/fish.png" width="300" height="200" alt="Горячие блюда из мяса">
-							</div>
-						</a>
-					</div>
-					<div class="col-lg-4 col-md-6">
-						<a href="#Meat">
-							<div class="category-title text-center my-3">
-								<div class="h3 text-dark my-2">Блюда из мяса</div>
-								<img src="assets/img/menu/meat.png" width="300" height="200" alt="Горячие блюда из рыбы">
-							</div>
-						</a>
-					</div>
-					<div class="col-lg-4 col-md-6">
-						<a href="#Sidedish">
-							<div class="category-title text-center my-3">
-								<div class="h3 text-dark my-2">Гарниры</div>
-								<img src="assets/img/menu/sidedish.png" width="300" height="200" alt="Гарниры">
-							</div>
-						</a>
-					</div>
-					<div class="col-lg-4 col-md-6">
-						<a href="#Dessert">
-							<div class="category-title text-center my-3">
-								<div class="h3 text-dark my-2">Десерты</div>
-								<img src="assets/img/menu/dessert.png" width="300" height="200" alt="Десерты">
-							</div>
-						</a>
-					</div>
+						{{/each}}
+					</script>
 				</div>
 			</div>
 		</section>	
@@ -1356,6 +1319,7 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 		<script src="assets/js/handlebars-v4.0.11.js"></script>
 		<script src="assets/js/model.js"></script>
+		<script src="assets/js/view.js"></script>		
 		<script src="assets/js/controller.js"></script>
 		<script src="assets/js/script.js"></script>
 	</body>

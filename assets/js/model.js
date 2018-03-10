@@ -1,10 +1,19 @@
 //создать класс, который будет наследовать через prototype
 
 function MenuModel() {
+	this.globalMenuView = null;
+	this.init = function(view) {      
+		this.globalMenuView = view;
+	}
+	this.updateViews = function() {
+		this.globalMenuView.update();     
+	}
+
 	this.categories = []; 
 		/* [{
 			title:
 			imgUrl:
+			hash:
 			meals [{name: 
 					price:},{},{}]
 		}]*/
@@ -27,6 +36,7 @@ function MenuModel() {
 						let category = {};
 						category.meals = [];
 						category.title = value.mealGroupName;
+						category.hash = value.mealGroupHash;
 						category.imgUrl = value.mealGroupUrl;
 						$.each((value.meals), function(index, value) {
 							let meal = {};
@@ -42,9 +52,5 @@ function MenuModel() {
 				} 
 			});
 		});
-	}
-	this.updateViews = function() {
-		/* this.viewMenu.update();
-		this.viewOrder.update(); */
 	}
 }
