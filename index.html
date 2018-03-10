@@ -8,12 +8,13 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">   <!-- подключечаем bootstrap -->
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">   
-		<script src="assets/js/less.min.js" type="text/javascript"></script>
-		<!-- <script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/bootstrap.min.js"></script> -->
+		<link rel="stylesheet" type="text/css" href="assets/js/jqueryui/jquery-ui.min.css"> 
+		<link rel="stylesheet" type="text/css" href="assets/js/jqueryui/jquery-ui.structure.min.css"> 		
+		<link rel="stylesheet" type="text/css" href="assets/js/jqueryui/jquery-ui.theme.min.css"> 
+		<script src="assets/js/bootstrap/less.min.js" type="text/javascript"></script>
+		<!-- <script src="assets/js/jquery.min.js"></script> -->
 	</head>
-	<body data-spy="scroll" data-target=".navbar" data-offset="50">  <!-- проверить надо ли -->
-		<div id="IPage"></div>
+	<body>
 
 		<header>
 			<nav class="navbar navbar-expand-md bg-info navbar-dark ">
@@ -58,7 +59,7 @@
 					<div class="btn-group-vertical col-sm-3 d-none d-md-block">
 						<a class="btn btn-info" href="#Signin">Вход</a>
 						<a class="btn btn-info" href="#Signup">Регистрация</a>
-						<button class="btn btn-info">Выход</button>
+						<a class="btn btn-info" href="javascript:void(0);">Выход</a>
 					</div>
 					<div class="col-12 d-sm-block d-md-none">
 						<div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -99,9 +100,9 @@
 									</a>
 								</li>
 								<li class="nav-item d-sm-block d-md-none">
-									<button class="nav-link text-center">
+									<a class="nav-link text-center" href="javascript:void(0);">
 										<span class="fa fa-sign-out"></span><br/> Выход
-									</button>
+									</a>
 								</li>
 							</ul>
 						</div>
@@ -122,7 +123,7 @@
 					<a href="#Menu" class="active">
 						<img src="assets/img/menu.png" alt="Меню">
 						<div class="carousel-caption">
-							<h3>Меню</h3>
+							<span class="h3">Меню</span>
 						</div>
 					</a>
 				</div>
@@ -130,7 +131,7 @@
 					<a href="#TableReservation">
 						<img src="assets/img/restaurant.png" alt="Заказать столик">
 						<div class="carousel-caption">
-							<h3>Заказать столик</h3>
+							<span class="h3">Заказать столик</span>
 						</div>
 					</a>
 				</div>
@@ -138,23 +139,24 @@
 					<a href="#Contacts">
 						<img src="assets/img/location.png" alt="Наши контакты и месторасположение">
 						<div class="carousel-caption">
-							<h3>Проверить месторасположение</h3>
+							<span class="h3">Проверить месторасположение</span>
 						</div>
 					</a>
 				</div>
 			 </div>
 			<a class="carousel-control-prev" href="#slider" data-slide="prev">
 				<span class="carousel-control-prev-icon"></span>
-			 </a>
-			 <a class="carousel-control-next" href="#slider" data-slide="next">
+			</a>
+			<a class="carousel-control-next" href="#slider" data-slide="next">
 				<span class="carousel-control-next-icon"></span>
-			 </a>
+			</a>
 		</section>	
-				
+		
 		<section id="menuCategories" class="my-4">
-			<div class="container-fluid" >
+			<div class="container-fluid">
 				<h2 class="text-center display-3">Меню</h2>
 				<div class="row">
+					
 					<div class="col-lg-4 col-md-6">
 						<a href="#Starter">
 							<div class="category-title text-center my-3">
@@ -467,17 +469,17 @@
 							</div>
 							<div class="form-group col-md-6">
 								<label for="number">Количество гостей:<span class="text-danger">*</span></label>
-								<input type="number" name="number" id="number" class="form-control" min="1" max="8"/>
+								<input type="number" name="number" id="number" class="form-control" min="1" max="65"/>
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-md-6">
-								<label for="date">Дата визита:<span class="text-danger">*</span></label>
-								<input type="date" class="form-control" id="date" name="date"/>
+								<label for="datepicker">Дата визита:<span class="text-danger">*</span></label>
+								<input type="text" class="form-control" id="datepicker" name="date"/>
 							</div>
 							<div class="form-group col-md-6">
 								<label for="time">Время визита:<span class="text-danger">*</span></label>
-								<input type="time" class="form-control" id="time" name="time"/>
+								<input type="time" class="form-control" id="time" name="time" value="09:00" step="900"/>
 							</div>
 						</div>
 						<div class="row">
@@ -668,6 +670,7 @@
 				<input type="text" id="client_name" class="form-control my-2" placeholder="Введите имя"/>
 				<label for="clientPassword" class="sr-only">Пароль</label>
 				<input type="password" id="clientPassword" class="form-control my-2" placeholder="Введите пароль"/>
+				<span id="passstrength"></span>
 				<label for="confirmPassword" class="sr-only">Подтвердите пароль</label>
 				<input type="password" id="confirmPassword" class="form-control my-2" placeholder="Подтвердите пароль"/>
 				<label for="clientEmail" class="sr-only">Ваш e-mail</label>
@@ -677,7 +680,6 @@
 				<button class="btn btn-lg btn-info btn-block" type="submit">Зарегистрироваться</button>
 			</form>
 		</section>
-		<a id="toTop" class="fa fa-chevron-up"></a>
 
 <!-- Вид для повара -->
 		<section id="mainContentChief" class="my-4">
@@ -1331,132 +1333,30 @@
 		<footer>
 			<div class="container-fluid bg-dark text-info">
 				<div class="row d-flex justify-content-between">
-					<section class="my-2 px-4">
+					<div class="my-2 px-4">
 						<small><span class="font-weight-bold">Время работы:</span><br/>
 						Понедельник-четверг: 10:00 - 24:00<br/> 
 						Пятница-восресенье: 9:00 - 02:00
 						</small>
-					</section>
+					</div>
 
-					<section class="my-2 px-4">
+					<div class="my-2 px-4">
 						<small><span class="font-weight-bold">Наш адрес:</span><br/>
 						г.Минск, ул.Ресторанная, 37
 						</small>
-					</section>
+					</div>
 				</div>
 				<div class="d-flex mt-3 font-weight-normal font-italic mb-o">&copy; Валерия Колягина</div>
 			</div>
 		</footer>
 		
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>  
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>  
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-		<script>
-			"use strict";
-		  
-			window.onhashchange=switchToStateFromURLHash;
-			var SPAState={};
-
-			function switchToStateFromURLHash() {
-				var URLHash=window.location.hash;
-				var stateStr=URLHash.substr(1);
-				if ( stateStr!="" ) { 
-					var parts=stateStr.split("_")
-					SPAState={ pagename: parts[0] }; // первая часть закладки - номер страницы
-				}
-				else
-				  SPAState={pagename:'Main'}; // иначе показываем главную страницу 
-
-				var pageHTML = document.querySelector('header').outerHTML;
-				switch ( SPAState.pagename ) {
-					case 'Main':
-						pageHTML+=document.querySelector('#slider').outerHTML;
-						break;
-					case 'Menu':
-						pageHTML+=document.querySelector('#menuCategories').outerHTML;
-						break;
-					case 'Starter':
-						pageHTML+=document.querySelector('#starter').outerHTML;
-						break;
-					case 'Soup':
-						pageHTML+=document.querySelector('#soup').outerHTML;
-						break;
-					case 'Fish':
-						pageHTML+=document.querySelector('#fish').outerHTML;
-						break;
-					case 'Meat':
-						pageHTML+=document.querySelector('#meat').outerHTML;
-						break;
-					case 'Sidedish':
-						pageHTML+=document.querySelector('#sidedish').outerHTML;
-						break;
-					case 'Dessert':
-						pageHTML+=document.querySelector('#dessert').outerHTML;
-						break;
-					case 'TableReservation':
-						pageHTML+=document.querySelector('#booking').outerHTML;
-						break;
-					case 'Contacts':
-						pageHTML+=document.querySelector('#contacts').outerHTML;
-						break;
-					case 'Signin':
-						pageHTML+=document.querySelector('#signin').outerHTML;
-						break;
-					case 'Signup':
-						pageHTML+=document.querySelector('#signup').outerHTML;
-						break;
-					case 'Chief':
-						pageHTML+=document.querySelector('#mainContentChief').outerHTML;
-						break;
-					case 'Waiter':
-						pageHTML+=document.querySelector('#containerOrderWaiter').outerHTML;
-						break;
-					case 'NewOrder':
-						pageHTML+=document.querySelector('#newOrder').outerHTML;
-						break;
-					case 'Schedule':
-						pageHTML+=document.querySelector('#schedule').outerHTML;
-						break;
-					case 'Table':
-						pageHTML+=document.querySelector('#accordionAdministrator').outerHTML;
-						break;
-				}
-				pageHTML+=document.querySelector('footer').outerHTML;
-				document.getElementById('IPage').innerHTML=pageHTML;
-			}
-
-		function switchToState(newState) {
-			var stateStr=newState.pagename;
-			location.hash=stateStr;
-		}
-
-		switchToStateFromURLHash();
-
-		</script>
-		
-		<script>
-			var textChanged=false;
-			
-			var txtElems=document.querySelectorAll('#signup form input');
-			for (let i = 0; i < txtElems.length; i++) {
-				txtElems[i].onchange=txtChanged;
-				txtElems[i].onkeypress=txtChanged;
-				txtElems[i].onpaste=txtChanged;
-				txtElems[i].oncut=txtChanged;
-			}
-
-			function txtChanged(EO) {
-				EO=EO||window.event;
-				textChanged=true; // текст изменён
-			}
-			 
-			window.onbeforeunload=befUnload;
-
-			function befUnload(EO) {
-				EO=EO||window.event;
-				// если текст изменён, попросим браузер задать вопрос пользователю
-				if ( textChanged )
-					EO.returnValue='Данные не сохранены';
-			};
-		</script>
+		<script src="assets/js/handlebars-v4.0.11.js"></script>
+		<script src="assets/js/model.js"></script>
+		<script src="assets/js/controller.js"></script>
+		<script src="assets/js/script.js"></script>
 	</body>
+</html>

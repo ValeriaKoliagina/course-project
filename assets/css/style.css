@@ -1,3 +1,7 @@
+html, 
+body {
+	height: 100%;
+}
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {  
 	.navbar-nav.h5 {font-size:1.25rem;} 
@@ -19,6 +23,9 @@
 	#order,
 	#orderAdministrator {font-size: 0.9rem;}
 	.modal-body {font-size: 0.9rem;}
+	.carousel-caption span {
+		font-size: 1.5rem; 
+	}
 }
 @media (max-width: 576px) {
 	.nav-item > a {font-size: 1.25rem;}
@@ -26,6 +33,15 @@
 	#order,
 	#orderAdministrator {font-size: 0.9rem;}
 	.modal-body {font-size: 0.8rem;}
+	.carousel-caption {
+		bottom: 5px;
+	}
+	.carousel-caption span{
+		font-size: 1.25rem; 
+	}
+	.carousel-indicators {
+		bottom: 0;
+	}
 }
 .nav-link span {font-size: 2.0rem;}
 
@@ -74,15 +90,7 @@ a {
 	height: 15rem;
 	overflow-y: scroll;
 }
-#toTop {
-	bottom: 7rem;
-	display: block;
-    position: fixed;
-    text-align: center;
-    left: 2rem;
-    cursor: pointer;
-    z-index: 100;
-}
+
 .form-signin,
 .form-signup {
     width: 100%;
@@ -106,3 +114,9 @@ a {
 .card .btn-link {
 	text-decoration: none;
 }
+section,
+header,
+footer {
+	display: none;
+}
+
