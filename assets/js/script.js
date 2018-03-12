@@ -1,10 +1,12 @@
 "use strict";
-//controller
+//MVC
 let teideController;
 let gMenuView;
 
 window.onload = function() {
 	teideController = new TeideController();
+	gMenuView = new GlobalMenuView();
+		
 	teideController.getToken()
 		.then(result => {
 			teideController.accessToken = result.access_token;
@@ -13,10 +15,9 @@ window.onload = function() {
 			teideController.createModel('menuModel', new MenuModel());	
 			teideController.menuModel.init(gMenuView);
 			gMenuView.init(teideController.menuModel);
+			switchToStateFromURLHash();
 		})
 		.catch(error => console.error(error));
-		
-	gMenuView = new GlobalMenuView();
 }
 
 
@@ -46,22 +47,40 @@ function switchToStateFromURLHash() {
 			});
 			break;
 		case 'Starter':
-			$('#starter').show('drop', null, 500);
+			teideController.menuModel.receiveCategories().then(function() {
+					$('#categoryMeals').show();
+					$('#Starter').show('drop', null, 500);
+			});
 			break;
 		case 'Soup':
-			$('#soup').show('drop', null, 500);
+			teideController.menuModel.receiveCategories().then(function() {
+					$('#categoryMeals').show();
+					$('#Soup').show('drop', null, 500);
+			});
 			break;
 		case 'Fish':
-			$('#fish').show('drop', null, 500);
+			teideController.menuModel.receiveCategories().then(function() {
+					$('#categoryMeals').show();
+					$('#Fish').show('drop', null, 500);
+			});
 			break;
 		case 'Meat':
-			$('#meat').show('drop', null, 500);
+			teideController.menuModel.receiveCategories().then(function() {
+					$('#categoryMeals').show();
+					$('#Meat').show('drop', null, 500);
+			});
 			break;
 		case 'Sidedish':
-			$('#sidedish').show('drop', null, 500);
+			teideController.menuModel.receiveCategories().then(function() {
+					$('#categoryMeals').show();
+					$('#Sidedish').show('drop', null, 500);
+			});
 			break;
 		case 'Dessert':
-			$('#dessert').show('drop', null, 500);
+			teideController.menuModel.receiveCategories().then(function() {
+					$('#categoryMeals').show();
+					$('#Dessert').show('drop', null, 500);
+			});
 			break;
 		case 'TableReservation':
 			$('#booking').show('drop', null, 500);
@@ -101,8 +120,6 @@ function switchToState(newState) {
 var stateStr=newState.pagename;
 location.hash=stateStr;
 }
-
-switchToStateFromURLHash();
 
 // Не сохранены данные
 var textChanged=false;

@@ -56,10 +56,11 @@
 							<span class="navbar-toggler-icon"></span>
 						</button>
 					</div>
-					<div class="btn-group-vertical col-sm-3 d-none d-md-block">
-						<a class="btn btn-info" href="#Signin">Вход</a>
-						<a class="btn btn-info" href="#Signup">Регистрация</a>
-						<a class="btn btn-info" href="javascript:void(0);">Выход</a>
+					<div class="btn-group-vertical col-sm-3 d-none d-md-block text-center">
+						<span class="hi-user text-light"></span>
+						<a class="btn btn-info button-enter" href="#Signin">Вход</a>
+						<a class="btn btn-info button-reg" href="#Signup">Регистрация</a>
+						<a class="btn btn-info d-none button-out" href="javascript:void(0);">Выход</a>
 					</div>
 					<div class="col-12 d-sm-block d-md-none">
 						<div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -89,17 +90,17 @@
 										<span class="fa fa-glass"></span><br/> Стек заказов
 									</a>
 								</li>
-								<li class="nav-item d-sm-block d-md-none">
+								<li class="nav-item d-sm-block d-md-none button-enter">
 									<a href="#Signin" class="nav-link text-center">
 										<span class="fa fa-sign-in"></span><br/> Вход
 									</a>
 								</li>
-								<li class="nav-item d-sm-block d-md-none">
+								<li class="nav-item d-sm-block d-md-none button-reg">
 									<a href="#Signup" class="nav-link text-center">
 										<span class="fa fa-user-plus"></span><br/> Регистрация
 									</a>
 								</li>
-								<li class="nav-item d-sm-block d-md-none">
+								<li class="nav-item d-sm-block d-md-none d-none button-out">
 									<a class="nav-link text-center" href="javascript:void(0);">
 										<span class="fa fa-sign-out"></span><br/> Выход
 									</a>
@@ -156,267 +157,259 @@
 			<div class="container-fluid">
 				<h2 class="text-center display-3">Меню</h2>
 				<div class="row">
-					<script id="globalMenu" type="text/x-handlebars-template">
-						{{#each categories}}
-							<div class="col-lg-4 col-md-6">
-								<a href="#{{this.hash}}">
-									<div class="category-title text-center my-3">
-										<div class="h3 text-dark my-2">{{this.title}}</div>
-										<img src="assets/img/menu/{{this.imgUrl}}" width="300" height="200" alt="Закуски">
-									</div>
-								</a>
-							</div>
-						{{/each}}
-					</script>
+					<!--здесь был template id=menuCategoriesTemplate-->
 				</div>
 			</div>
 		</section>	
 
 <!-- Меню -->
-		<section id="starter" class="my-4">
-		<div class=" h2 text-dark my-3 text-center">Закуски</div>
-			<div class="menu-item mx-5 px-4 my-3">
-				<h5 class="menu-post">
-					<span class="menu-title">Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</span>
-					<span class="menu-dots"></span>
-					<span class="menu-price">50.00</span>
-				</h5>
-				<p class="my-0">(1/290)</p>
-			</div>
-			<div class="menu-item mx-5 px-4 my-3">
-				<h5 class="menu-post">
-					<span class="menu-title">Томлёный балантин из утки с овощами агродольче</span>
-					<span class="menu-dots"></span>
-					<span class="menu-price">20.00</span>
-				</h5>
-				<p class="my-0">(1/235)</p>
-			</div>
-			<div class="menu-item mx-5 px-4 my-3">
-				<h5 class="menu-post">
-					<span class="menu-title">Кальмар су-вид с теплым рататуем, зеленым салатом и винным соусом</span>
-					<span class="menu-dots"></span>
-					<span class="menu-price">30.00</span>
-				</h5>
-				<p class="my-0">(1/260)</p>
-			</div>
-			<div class="menu-item mx-5 px-4 my-3">
-				<h5 class="menu-post">
-					<span class="menu-title">Подкопчённый лосось с лимонно-мятным йогуртом, цуккини «scapeсe» и микс салатом</span>
-					<span class="menu-dots"></span>
-					<span class="menu-price">45.00</span>
-				</h5>
-				<p class="my-0">(1/310)</p>
-			</div>
-			<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
-				<a href="#Dessert" class="fa fa-chevron-left" ></a>
-				<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
-				<a href="#Soup" class="fa fa-chevron-right"></a>
-			</div>
-		</section>
+		<section id="categoryMeals">
+		<!--здесь был template id=categoryMealsTemplate-->
+			<!-- <section id="starter" class="my-4">
+				<div class=" h2 text-dark my-3 text-center">Закуски</div>
+				<div class="menu-item mx-5 px-4 my-3">
+					<h5 class="menu-post">
+						<span class="menu-title">Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</span>
+						<span class="menu-dots"></span>
+						<span class="menu-price">50.00</span>
+					</h5>
+					<p class="my-0">(1/290)</p>
+				</div>
+				<div class="menu-item mx-5 px-4 my-3">
+					<h5 class="menu-post">
+						<span class="menu-title">Томлёный балантин из утки с овощами агродольче</span>
+						<span class="menu-dots"></span>
+						<span class="menu-price">20.00</span>
+					</h5>
+					<p class="my-0">(1/235)</p>
+				</div>
+				<div class="menu-item mx-5 px-4 my-3">
+					<h5 class="menu-post">
+						<span class="menu-title">Кальмар су-вид с теплым рататуем, зеленым салатом и винным соусом</span>
+						<span class="menu-dots"></span>
+						<span class="menu-price">30.00</span>
+					</h5>
+					<p class="my-0">(1/260)</p>
+				</div>
+				<div class="menu-item mx-5 px-4 my-3">
+					<h5 class="menu-post">
+						<span class="menu-title">Подкопчённый лосось с лимонно-мятным йогуртом, цуккини «scapeсe» и микс салатом</span>
+						<span class="menu-dots"></span>
+						<span class="menu-price">45.00</span>
+					</h5>
+					<p class="my-0">(1/310)</p>
+				</div>
+				<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
+					<a href="#Dessert" class="fa fa-chevron-left" ></a>
+					<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
+					<a href="#Soup" class="fa fa-chevron-right"></a>
+				</div>
+			</section>
+				
+			<section id="soup" class="my-4">
+				<div class=" h2 text-dark my-3 text-center">Паста и супы</div>
+				<div class="menu-item mx-5 px-4 my-3">
+					<h5 class="menu-post">
+						<span class="menu-title">Зелёные равиоли с уткой, хрустящим луком пореем и черным и белым соусом</span>
+						<span class="menu-dots"></span>
+						<span class="menu-price">20.00</span>
+					</h5>
+					<p class="my-0">(1/330)</p>
+				</div>
+				<div class="menu-item mx-5 px-4 my-3">
+					<h5 class="menu-post">
+						<span class="menu-title">Суп из белых грибов с нутом</span>
+						<span class="menu-dots"></span>
+						<span class="menu-price">25.00</span>
+					</h5>
+					<p class="my-0">(1/250)</p>
+				</div>
+				<div class="menu-item mx-5 px-4 my-3">
+					<h5 class="menu-post">
+						<span class="menu-title">Цветные тальятелле с морепродуктами и пеной из лайма</span>
+						<span class="menu-dots"></span>
+						<span class="menu-price">30.00</span>
+					</h5>
+					<p class="my-0">(1/300)</p>
+				</div>
+				<div class="menu-item mx-5 px-4 my-3">
+					<h5 class="menu-post">
+						<span class="menu-title">Паста «pacchero allo scoglio» с диким сибасом и соусом из свежих трав</span>
+						<span class="menu-dots"></span>
+						<span class="menu-price">45.00</span>
+					</h5>
+					<p class="my-0">(1/360)</p>
+				</div>
+				<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
+					<a href="#Starter" class="fa fa-chevron-left" ></a>
+					<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
+					<a href="#Fish" class="fa fa-chevron-right"></a>
+				</div>
+			</section>
 			
-		<section id="soup" class="my-4">
-			<div class=" h2 text-dark my-3 text-center">Паста и супы</div>
-			<div class="menu-item mx-5 px-4 my-3">
-				<h5 class="menu-post">
-					<span class="menu-title">Зелёные равиоли с уткой, хрустящим луком пореем и черным и белым соусом</span>
-					<span class="menu-dots"></span>
-					<span class="menu-price">20.00</span>
-				</h5>
-				<p class="my-0">(1/330)</p>
-			</div>
-			<div class="menu-item mx-5 px-4 my-3">
-				<h5 class="menu-post">
-					<span class="menu-title">Суп из белых грибов с нутом</span>
-					<span class="menu-dots"></span>
-					<span class="menu-price">25.00</span>
-				</h5>
-				<p class="my-0">(1/250)</p>
-			</div>
-			<div class="menu-item mx-5 px-4 my-3">
-				<h5 class="menu-post">
-					<span class="menu-title">Цветные тальятелле с морепродуктами и пеной из лайма</span>
-					<span class="menu-dots"></span>
-					<span class="menu-price">30.00</span>
-				</h5>
-				<p class="my-0">(1/300)</p>
-			</div>
-			<div class="menu-item mx-5 px-4 my-3">
-				<h5 class="menu-post">
-					<span class="menu-title">Паста «pacchero allo scoglio» с диким сибасом и соусом из свежих трав</span>
-					<span class="menu-dots"></span>
-					<span class="menu-price">45.00</span>
-				</h5>
-				<p class="my-0">(1/360)</p>
-			</div>
-			<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
-				<a href="#Starter" class="fa fa-chevron-left" ></a>
-				<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
-				<a href="#Fish" class="fa fa-chevron-right"></a>
-			</div>
-		</section>
+			<section id="fish" class="my-4">
+				<div class=" h2 text-dark my-3 text-center">Блюда из рыбы</div>
+				<div class="menu-item mx-5 px-4 my-3">
+					<h5 class="menu-post">
+						<span class="menu-title">Дикий сибас на гриле с оливами таджаска, свежим шпинатом и свекольным соусом</span>
+						<span class="menu-dots"></span>
+						<span class="menu-price">80.00</span>
+					</h5>
+					<p class="my-0">(1/270)</p>
+				</div>
+				<div class="menu-item mx-5 px-4 my-3">
+					<h5 class="menu-post">
+						<span class="menu-title">Сэндвич из домашнего хлеба с мягким лобстером и картофелем </span>
+						<span class="menu-dots"></span>
+						<span class="menu-price">90.00</span>
+					</h5>
+					<p class="my-0">(1/525)</p>
+				</div>
+				<div class="menu-item mx-5 px-4 my-3">
+					<h5 class="menu-post">
+						<span class="menu-title">Конфи из дикой трески с цитрусовым картофельным пюре и салатом из сельдерея</span>
+						<span class="menu-dots"></span>
+						<span class="menu-price">40.00</span>
+					</h5>
+					<p class="my-0">(1/330)</p>
+				</div>
+				<div class="menu-item mx-5 px-4 my-3">
+					<h5 class="menu-post">
+						<span class="menu-title">Сибас в ароматической соли</span>
+						<span class="menu-dots"></span>
+						<span class="menu-price">20.00</span>
+					</h5>
+					<p class="my-0">(1/250)</p>
+				</div>
+				<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
+					<a href="#Soup" class="fa fa-chevron-left" ></a>
+					<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
+					<a href="#Meat" class="fa fa-chevron-right"></a>
+				</div>
+			</section>
 			
-		<section id="fish" class="my-4">
-			<div class=" h2 text-dark my-3 text-center">Блюда из рыбы</div>
-			<div class="menu-item mx-5 px-4 my-3">
-				<h5 class="menu-post">
-					<span class="menu-title">Дикий сибас на гриле с оливами таджаска, свежим шпинатом и свекольным соусом</span>
-					<span class="menu-dots"></span>
-					<span class="menu-price">80.00</span>
-				</h5>
-				<p class="my-0">(1/270)</p>
-			</div>
-			<div class="menu-item mx-5 px-4 my-3">
-				<h5 class="menu-post">
-					<span class="menu-title">Сэндвич из домашнего хлеба с мягким лобстером и картофелем </span>
-					<span class="menu-dots"></span>
-					<span class="menu-price">90.00</span>
-				</h5>
-				<p class="my-0">(1/525)</p>
-			</div>
-			<div class="menu-item mx-5 px-4 my-3">
-				<h5 class="menu-post">
-					<span class="menu-title">Конфи из дикой трески с цитрусовым картофельным пюре и салатом из сельдерея</span>
-					<span class="menu-dots"></span>
-					<span class="menu-price">40.00</span>
-				</h5>
-				<p class="my-0">(1/330)</p>
-			</div>
-			<div class="menu-item mx-5 px-4 my-3">
-				<h5 class="menu-post">
-					<span class="menu-title">Сибас в ароматической соли</span>
-					<span class="menu-dots"></span>
-					<span class="menu-price">20.00</span>
-				</h5>
-				<p class="my-0">(1/250)</p>
-			</div>
-			<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
-				<a href="#Soup" class="fa fa-chevron-left" ></a>
-				<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
-				<a href="#Meat" class="fa fa-chevron-right"></a>
-			</div>
-		</section>
-		
-		<section id="meat" class="my-4">
-			<div class=" h2 text-dark my-3 text-center">Блюда из мяса</div>
-			<div class="menu-item mx-5 px-4 my-3">
-				<h5 class="menu-post">
-					<span class="menu-title">Стейк Риб-ай с медовой морковью, грибами порто белло и рукколой</span>
-					<span class="menu-dots"></span>
-					<span class="menu-price">90.00</span>
-				</h5>
-				<p class="my-0">(1/420)</p>
-			</div>
-			<div class="menu-item mx-5 px-4 my-3">
-				<h5 class="menu-post">
-					<span class="menu-title">Говядина Веллингтон, запечённая в домашнем хлебе с грибами и пармской ветчиной</span>
-					<span class="menu-dots"></span>
-					<span class="menu-price">45.00</span>
-				</h5>
-				<p class="my-0">(1/410)</p>
-			</div>
-			<div class="menu-item mx-5 px-4 my-3">
-				<h5 class="menu-post">
-					<span class="menu-title">Филе телятины с горчичным соусом на подушке из краснокочанной капусты и кремом из цветной капусты</span>
-					<span class="menu-dots"></span>
-					<span class="menu-price">40.00</span>
-				</h5>
-				<p class="my-0">(1/400)</p>
-			</div>
-			<div class="menu-item mx-5 px-4 my-3">
-				<h5 class="menu-post">
-					<span class="menu-title">Каре ягнёнка «a modo mio» с пюре из топинамбура, зеленым салатом и соусом из розмарина</span>
-					<span class="menu-dots"></span>
-					<span class="menu-price">45.00</span>
-				</h5>
-				<p class="my-0">(1/410)</p>
-			</div>
-			<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
-				<a href="#Fish" class="fa fa-chevron-left" ></a>
-				<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
-				<a href="#Sidedish" class="fa fa-chevron-right"></a>
-			</div>
-		</section>
-		
-		<section id="sidedish" class="my-4">
-			<div class=" h2 text-dark my-3 text-center">Гарниры</div>
-			<div class="menu-item mx-5 px-4 my-3">
-				<h5 class="menu-post">
-					<span class="menu-title">Запечённый картофель с розмарином</span>
-					<span class="menu-dots"></span>
-					<span class="menu-price">15.00</span>
-				</h5>
-				<p class="my-0">(1/150)</p>
-			</div>
-			<div class="menu-item mx-5 px-4 my-3">
-				<h5 class="menu-post">
-					<span class="menu-title">Брокколи на пару с пряным маслом</span>
-					<span class="menu-dots"></span>
-					<span class="menu-price">10.00</span>
-				</h5>
-				<p class="my-0">(1/115)</p>
-			</div>
-			<div class="menu-item mx-5 px-4 my-3">
-				<h5 class="menu-post">
-					<span class="menu-title">Соте из шампиньонов</span>
-					<span class="menu-dots"></span>
-					<span class="menu-price">10.00</span>
-				</h5>
-				<p class="my-0">(1/110)</p>
-			</div>
-			<div class="menu-item mx-5 px-4 my-3">
-				<h5 class="menu-post">
-					<span class="menu-title">Зеленый салат с сыром горгонзола и грушей</span>
-					<span class="menu-dots"></span>
-					<span class="menu-price">10.00</span>
-				</h5>
-				<p class="my-0">(1/110)</p>
-			</div>
-			<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
-				<a href="#Meat" class="fa fa-chevron-left" ></a>
-				<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
-				<a href="#Dessert" class="fa fa-chevron-right"></a>
-			</div>
-		</section>
-		
-		<section id="dessert" class="my-4">
-			<div class=" h2 text-dark my-3 text-center">Десерты</div>
-			<div class="menu-item mx-5 px-4 my-3">
-				<h5 class="menu-post">
-					<span class="menu-title">«Ciocolatoso» Тёплый шоколадный пирог, арахисовое мороженое, шоколадный мусс и солёный бисквит</span>
-					<span class="menu-dots"></span>
-					<span class="menu-price">15.00</span>
-				</h5>
-				<p class="my-0">(1/220)</p>
-			</div>
-			<div class="menu-item mx-5 px-4 my-3">
-				<h5 class="menu-post">
-					<span class="menu-title">«Тирамису della mamma» Кофейный бисквит, сабайон с марсалой и какао-порошком</span>
-					<span class="menu-dots"></span>
-					<span class="menu-price">20.00</span>
-				</h5>
-				<p class="my-0">(1/220)</p>
-			</div>
-			<div class="menu-item mx-5 px-4 my-3">
-				<h5 class="menu-post">
-					<span class="menu-title">Классический чизкейк с ягодным соусом</span>
-					<span class="menu-dots"></span>
-					<span class="menu-price">15.00</span>
-				</h5>
-				<p class="my-0">(1/230)</p>
-			</div>
-			<div class="menu-item mx-5 px-4 my-3">
-				<h5 class="menu-post">
-					<span class="menu-title">Домашнее мороженое (крема антика, шоколад, прополис, миндаль)</span>
-					<span class="menu-dots"></span>
-					<span class="menu-price">5.00</span>
-				</h5>
-				<p class="my-0">(1/50)</p>
-			</div>  
-			<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
-				<a href="#Sidedish" class="fa fa-chevron-left" ></a>
-				<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
-				<a href="#Starter" class="fa fa-chevron-right"></a>
-			</div>
+			<section id="meat" class="my-4">
+				<div class=" h2 text-dark my-3 text-center">Блюда из мяса</div>
+				<div class="menu-item mx-5 px-4 my-3">
+					<h5 class="menu-post">
+						<span class="menu-title">Стейк Риб-ай с медовой морковью, грибами порто белло и рукколой</span>
+						<span class="menu-dots"></span>
+						<span class="menu-price">90.00</span>
+					</h5>
+					<p class="my-0">(1/420)</p>
+				</div>
+				<div class="menu-item mx-5 px-4 my-3">
+					<h5 class="menu-post">
+						<span class="menu-title">Говядина Веллингтон, запечённая в домашнем хлебе с грибами и пармской ветчиной</span>
+						<span class="menu-dots"></span>
+						<span class="menu-price">45.00</span>
+					</h5>
+					<p class="my-0">(1/410)</p>
+				</div>
+				<div class="menu-item mx-5 px-4 my-3">
+					<h5 class="menu-post">
+						<span class="menu-title">Филе телятины с горчичным соусом на подушке из краснокочанной капусты и кремом из цветной капусты</span>
+						<span class="menu-dots"></span>
+						<span class="menu-price">40.00</span>
+					</h5>
+					<p class="my-0">(1/400)</p>
+				</div>
+				<div class="menu-item mx-5 px-4 my-3">
+					<h5 class="menu-post">
+						<span class="menu-title">Каре ягнёнка «a modo mio» с пюре из топинамбура, зеленым салатом и соусом из розмарина</span>
+						<span class="menu-dots"></span>
+						<span class="menu-price">45.00</span>
+					</h5>
+					<p class="my-0">(1/410)</p>
+				</div>
+				<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
+					<a href="#Fish" class="fa fa-chevron-left" ></a>
+					<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
+					<a href="#Sidedish" class="fa fa-chevron-right"></a>
+				</div>
+			</section>
+			
+			<section id="sidedish" class="my-4">
+				<div class=" h2 text-dark my-3 text-center">Гарниры</div>
+				<div class="menu-item mx-5 px-4 my-3">
+					<h5 class="menu-post">
+						<span class="menu-title">Запечённый картофель с розмарином</span>
+						<span class="menu-dots"></span>
+						<span class="menu-price">15.00</span>
+					</h5>
+					<p class="my-0">(1/150)</p>
+				</div>
+				<div class="menu-item mx-5 px-4 my-3">
+					<h5 class="menu-post">
+						<span class="menu-title">Брокколи на пару с пряным маслом</span>
+						<span class="menu-dots"></span>
+						<span class="menu-price">10.00</span>
+					</h5>
+					<p class="my-0">(1/115)</p>
+				</div>
+				<div class="menu-item mx-5 px-4 my-3">
+					<h5 class="menu-post">
+						<span class="menu-title">Соте из шампиньонов</span>
+						<span class="menu-dots"></span>
+						<span class="menu-price">10.00</span>
+					</h5>
+					<p class="my-0">(1/110)</p>
+				</div>
+				<div class="menu-item mx-5 px-4 my-3">
+					<h5 class="menu-post">
+						<span class="menu-title">Зеленый салат с сыром горгонзола и грушей</span>
+						<span class="menu-dots"></span>
+						<span class="menu-price">10.00</span>
+					</h5>
+					<p class="my-0">(1/110)</p>
+				</div>
+				<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
+					<a href="#Meat" class="fa fa-chevron-left" ></a>
+					<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
+					<a href="#Dessert" class="fa fa-chevron-right"></a>
+				</div>
+			</section>
+			
+			<section id="dessert" class="my-4">
+				<div class=" h2 text-dark my-3 text-center">Десерты</div>
+				<div class="menu-item mx-5 px-4 my-3">
+					<h5 class="menu-post">
+						<span class="menu-title">«Ciocolatoso» Тёплый шоколадный пирог, арахисовое мороженое, шоколадный мусс и солёный бисквит</span>
+						<span class="menu-dots"></span>
+						<span class="menu-price">15.00</span>
+					</h5>
+					<p class="my-0">(1/220)</p>
+				</div>
+				<div class="menu-item mx-5 px-4 my-3">
+					<h5 class="menu-post">
+						<span class="menu-title">«Тирамису della mamma» Кофейный бисквит, сабайон с марсалой и какао-порошком</span>
+						<span class="menu-dots"></span>
+						<span class="menu-price">20.00</span>
+					</h5>
+					<p class="my-0">(1/220)</p>
+				</div>
+				<div class="menu-item mx-5 px-4 my-3">
+					<h5 class="menu-post">
+						<span class="menu-title">Классический чизкейк с ягодным соусом</span>
+						<span class="menu-dots"></span>
+						<span class="menu-price">15.00</span>
+					</h5>
+					<p class="my-0">(1/230)</p>
+				</div>
+				<div class="menu-item mx-5 px-4 my-3">
+					<h5 class="menu-post">
+						<span class="menu-title">Домашнее мороженое (крема антика, шоколад, прополис, миндаль)</span>
+						<span class="menu-dots"></span>
+						<span class="menu-price">5.00</span>
+					</h5>
+					<p class="my-0">(1/50)</p>
+				</div>  
+				<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
+					<a href="#Sidedish" class="fa fa-chevron-left" ></a>
+					<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
+					<a href="#Starter" class="fa fa-chevron-right"></a>
+				</div>
+			</section> -->
 		</section>
 <!-- Бронь столика -->
 		<section id="booking" class="my-4">
@@ -612,16 +605,17 @@
 			<form class="form-signin">
 				<img class="mb-4" src="assets/img/logo2.png" alt="Лого" height="100">
 				<h1 class="h3 mb-3 font-weight-normal">С возвращением</h1>
+				<span class="d-none text-center text-danger">Пользователь не найден</span>
 				<label for="inputEmail" class="sr-only">Введите e-mail</label>
 				<input type="email" id="inputEmail" class="form-control my-2" placeholder="Введите e-mail"/>
 				<label for="inputPassword" class="sr-only">Введите пароль</label>
 				<input type="password" id="inputPassword" class="form-control my-2" placeholder="Введите пароль"/>
 				<div class="checkbox mb-3">
 					<label>
-						<input type="checkbox" value="remember-me"> Запомнить меня
+						<input type="checkbox"/> Запомнить меня
 					</label>
 				</div>
-				<button class="btn btn-lg btn-info btn-block" type="submit">Войти</button>
+				<button class="btn btn-lg btn-info btn-block" id="buttonSignin" type="submit">Войти</button>
 			</form>
 		</section>
 			
@@ -1312,7 +1306,42 @@
 				<div class="d-flex mt-3 font-weight-normal font-italic mb-o">&copy; Валерия Колягина</div>
 			</div>
 		</footer>
+<!-- templates -->
+		<script id="menuCategoriesTemplate" type="text/x-handlebars-template">
+			{{#each categories}}
+				<div class="col-lg-4 col-md-6">
+					<a href="#{{this.hash}}">
+						<div class="category-title text-center my-3">
+							<div class="h3 text-dark my-2">{{this.title}}</div>
+							<img src="assets/img/menu/{{this.imgUrl}}" width="300" height="200" alt="Закуски">
+						</div>
+					</a>
+				</div>
+			{{/each}}
+		</script>
 		
+		<script id="categoryMealsTemplate" type="text/x-handlebars-template">
+			{{#each categories}}
+				<section id="{{this.hash}}" class="my-4">
+					<div class=" h2 text-dark my-3 text-center">{{this.title}}</div>
+					{{#each this.meals}}
+						<div class="menu-item mx-5 px-4 my-3">
+							<h5 class="menu-post">
+								<span class="menu-title">{{this.name}}</span>
+								<span class="menu-dots"></span>
+								<span class="menu-price">{{this.price}}.00</span>
+							</h5>
+							<p class="my-0">({{this.weight}})</p>
+						</div>
+					{{/each}}
+					<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
+						<a href="#{{this.prevHash}}" class="fa fa-chevron-left" ></a>
+						<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
+						<a href="#{{this.nextHash}}" class="fa fa-chevron-right"></a>
+					</div>
+				</section>
+			{{/each}}
+		</script>
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>  
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
