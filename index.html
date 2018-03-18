@@ -9,7 +9,8 @@
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">   
 		<link rel="stylesheet" type="text/css" href="assets/js/jqueryui/jquery-ui.min.css"> 
-		<link rel="stylesheet" type="text/css" href="assets/js/jqueryui/jquery-ui.structure.min.css"> 		
+		<link rel="stylesheet" type="text/css" href="assets/js/jqueryui/jquery-ui.structure.min.css"> 	
+		<link rel="stylesheet" type="text/css" href="assets/css/jquery.datetimepicker.css">		
 		<link rel="stylesheet" type="text/css" href="assets/js/jqueryui/jquery-ui.theme.min.css"> 
 		<script src="assets/js/bootstrap/less.min.js" type="text/javascript"></script>
 		<!-- <script src="assets/js/jquery.min.js"></script> -->
@@ -17,7 +18,7 @@
 	<body>
 
 		<header>
-			<nav class="navbar navbar-expand-md bg-info navbar-dark ">
+			<nav class="navbar navbar-expand-md bg-info navbar-dark">
 				<div class="container-fluid">
 					<a class="col-6 col-sm-4 navbar-brand" href="index.html#Main">
 						<img src="assets/img/logo.png" class="d-inline-block align-top img-fluid" alt="Лого">
@@ -417,11 +418,11 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-2"></div>
-					<form action="/action_page.php" class="col-md-8" name="formOrder" method="post">
+					<form class="col-md-8" name="formOrder" method="post">
 						<div class="row">
 							<div class="form-group col-md-6">
 								<label for="name">Ваше имя:<span class="text-danger">*</span></label>
-								<input type="text" class="form-control" id="name" name="name" /> <!--Добавить автофокус-->
+								<input type="text" class="form-control" id="name" name="name"/> 
 							</div>
 							<div class="form-group col-md-6">
 								<label for="number">Количество гостей:<span class="text-danger">*</span></label>
@@ -435,17 +436,17 @@
 							</div>
 							<div class="form-group col-md-6">
 								<label for="time">Время визита:<span class="text-danger">*</span></label>
-								<input type="time" class="form-control" id="time" name="time" value="09:00" step="900"/>
+								<input type="text" class="form-control" id="time" name="time"/>
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-md-6">
 								<label for="email">Ваш e-mail:</label>
-								<input type="email" class="form-control" id="email">
+								<input type="text" class="form-control" id="email" name="email">
 							</div>
 							<div class="form-group col-md-6">
 								<label for="phone">Ваш телефон:<span class="text-danger">*</span></label>
-								<input type="tel" class="form-control" id="phone" name="phone"/>
+								<input type="text" class="form-control" id="phone" name="phone"/>
 							</div>
 						</div>
 						<small class="row mx-auto mt-0 mb-4"><span class="text-danger">*</span> - Поля, обязательные для заполненения</small>
@@ -465,47 +466,50 @@
 												<div class="col-3">Количество</div>
 												<div class="col-3">Цена</div>
 											</div>
-											<div class="row my-2">
-												<div class="col-12 font-weight-bold">Закуски</div>
-											</div>
-											<div class="row mb-2">
-												<div class="col-7">
-													Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца
+											<div id="modalMenu">
+											<!-- здесь был template id=modalMenuTemplate-->
+												<!-- <div class="row my-2">
+													<div class="col-12 font-weight-bold">Закуски</div>
 												</div>
-												<div class="col-2 m-0">
-													<input type="number" min="0" name="guests" class=" col-sm-12 px-0 border-0" value="0"/>
+												<div class="row mb-2">
+													<div class="col-7">
+														Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца
+													</div>
+													<div class="col-2 m-0">
+														<input type="number" min="0" name="guests" class=" col-sm-12 px-0 border-0" value="0"/>
+													</div>
+													<div class="col-3">50.00</div>
 												</div>
-												<div class="col-3">50.00</div>
-											</div>
-											<div class="row mb-2">
-												<div class="col-7">
-													Томлёный балантин из утки с овощами агродольче
+												<div class="row mb-2">
+													<div class="col-7">
+														Томлёный балантин из утки с овощами агродольче
+													</div>
+													<div class="col-2 m-0">
+														<input type="number" min="9" name="guests" class=" col-sm-12 px-0 border-0" value="0"/>
+													</div>
+													<div class="col-3">20.00</div>
 												</div>
-												<div class="col-2 m-0">
-													<input type="number" min="9" name="guests" class=" col-sm-12 px-0 border-0" value="0"/>
+												<div class="row my-2">
+													<div class="col-12 font-weight-bold">Паста и супы</div>
 												</div>
-												<div class="col-3">20.00</div>
-											</div>
-											<div class="row my-2">
-												<div class="col-12 font-weight-bold">Паста и супы</div>
-											</div>
-											<div class="row mb-2">
-												<div class="col-7">
-													Чего-то там hjfbv,jdhfbv,jdh  jfhbvdfjhvb,dsjhfbv jfhbv,djfhvb,jfshdvb,jfdshvbs
+												<div class="row mb-2">
+													<div class="col-7">
+														Чего-то там hjfbv,jdhfbv,jdh  jfhbvdfjhvb,dsjhfbv jfhbv,djfhvb,jfshdvb,jfdshvbs
+													</div>
+													<div class="col-2 m-0">
+														<input type="number" min="9" name="guests" class=" col-sm-12 px-0 border-0" value="0"/>
+													</div>
+													<div class="col-3">20.00</div>
 												</div>
-												<div class="col-2 m-0">
-													<input type="number" min="9" name="guests" class=" col-sm-12 px-0 border-0" value="0"/>
-												</div>
-												<div class="col-3">20.00</div>
-											</div>
-											<div class="row mb-2">
-												<div class="col-7">
-													Чего-то там hjfbv,jdhfbv,jdh  jfhbvdfjhvb,dsjhfbv jfhbv,djfhvb,jfshdvb,jfdshvbs
-												</div>
-												<div class="col-2 m-0">
-													<input type="number" min="0" name="guests" class="col-sm-12 px-0 border-0" value="0"/>
-												</div>
-												<div class="col-3">20.00</div>
+												<div class="row mb-2">
+													<div class="col-7">
+														Чего-то там hjfbv,jdhfbv,jdh  jfhbvdfjhvb,dsjhfbv jfhbv,djfhvb,jfshdvb,jfdshvbs
+													</div>
+													<div class="col-2 m-0">
+														<input type="number" min="0" name="guests" class="col-sm-12 px-0 border-0" value="0"/>
+													</div>
+													<div class="col-3">20.00</div>
+												</div> -->
 											</div>
 										</div>
 									</div>
@@ -564,7 +568,8 @@
 							<textarea class="form-control" id="message" name="message"/>
 							</textarea>
 						</div>
-						<button type="submit" class="btn btn-info btn-block my-3">Забронировать столик</button>
+						<button type="submit" class="btn btn-info btn-block my-3" id="buttonReservation">Забронировать столик</button>
+						<div class="text-center text-success d-none" id="tableOK">Ваша заявка принята. В ближайшее время с Вами свяжется администратор</div>
 					</form>
 					<div class="col-md-2"></div>
 				</div>
@@ -607,7 +612,7 @@
 				<h1 class="h3 mb-3 font-weight-normal">С возвращением</h1>
 				<span class="d-none text-center text-danger">Пользователь не найден</span>
 				<label for="inputEmail" class="sr-only">Введите e-mail</label>
-				<input type="email" id="inputEmail" class="form-control my-2" placeholder="Введите e-mail"/>
+				<input type="email" id="inputEmail" class="form-control my-2" placeholder="Введите e-mail" name="email"/>
 				<label for="inputPassword" class="sr-only">Введите пароль</label>
 				<input type="password" id="inputPassword" class="form-control my-2" placeholder="Введите пароль"/>
 				<div class="checkbox mb-3">
@@ -620,28 +625,32 @@
 		</section>
 			
 		<section class="text-center" id="signup">
+			<img class="my-4" src="assets/img/logo2.png" alt="Лого" height="100">
+			<div class="d-none text-center text-info my-4 h5" id="welldone">Вы успешно зарегистрированы. Войдите, пожалуйста, под своим логином и паролем
+				<div class="my-3"><a href="#Signin" class="btn btn-info mx-auto">Перейти</a></div>
+			</div>
 			<form class="form-signup">
-				<img class="mb-4" src="assets/img/logo2.png" alt="Лого" height="100">
 				<h1 class="h3 mb-3 font-weight-normal">Зарегистрироваться</h1>
 				<label for="clientName" class="sr-only">Ваше имя</label>
-				<input type="text" id="client_name" class="form-control my-2" placeholder="Введите имя"/>
+				<input type="text" id="clientName" class="form-control my-2" placeholder="Введите имя"/>
 				<label for="clientPassword" class="sr-only">Пароль</label>
+				<span class="text-center text-info" id="wrongPasswords"></span>
 				<input type="password" id="clientPassword" class="form-control my-2" placeholder="Введите пароль"/>
-				<span id="passstrength"></span>
 				<label for="confirmPassword" class="sr-only">Подтвердите пароль</label>
 				<input type="password" id="confirmPassword" class="form-control my-2" placeholder="Подтвердите пароль"/>
 				<label for="clientEmail" class="sr-only">Ваш e-mail</label>
-				<input type="email" id="clientEmail" class="form-control my-2" placeholder="Введите e-mail"/>
+				<input type="email" id="clientEmail" class="form-control my-2" placeholder="Введите e-mail" name="email"/>
 				<label for="clientPhone" class="sr-only">Ваш телефон</label>
-				<input type="tel" id="clientPhone" class="form-control my-2" placeholder="Введите номер телефона"/>
-				<button class="btn btn-lg btn-info btn-block" type="submit">Зарегистрироваться</button>
+				<input type="tel" id="clientPhone" class="form-control my-2" placeholder="Введите номер телефона" name="phone"/>
+				<span class="d-none text-center text-danger" id="allFieldsRequired">Все поля обязательны для заполнения</span>
+				<button class="btn btn-lg btn-info btn-block mt-2" id="buttonSignup" type="submit">Зарегистрироваться</button>
 			</form>
 		</section>
 
 <!-- Вид для повара -->
-		<section id="mainContentChief" class="my-4">
-			 <div class="container" id="containerChief">
-				<div class="card-deck my-3">
+		<section id="containerChief" class="container my-4">
+			<!-- здесь был template id="containerChiefTemplate-->
+<!-- 				<div class="card-deck my-3">
 					<div class="card mb-4 box-shadow">
 						<div class="card-header">
 							<h5 class="my-0">18:30</h5>
@@ -751,8 +760,7 @@
 							<button class="btn btn-success">Готово</button>
 						</div>
 					</div>
-				</div>
-			</div>
+				</div> -->
 		</section>
 		
 <!-- Вид для официанта -->
@@ -762,7 +770,8 @@
 					<div class="col-md-6">
 						<aside>
 							<div id="accordion">
-								<div class="card">
+							<!--Здесь был template id="accordionTemplate"-->
+								<!-- <div class="card">
 									<div class="card-header" id="starterWaiter" data-toggle="collapse" data-target="#collapseOne">
 										<h5 class="mb-0">
 											<button class="btn btn-link" aria-expanded="false" aria-controls="collapseOne">
@@ -864,13 +873,14 @@
 											<li class="list-group-item list-group-item-action">Домашнее мороженое (крема антика, шоколад, прополис, миндаль)</li>
 										</ul>
 									</div>
-								</div>
+								</div> -->
 							</div>
 						</aside>
 					</div>
 
-					<div class="col-md-6">
-						<div class="row my-3 no-gutters">
+					<div class="col-md-6" id="guestOrder">
+						<!-- Здесь был template id="guestOrderTemplate" -->
+						<!-- <div class="row my-3 no-gutters">
 							<div class="col-sm-6 my-2">
 								<span>Номер столика</span>
 								<select name="table-number">
@@ -930,7 +940,7 @@
 								<textarea name="messageWaiter" id="messageWaiter" class="w-100 border border-info rounded p-2" placeholder="Примечания"></textarea>
 							</div>
 						</div>
-						<button type="submit" class="btn btn-info my-1">Оформить заказ</button>
+						<button type="submit" class="btn btn-info my-1">Оформить заказ</button> -->
 					</div>
 				</div>
 			</div>
@@ -939,8 +949,9 @@
 		<section id="containerOrderWaiter" class="my-4">
 			<div class="container">
 				<a href="#NewOrder" class="btn btn-info btn-block mt-4">Добавить <span class="fa fa-plus"></span></a><br/>
-				<div class="card-deck mb-3">
-					<div class="card mb-4 box-shadow">
+				<div class="card-deck mb-3" id="orderListWaiter">
+				<!-- Здесь был template id="orderListWaiterTemplate"-->
+<!-- 					<div class="card mb-4 box-shadow">
 						<div class="card-header d-flex justify-content-between">
 							<span class="h5 my-0">18:30</span>
 							<span class="fa fa-pencil-square-o text-right pt-1"></span>
@@ -1093,14 +1104,14 @@
 						<div class="card-footer d-flex justify-content-between">
 							<button class="btn btn-success btn-block">Готово</button>
 						</div>
-					</div>
+					</div> -->
 					
 				</div>
 			</div>
 		</section>
 
 <!-- Вид для администратора -->
-		<section id="schedule" class="my-4">
+<!-- 		<section id="schedule" class="my-4">
 			<div class="container-fluid">
 				<h2 class="text-center">Расписание на <span>21.03.2018</h2>
 				<table class="table table-bordered table-hover table-responsive-lg text-center mb-3">
@@ -1285,15 +1296,14 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 
 		<footer>
 			<div class="container-fluid bg-dark text-info">
 				<div class="row d-flex justify-content-between">
 					<div class="my-2 px-4">
 						<small><span class="font-weight-bold">Время работы:</span><br/>
-						Понедельник-четверг: 10:00 - 24:00<br/> 
-						Пятница-восресенье: 9:00 - 02:00
+						ежедневно с 10:00 до 02:00
 						</small>
 					</div>
 
@@ -1322,7 +1332,7 @@
 		
 		<script id="categoryMealsTemplate" type="text/x-handlebars-template">
 			{{#each categories}}
-				<section id="{{this.hash}}" class="my-4">
+				<section id="{{this.hash}}" class="mb-4 mt-2">
 					<div class=" h2 text-dark my-3 text-center">{{this.title}}</div>
 					{{#each this.meals}}
 						<div class="menu-item mx-5 px-4 my-3">
@@ -1342,10 +1352,179 @@
 				</section>
 			{{/each}}
 		</script>
+		
+		<script id="modalMenuTemplate" type="text/x-handlebars-template">
+			{{#each categories}}
+				<div class="row my-2">
+					<div class="col-12 font-weight-bold">{{this.title}}</div>
+				</div>
+				{{#each this.meals}}
+					<div class="row mb-2">
+						<div class="col-7">{{this.name}}</div>
+						<div class="col-2 m-0">
+							<input type="number" min="0" name="guests" class=" col-sm-12 px-0 border-0" value="0"/>
+						</div>
+						<div class="col-3">{{this.price}}.00</div>
+					</div>
+				{{/each}}
+			{{/each}}
+		</script>
+		
+		<script id="accordionTemplate" type="text/x-handlebars-template">
+			{{#each categories}}
+				<div class="card">
+					<div class="card-header" id="{{this.hash}}Waiter" data-toggle="collapse" data-target="#collapse{{this.hash}}">
+						<h5 class="mb-0">
+							<button class="btn btn-link" aria-expanded="false" aria-controls="collapse{{this.hash}}">
+								<span class="h4 text-info">{{this.title}}</span>
+							</button>
+						</h5>
+					</div>
+
+					<div id="collapse{{this.hash}}" class="collapse" aria-labelledby="{{this.hash}}Waiter" data-parent="#accordion">
+						<ul class="list-group">
+							{{#each this.meals}}
+								<li class="list-group-item list-group-item-action accordionMeal" data-mealId="{{this.id}}">{{this.name}}</li>
+							{{/each}}
+						</ul>
+					</div>
+				</div>
+			{{/each}}
+		</script>
+		
+		<script id="guestOrderTemplate" type="text/x-handlebars-template">
+			<div class="row my-3 no-gutters">
+				<div class="col-sm-6 my-2">
+					<span>Номер столика</span>
+					<select name="table-number" id="table-number">
+						{{#each tableNums}}
+							{{#if_eq this ../newOrder.table}} 
+								<option value="{{this}}" selected>{{this}}</option>
+								{{else}}
+								<option value="{{this}}">{{this}}</option>
+							{{/if_eq}}
+						{{/each}}
+					</select> 
+				</div>
+				<div class="col-sm-6 text-left text-sm-right my-2">
+					<label for="orderTime">Готовность, мин</label>
+					<input class="w-25" type="number" name="order-time" id="orderTime" value="{{newOrder.timeShift}}" step="15"/>
+				</div>
+			</div>
+			<ul class="list-group list-group-flush">
+				{{#each newOrder.orderItems}}
+					<li class="list-group-item liMeal">
+						<div class="row">
+							<div class="col-9">{{this.mealName}}</div>
+							<input type="number" name="count" class="col-1 px-0 border-0 count" min="1" data-mealId="{{this.mealId}}" value="{{this.quantity}}"/>
+							<div class="col-2 d-flex align-items-center">
+								<button type="button" class="close" aria-label="Close" data-mealId="{{this.mealId}}">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+						</div>
+					</li>
+				{{/each}}
+			</ul>
+			<div class="row">
+				<div class="my-4 col-12 w-100">
+					<textarea name="messageWaiter" id="messageWaiter" class="w-100 border border-info rounded p-2" placeholder="Примечания">{{newOrder.message}}</textarea>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-info my-1" id="orderOK">Оформить заказ</button>
+		</script>
+		
+		<script id="orderListWaiterTemplate" type="text/x-handlebars-template">
+			{{#each receivedOrders}}
+				<div class="card mb-4 box-shadow">
+					<div class="card-header d-flex justify-content-between">
+						{{#if this.timeShift}}
+							<span class="h5 my-0">{{this.desiredTime}}</span>
+							{{else}}
+							<span class="h5 my-0">ASAP</span>
+						{{/if}}
+						<span class="fa fa-pencil-square-o text-right pt-1" data-orderIndex="{{@index}}"></span>
+					</div>
+					<div class="card-body">
+						<h6 class="card-subtitle mb-2 text-muted">Столик №{{this.table}}</h6>
+						{{#each this.orderItems}}
+							<div class="row">
+								<div class="card-text col-10">
+									<p>{{this.mealName}}</p>
+								</div>
+								<div class="col-2 font-weight-bold">{{this.quantity}}</div>
+							</div>
+						{{/each}}
+						<h6 class="card-title">{{this.message}}</h6>
+						<!-- <h6 class="card-title text-danger">Привет от администратора</h6> -->
+						<div class="row mt-3 text-info font-weight-bold">
+							<div class="card-text col-7">Сумма</div>
+							<div class="card-text col-5">{{this.totalPrice}}</div>
+						</div>
+					</div>
+					<div class="card-footer d-flex justify-content-between">
+						<button class="btn btn-success btn-block">Готово</button>
+					</div>
+				</div>
+			{{/each}}
+		</script>
+		
+		<script id="containerChiefTemplate" type="text/x-handlebars-template">
+			<div class="card-deck card-deck-chief my-3">
+				{{#each receivedOrders}}
+					{{#if_eq this.status 'In Progress'}}
+						<div class="card mb-4 box-shadow chiefCard" style="background: rgba(23, 162,184, 0.05)">
+						{{else}}
+						<div class="card mb-4 box-shadow chiefCard">
+					{{/if_eq}}
+						<div class="card-header">
+							{{#if this.timeShift}}
+								<h5 class="my-0">{{this.desiredTime}}<h5>
+								{{else}}
+								<h5 class="my-0">ASAP</h5>
+							{{/if}}
+						</div>
+						{{#if_eq this.status 'New'}}
+							<button class="btn btn-dark btn-block font-weight-bold takeOrder" data-orderId="{{this.id}}">Принять заказ</button>
+							{{else}}
+							<button class="btn btn-dark btn-block font-weight-bold takeOrder d-none" data-orderId="{{this.id}}">Принять заказ</button>
+						{{/if_eq}}
+						<div class="card-body">
+							<h6 class="card-subtitle mb-2 text-muted">Столик №{{this.table}}</h6>
+							{{#each this.orderItems}}
+								<div class="row">
+									<div class="card-text col-10">
+										<p>{{this.mealName}}</p>
+									</div>
+									<div class="col-2 font-weight-bold">{{this.quantity}}</div>
+								</div>
+							{{/each}}
+							<h6 class="card-title">{{this.message}}</h6>
+							<!-- <h6 class="card-title text-danger">Привет от администратора</h6> -->
+						</div>
+						<div class="card-footer d-flex justify-content-between">
+						{{#if_eq this.status 'Completed'}}
+							<button class="btn btn-info inProgress" data-orderId="{{this.id}}">В процессе</button>
+							{{else}}
+							<button class="btn btn-info inProgress" data-orderId="{{this.id}}" disabled>В процессе</button>
+						{{/if_eq}}
+						{{#if_eq this.status 'In Progress'}}
+							<button class="btn btn-success orderComplited" data-orderId="{{this.id}}">Готово</button>
+							{{else}}
+							<button class="btn btn-success orderComplited" data-orderId="{{this.id}}" disabled>Готово</button>
+						{{/if_eq}}
+						</div>
+					</div>
+				{{/each}}
+			</div>
+		</script>
+		
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>  
+		<script src="assets/js/jquery.validate.js"></script> 
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<script src="assets/js/jquery.datetimepicker.full.min.js"></script>
 		<script src="assets/js/handlebars-v4.0.11.js"></script>
 		<script src="assets/js/model.js"></script>
 		<script src="assets/js/view.js"></script>		
