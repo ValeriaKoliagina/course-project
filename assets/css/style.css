@@ -125,11 +125,11 @@ section {
 }
 
 input.error {
-	border: 1px solid #ff0000;
+	border: 1px solid #dc3545;
 }
 
 label.error {
-	color: #ff0000;
+	color: #dc3545;
 	font-weight: normal;
 }
 .inProgressOrder {
@@ -140,4 +140,19 @@ label.error {
 }
 .card-header {
 	min-height: 57px;
+}
+.gif {
+	top: 25%;
+	left: 25%;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.content {
+  flex: 1 0 auto;
+}
+footer {
+  flex: 0 0 auto;
 }

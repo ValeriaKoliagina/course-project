@@ -35,7 +35,12 @@ function MenuModel() {
 						'Content-Type': 'application/json'
 					},
 					context: this,
+					crossDomain: true,
+					beforeSend: function() {
+						$('.gif').removeClass('d-none'); 
+					},
 					success: function(result) { //можно ли тут записать через стрелочную функцию 
+						$('.gif').addClass('d-none'); 
 						let categories = [];
 						$.each((result), function(index, value) { //передали индекс и текущий элемент
 							let category = {};
@@ -118,7 +123,12 @@ function WaiterModel() {
 						'Content-Type': 'application/json'
 					},
 					context: this,
+					crossDomain: true,
+					beforeSend: function() {
+						$('.gif').removeClass('d-none'); 
+					},
 					success: function(result) {
+						$('.gif').addClass('d-none'); 
 						let categories = [];
 						$.each((result), function(index, value) { //передали индекс и текущий элемент
 							let category = {};
@@ -187,6 +197,35 @@ function WaiterModel() {
 					'Content-Type': 'application/json'
 				},
 				contentType: 'application/json',
+				crossDomain: true,
+				beforeSend: function() {
+					$('.gif').removeClass('d-none'); 
+				},
+				success: function(result) {
+					$('.gif').addClass('d-none'); 
+					this.receivedOrders = result;
+					resolve(result);
+				},
+				error: function(error) {
+					$('.gif').addClass('d-none');
+					reject(error);
+				}
+			});
+		});
+	}
+	//для Time - чтобы спиннер не было видно
+	this.recieveOrdersTime = function() {
+		return new Promise((resolve, reject) => {
+			let ajaxHandlerScript=this.instanceUrl + '/services/apexrest/Order/' + teideController.user.Id;	
+			$.ajax(ajaxHandlerScript, { 
+				method:'get', 
+				context: this,
+				headers: {
+					'Authorization': this.tokenType + ' ' + this.accessToken,
+					'Content-Type': 'application/json'
+				},
+				contentType: 'application/json',
+				crossDomain: true,
 				success: function(result) {
 					this.receivedOrders = result;
 					resolve(result);
@@ -227,11 +266,17 @@ function ChiefModel() {
 					'Content-Type': 'application/json'
 				},
 				contentType: 'application/json',
+				crossDomain: true,
+				beforeSend: function() {
+					$('.gif').removeClass('d-none'); 
+				},
 				success: function(result) {
+					$('.gif').addClass('d-none'); 
 					this.receivedOrders = result;
 					resolve(result);
 				},
 				error: function(error) {
+					$('.gif').addClass('d-none');
 					reject(error);
 				}
 			});

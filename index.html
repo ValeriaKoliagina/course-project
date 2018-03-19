@@ -16,1317 +16,1369 @@
 		<!-- <script src="assets/js/jquery.min.js"></script> -->
 	</head>
 	<body>
-
-		<header>
-			<nav class="navbar navbar-expand-md bg-info navbar-dark">
-				<div class="container-fluid">
-					<a class="col-6 col-sm-4 navbar-brand" href="#Main">
-						<img src="assets/img/logo.png" class="d-inline-block align-top img-fluid" alt="Лого">
-					</a>
-					<div class="col-5 col-sm-5 text-right text-md-center">
-						<div class="collapse navbar-collapse" >
-							<ul class="navbar-nav mx-auto h5">
-								<li class="nav-item">
-									<a href="#Menu" class="nav-link text-left text-md-center">
-										<span class="fa fa-cutlery"></span><br/> Меню
-									</a>
-								</li>
-								<li class="nav-item">
-									<a href="#TableReservation" class="nav-link text-left text-md-center">
-										<span class="fa fa-book"></span><br/> Бронь
-									</a>
-								</li>
-								<li class="nav-item">
-									<a href="#Contacts" class="nav-link text-left text-md-center">
-										<span class="fa fa-envelope"></span><br/> Контакты
-									</a>
-								</li>
-<!-- 							<li class="nav-item">
-									<a href="#Schedule" class="nav-link text-left text-md-center">
-										<span class="fa fa-pencil"></span><br/> Расписание
-									</a>
-								</li> -->
-								<li class="nav-item waiterOrders d-none">
-									<a href="#Waiter" class="nav-link text-left text-md-center">
-										<span class="fa fa-glass"></span><br/> Стек заказов
-									</a>
-								</li>
-								<li class="nav-item chiefOrders d-none">
-									<a href="#Chief" class="nav-link text-left text-md-center">
-										<span class="fa fa-glass"></span><br/> Стек заказов
-									</a>
-								</li>
-							</ul>
+		<div class="wrapper">
+			<div class="content">
+				<header>
+					<nav class="navbar navbar-expand-md bg-info navbar-dark">
+						<div class="container-fluid">
+							<a class="col-6 col-sm-4 navbar-brand" href="#Main">
+								<img src="assets/img/logo.png" class="d-inline-block align-top img-fluid" alt="Лого">
+							</a>
+							<div class="col-5 col-sm-5 text-right text-md-center">
+								<div class="collapse navbar-collapse" >
+									<ul class="navbar-nav mx-auto h5">
+										<li class="nav-item">
+											<a href="#Menu" class="nav-link text-left text-md-center">
+												<span class="fa fa-cutlery"></span><br/> Меню
+											</a>
+										</li>
+										<li class="nav-item">
+											<a href="#TableReservation" class="nav-link text-left text-md-center">
+												<span class="fa fa-book"></span><br/> Бронь
+											</a>
+										</li>
+										<li class="nav-item">
+											<a href="#Contacts" class="nav-link text-left text-md-center">
+												<span class="fa fa-envelope"></span><br/> Контакты
+											</a>
+										</li>
+		<!-- 							<li class="nav-item">
+											<a href="#Schedule" class="nav-link text-left text-md-center">
+												<span class="fa fa-pencil"></span><br/> Расписание
+											</a>
+										</li> -->
+										<li class="nav-item waiterOrders d-none">
+											<a href="#Waiter" class="nav-link text-left text-md-center">
+												<span class="fa fa-glass"></span><br/> Стек заказов
+											</a>
+										</li>
+										<li class="nav-item chiefOrders d-none">
+											<a href="#Chief" class="nav-link text-left text-md-center">
+												<span class="fa fa-glass"></span><br/> Стек заказов
+											</a>
+										</li>
+									</ul>
+								</div>
+								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-expanded="false">
+									<span class="navbar-toggler-icon"></span>
+								</button>
+							</div>
+							<div class="btn-group-vertical col-sm-3 d-none d-md-block text-center">
+								<span class="hi-user text-light"></span>
+								<a class="btn btn-info button-enter" href="#Signin">Вход</a>
+								<a class="btn btn-info button-reg" href="#Signup">Регистрация</a>
+								<a class="btn btn-info d-none button-out" href="javascript:void(0);">Выход</a>
+							</div>
+							<div class="col-12 d-sm-block d-md-none">
+								<div class="collapse navbar-collapse" id="collapsibleNavbar">
+									<ul class="navbar-nav mx-auto h5">
+										<li class="nav-item">
+											<a href="#Menu" class="nav-link text-center">
+												<span class="fa fa-cutlery"></span><br/> Меню
+											</a>
+										</li>
+										<li class="nav-item">
+											<a href="#TableReservation" class="nav-link text-center">
+												<span class="fa fa-book"></span><br/> Бронь
+											</a>
+										</li>
+										<li class="nav-item">
+											<a href="#Contacts" class="nav-link text-center">
+												<span class="fa fa-envelope"></span><br/> Контакты
+											</a>
+										</li>
+		<!-- 							<li class="nav-item">
+											<a href="#Schedule" class="nav-link text-center">
+												<span class="fa fa-pencil"></span><br/> Расписание
+											</a>
+										</li> -->
+										<li class="nav-item waiterOrders d-none">
+											<a href="#Waiter" class="nav-link text-center">
+												<span class="fa fa-glass"></span><br/> Стек заказов
+											</a>
+										</li> 
+										<li class="nav-item chiefOrders d-none">
+											<a href="#Chief" class="nav-link text-center">
+												<span class="fa fa-glass"></span><br/> Стек заказов
+											</a>
+										</li> 
+										<li class="nav-item d-sm-block d-md-none button-enter">
+											<a href="#Signin" class="nav-link text-center">
+												<span class="fa fa-sign-in"></span><br/> Вход
+											</a>
+										</li>
+										<li class="nav-item d-sm-block d-md-none button-reg">
+											<a href="#Signup" class="nav-link text-center">
+												<span class="fa fa-user-plus"></span><br/> Регистрация
+											</a>
+										</li>
+										<li class="nav-item d-sm-block d-md-none d-none button-out">
+											<a class="nav-link text-center" href="javascript:void(0);">
+												<span class="fa fa-sign-out"></span><br/> Выход
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
 						</div>
-						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-expanded="false">
-							<span class="navbar-toggler-icon"></span>
-						</button>
-					</div>
-					<div class="btn-group-vertical col-sm-3 d-none d-md-block text-center">
-						<span class="hi-user text-light"></span>
-						<a class="btn btn-info button-enter" href="#Signin">Вход</a>
-						<a class="btn btn-info button-reg" href="#Signup">Регистрация</a>
-						<a class="btn btn-info d-none button-out" href="javascript:void(0);">Выход</a>
-					</div>
-					<div class="col-12 d-sm-block d-md-none">
-						<div class="collapse navbar-collapse" id="collapsibleNavbar">
-							<ul class="navbar-nav mx-auto h5">
-								<li class="nav-item">
-									<a href="#Menu" class="nav-link text-center">
-										<span class="fa fa-cutlery"></span><br/> Меню
-									</a>
-								</li>
-								<li class="nav-item">
-									<a href="#TableReservation" class="nav-link text-center">
-										<span class="fa fa-book"></span><br/> Бронь
-									</a>
-								</li>
-								<li class="nav-item">
-									<a href="#Contacts" class="nav-link text-center">
-										<span class="fa fa-envelope"></span><br/> Контакты
-									</a>
-								</li>
-<!-- 							<li class="nav-item">
-									<a href="#Schedule" class="nav-link text-center">
-										<span class="fa fa-pencil"></span><br/> Расписание
-									</a>
-								</li> -->
-								<li class="nav-item waiterOrders d-none">
-									<a href="#Waiter" class="nav-link text-center">
-										<span class="fa fa-glass"></span><br/> Стек заказов
-									</a>
-								</li> 
-								<li class="nav-item chiefOrders d-none">
-									<a href="#Chief" class="nav-link text-center">
-										<span class="fa fa-glass"></span><br/> Стек заказов
-									</a>
-								</li> 
-								<li class="nav-item d-sm-block d-md-none button-enter">
-									<a href="#Signin" class="nav-link text-center">
-										<span class="fa fa-sign-in"></span><br/> Вход
-									</a>
-								</li>
-								<li class="nav-item d-sm-block d-md-none button-reg">
-									<a href="#Signup" class="nav-link text-center">
-										<span class="fa fa-user-plus"></span><br/> Регистрация
-									</a>
-								</li>
-								<li class="nav-item d-sm-block d-md-none d-none button-out">
-									<a class="nav-link text-center" href="javascript:void(0);">
-										<span class="fa fa-sign-out"></span><br/> Выход
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</nav>	
-		</header>
-		
-
-		<section class="carousel slide" data-ride="carousel" id="slider">
-			<ul class="carousel-indicators">
-				<li data-target="#slider" data-slide-to="0"></li>
-				<li data-target="#slider" data-slide-to="1"></li>
-				<li data-target="#slider" data-slide-to="2"></li>
-			</ul>
-			<div class="carousel-inner">
-				<div class="carousel-item active">
-					<a href="#Menu" class="active">
-						<img src="assets/img/menu.png" alt="Меню">
-						<div class="carousel-caption">
-							<span class="h3">Меню</span>
-						</div>
-					</a>
-				</div>
-				<div class="carousel-item">
-					<a href="#TableReservation">
-						<img src="assets/img/restaurant.png" alt="Заказать столик">
-						<div class="carousel-caption">
-							<span class="h3">Заказать столик</span>
-						</div>
-					</a>
-				</div>
-				<div class="carousel-item">
-					<a href="#Contacts">
-						<img src="assets/img/location.png" alt="Наши контакты и месторасположение">
-						<div class="carousel-caption">
-							<span class="h3">Проверить месторасположение</span>
-						</div>
-					</a>
-				</div>
-			 </div>
-			<a class="carousel-control-prev" href="#slider" data-slide="prev">
-				<span class="carousel-control-prev-icon"></span>
-			</a>
-			<a class="carousel-control-next" href="#slider" data-slide="next">
-				<span class="carousel-control-next-icon"></span>
-			</a>
-		</section>	
-		
-		<section id="menuCategories" class="my-4">
-			<div class="container-fluid">
-				<h2 class="text-center display-3">Меню</h2>
-				<div class="row">
-					<!--здесь был template id=menuCategoriesTemplate-->
-				</div>
-			</div>
-		</section>	
-
-<!-- Меню -->
-		<section id="categoryMeals">
-		<!--здесь был template id=categoryMealsTemplate-->
-			<!-- <section id="starter" class="my-4">
-				<div class=" h2 text-dark my-3 text-center">Закуски</div>
-				<div class="menu-item mx-5 px-4 my-3">
-					<h5 class="menu-post">
-						<span class="menu-title">Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</span>
-						<span class="menu-dots"></span>
-						<span class="menu-price">50.00</span>
-					</h5>
-					<p class="my-0">(1/290)</p>
-				</div>
-				<div class="menu-item mx-5 px-4 my-3">
-					<h5 class="menu-post">
-						<span class="menu-title">Томлёный балантин из утки с овощами агродольче</span>
-						<span class="menu-dots"></span>
-						<span class="menu-price">20.00</span>
-					</h5>
-					<p class="my-0">(1/235)</p>
-				</div>
-				<div class="menu-item mx-5 px-4 my-3">
-					<h5 class="menu-post">
-						<span class="menu-title">Кальмар су-вид с теплым рататуем, зеленым салатом и винным соусом</span>
-						<span class="menu-dots"></span>
-						<span class="menu-price">30.00</span>
-					</h5>
-					<p class="my-0">(1/260)</p>
-				</div>
-				<div class="menu-item mx-5 px-4 my-3">
-					<h5 class="menu-post">
-						<span class="menu-title">Подкопчённый лосось с лимонно-мятным йогуртом, цуккини «scapeсe» и микс салатом</span>
-						<span class="menu-dots"></span>
-						<span class="menu-price">45.00</span>
-					</h5>
-					<p class="my-0">(1/310)</p>
-				</div>
-				<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
-					<a href="#Dessert" class="fa fa-chevron-left" ></a>
-					<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
-					<a href="#Soup" class="fa fa-chevron-right"></a>
-				</div>
-			</section>
+					</nav>	
+				</header>
 				
-			<section id="soup" class="my-4">
-				<div class=" h2 text-dark my-3 text-center">Паста и супы</div>
-				<div class="menu-item mx-5 px-4 my-3">
-					<h5 class="menu-post">
-						<span class="menu-title">Зелёные равиоли с уткой, хрустящим луком пореем и черным и белым соусом</span>
-						<span class="menu-dots"></span>
-						<span class="menu-price">20.00</span>
-					</h5>
-					<p class="my-0">(1/330)</p>
-				</div>
-				<div class="menu-item mx-5 px-4 my-3">
-					<h5 class="menu-post">
-						<span class="menu-title">Суп из белых грибов с нутом</span>
-						<span class="menu-dots"></span>
-						<span class="menu-price">25.00</span>
-					</h5>
-					<p class="my-0">(1/250)</p>
-				</div>
-				<div class="menu-item mx-5 px-4 my-3">
-					<h5 class="menu-post">
-						<span class="menu-title">Цветные тальятелле с морепродуктами и пеной из лайма</span>
-						<span class="menu-dots"></span>
-						<span class="menu-price">30.00</span>
-					</h5>
-					<p class="my-0">(1/300)</p>
-				</div>
-				<div class="menu-item mx-5 px-4 my-3">
-					<h5 class="menu-post">
-						<span class="menu-title">Паста «pacchero allo scoglio» с диким сибасом и соусом из свежих трав</span>
-						<span class="menu-dots"></span>
-						<span class="menu-price">45.00</span>
-					</h5>
-					<p class="my-0">(1/360)</p>
-				</div>
-				<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
-					<a href="#Starter" class="fa fa-chevron-left" ></a>
-					<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
-					<a href="#Fish" class="fa fa-chevron-right"></a>
-				</div>
-			</section>
-			
-			<section id="fish" class="my-4">
-				<div class=" h2 text-dark my-3 text-center">Блюда из рыбы</div>
-				<div class="menu-item mx-5 px-4 my-3">
-					<h5 class="menu-post">
-						<span class="menu-title">Дикий сибас на гриле с оливами таджаска, свежим шпинатом и свекольным соусом</span>
-						<span class="menu-dots"></span>
-						<span class="menu-price">80.00</span>
-					</h5>
-					<p class="my-0">(1/270)</p>
-				</div>
-				<div class="menu-item mx-5 px-4 my-3">
-					<h5 class="menu-post">
-						<span class="menu-title">Сэндвич из домашнего хлеба с мягким лобстером и картофелем </span>
-						<span class="menu-dots"></span>
-						<span class="menu-price">90.00</span>
-					</h5>
-					<p class="my-0">(1/525)</p>
-				</div>
-				<div class="menu-item mx-5 px-4 my-3">
-					<h5 class="menu-post">
-						<span class="menu-title">Конфи из дикой трески с цитрусовым картофельным пюре и салатом из сельдерея</span>
-						<span class="menu-dots"></span>
-						<span class="menu-price">40.00</span>
-					</h5>
-					<p class="my-0">(1/330)</p>
-				</div>
-				<div class="menu-item mx-5 px-4 my-3">
-					<h5 class="menu-post">
-						<span class="menu-title">Сибас в ароматической соли</span>
-						<span class="menu-dots"></span>
-						<span class="menu-price">20.00</span>
-					</h5>
-					<p class="my-0">(1/250)</p>
-				</div>
-				<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
-					<a href="#Soup" class="fa fa-chevron-left" ></a>
-					<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
-					<a href="#Meat" class="fa fa-chevron-right"></a>
-				</div>
-			</section>
-			
-			<section id="meat" class="my-4">
-				<div class=" h2 text-dark my-3 text-center">Блюда из мяса</div>
-				<div class="menu-item mx-5 px-4 my-3">
-					<h5 class="menu-post">
-						<span class="menu-title">Стейк Риб-ай с медовой морковью, грибами порто белло и рукколой</span>
-						<span class="menu-dots"></span>
-						<span class="menu-price">90.00</span>
-					</h5>
-					<p class="my-0">(1/420)</p>
-				</div>
-				<div class="menu-item mx-5 px-4 my-3">
-					<h5 class="menu-post">
-						<span class="menu-title">Говядина Веллингтон, запечённая в домашнем хлебе с грибами и пармской ветчиной</span>
-						<span class="menu-dots"></span>
-						<span class="menu-price">45.00</span>
-					</h5>
-					<p class="my-0">(1/410)</p>
-				</div>
-				<div class="menu-item mx-5 px-4 my-3">
-					<h5 class="menu-post">
-						<span class="menu-title">Филе телятины с горчичным соусом на подушке из краснокочанной капусты и кремом из цветной капусты</span>
-						<span class="menu-dots"></span>
-						<span class="menu-price">40.00</span>
-					</h5>
-					<p class="my-0">(1/400)</p>
-				</div>
-				<div class="menu-item mx-5 px-4 my-3">
-					<h5 class="menu-post">
-						<span class="menu-title">Каре ягнёнка «a modo mio» с пюре из топинамбура, зеленым салатом и соусом из розмарина</span>
-						<span class="menu-dots"></span>
-						<span class="menu-price">45.00</span>
-					</h5>
-					<p class="my-0">(1/410)</p>
-				</div>
-				<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
-					<a href="#Fish" class="fa fa-chevron-left" ></a>
-					<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
-					<a href="#Sidedish" class="fa fa-chevron-right"></a>
-				</div>
-			</section>
-			
-			<section id="sidedish" class="my-4">
-				<div class=" h2 text-dark my-3 text-center">Гарниры</div>
-				<div class="menu-item mx-5 px-4 my-3">
-					<h5 class="menu-post">
-						<span class="menu-title">Запечённый картофель с розмарином</span>
-						<span class="menu-dots"></span>
-						<span class="menu-price">15.00</span>
-					</h5>
-					<p class="my-0">(1/150)</p>
-				</div>
-				<div class="menu-item mx-5 px-4 my-3">
-					<h5 class="menu-post">
-						<span class="menu-title">Брокколи на пару с пряным маслом</span>
-						<span class="menu-dots"></span>
-						<span class="menu-price">10.00</span>
-					</h5>
-					<p class="my-0">(1/115)</p>
-				</div>
-				<div class="menu-item mx-5 px-4 my-3">
-					<h5 class="menu-post">
-						<span class="menu-title">Соте из шампиньонов</span>
-						<span class="menu-dots"></span>
-						<span class="menu-price">10.00</span>
-					</h5>
-					<p class="my-0">(1/110)</p>
-				</div>
-				<div class="menu-item mx-5 px-4 my-3">
-					<h5 class="menu-post">
-						<span class="menu-title">Зеленый салат с сыром горгонзола и грушей</span>
-						<span class="menu-dots"></span>
-						<span class="menu-price">10.00</span>
-					</h5>
-					<p class="my-0">(1/110)</p>
-				</div>
-				<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
-					<a href="#Meat" class="fa fa-chevron-left" ></a>
-					<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
-					<a href="#Dessert" class="fa fa-chevron-right"></a>
-				</div>
-			</section>
-			
-			<section id="dessert" class="my-4">
-				<div class=" h2 text-dark my-3 text-center">Десерты</div>
-				<div class="menu-item mx-5 px-4 my-3">
-					<h5 class="menu-post">
-						<span class="menu-title">«Ciocolatoso» Тёплый шоколадный пирог, арахисовое мороженое, шоколадный мусс и солёный бисквит</span>
-						<span class="menu-dots"></span>
-						<span class="menu-price">15.00</span>
-					</h5>
-					<p class="my-0">(1/220)</p>
-				</div>
-				<div class="menu-item mx-5 px-4 my-3">
-					<h5 class="menu-post">
-						<span class="menu-title">«Тирамису della mamma» Кофейный бисквит, сабайон с марсалой и какао-порошком</span>
-						<span class="menu-dots"></span>
-						<span class="menu-price">20.00</span>
-					</h5>
-					<p class="my-0">(1/220)</p>
-				</div>
-				<div class="menu-item mx-5 px-4 my-3">
-					<h5 class="menu-post">
-						<span class="menu-title">Классический чизкейк с ягодным соусом</span>
-						<span class="menu-dots"></span>
-						<span class="menu-price">15.00</span>
-					</h5>
-					<p class="my-0">(1/230)</p>
-				</div>
-				<div class="menu-item mx-5 px-4 my-3">
-					<h5 class="menu-post">
-						<span class="menu-title">Домашнее мороженое (крема антика, шоколад, прополис, миндаль)</span>
-						<span class="menu-dots"></span>
-						<span class="menu-price">5.00</span>
-					</h5>
-					<p class="my-0">(1/50)</p>
-				</div>  
-				<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
-					<a href="#Sidedish" class="fa fa-chevron-left" ></a>
-					<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
-					<a href="#Starter" class="fa fa-chevron-right"></a>
-				</div>
-			</section> -->
-		</section>
-<!-- Бронь столика -->
-		<section id="booking" class="my-4">
-			<h2 class="text-center display-5">Забронировать столик</h2>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-2"></div>
-					<form class="col-md-8" name="formOrder" method="post">
-						<div class="row">
-							<div class="form-group col-md-6">
-								<label for="name">Ваше имя:<span class="text-danger">*</span></label>
-								<input type="text" class="form-control" id="name" name="name"/> 
-							</div>
-							<div class="form-group col-md-6">
-								<label for="number">Количество гостей:<span class="text-danger">*</span></label>
-								<input type="number" name="number" id="number" class="form-control" min="1" max="65"/>
-							</div>
-						</div>
-						<div class="row">
-							<div class="form-group col-md-6">
-								<label for="datepicker">Дата визита:<span class="text-danger">*</span></label>
-								<input type="text" class="form-control" id="datepicker" name="date"/>
-							</div>
-							<div class="form-group col-md-6">
-								<label for="time">Время визита:<span class="text-danger">*</span></label>
-								<input type="text" class="form-control" id="time" name="time"/>
-							</div>
-						</div>
-						<div class="row">
-							<div class="form-group col-md-6">
-								<label for="email">Ваш e-mail:</label>
-								<input type="text" class="form-control" id="email" name="email">
-							</div>
-							<div class="form-group col-md-6">
-								<label for="phone">Ваш телефон:<span class="text-danger">*</span></label>
-								<input type="text" class="form-control" id="phone" name="phone"/>
-							</div>
-						</div>
-						<small class="row mx-auto mt-0 mb-4"><span class="text-danger">*</span> - Поля, обязательные для заполненения</small>
-						<!-- <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
-							 <div class="modal-dialog" role="document">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h5 class="modal-title" id="orderModalLabel">Выбрать блюдо</h5>
-										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-											<span aria-hidden="true">&times;</span>
-										</button>
-									</div>
-									<div class="modal-body">
-										<div class="container-fluid">
-											<div class="row my-2">
-												<div class="col-6">Блюдо</div>
-												<div class="col-3">Количество</div>
-												<div class="col-3">Цена</div>
-											</div>
-											<div id="modalMenu"> -->
-											<!-- здесь был template id=modalMenuTemplate-->
-												<!-- <div class="row my-2">
-													<div class="col-12 font-weight-bold">Закуски</div>
-												</div>
-												<div class="row mb-2">
-													<div class="col-7">
-														Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца
-													</div>
-													<div class="col-2 m-0">
-														<input type="number" min="0" name="guests" class=" col-sm-12 px-0 border-0" value="0"/>
-													</div>
-													<div class="col-3">50.00</div>
-												</div>
-												<div class="row mb-2">
-													<div class="col-7">
-														Томлёный балантин из утки с овощами агродольче
-													</div>
-													<div class="col-2 m-0">
-														<input type="number" min="9" name="guests" class=" col-sm-12 px-0 border-0" value="0"/>
-													</div>
-													<div class="col-3">20.00</div>
-												</div>
-												<div class="row my-2">
-													<div class="col-12 font-weight-bold">Паста и супы</div>
-												</div>
-												<div class="row mb-2">
-													<div class="col-7">
-														Чего-то там hjfbv,jdhfbv,jdh  jfhbvdfjhvb,dsjhfbv jfhbv,djfhvb,jfshdvb,jfdshvbs
-													</div>
-													<div class="col-2 m-0">
-														<input type="number" min="9" name="guests" class=" col-sm-12 px-0 border-0" value="0"/>
-													</div>
-													<div class="col-3">20.00</div>
-												</div>
-												<div class="row mb-2">
-													<div class="col-7">
-														Чего-то там hjfbv,jdhfbv,jdh  jfhbvdfjhvb,dsjhfbv jfhbv,djfhvb,jfshdvb,jfdshvbs
-													</div>
-													<div class="col-2 m-0">
-														<input type="number" min="0" name="guests" class="col-sm-12 px-0 border-0" value="0"/>
-													</div>
-													<div class="col-3">20.00</div>
-												</div> -->
-<!-- 											</div>
-										</div>
-									</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-										<button type="button" class="btn btn-info">Сохранить</button>
-									</div>
-								</div>
-							 </div>
-						</div> -->
-						<!-- <div class="form-group">
-							<div class="font-weight-bold h5">Ваш заказ</div>
-							<div class="border border-info rounded px-2" id="order">
-								<div class="row my-2 font-weight-bold">
-									<div class="col-sm-5 d-none d-sm-block">Название блюда</div>
-									<div class="col-sm-3 text-center d-none d-sm-block">Количество</div>
-									<div class="col-sm-1 d-none d-sm-block">Цена</div>
-									<div class="col-sm-3 text-center d-none d-sm-block">Стоимость</div>
-								</div>
-								<div class="row mb-2">
-									<div class="col-9 col-sm-6">
-										Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца
-									</div>
-									<div class="col-2 m-0">2 шт</div>
-									<div class="d-none col-sm-2 d-sm-block">50.00</div>
-									<div class="d-none col-sm-1 d-sm-block">100</div>
-									<div class="col-1">
-										<button type="button" class="close" aria-label="Close">
-											<span aria-hidden="true">&times;</span>
-										</button>
-									</div>
-								</div>
-								<div class="row mb-2">
-									<div class="col-9 col-sm-6">
-										Томлёный балантин из утки с овощами агродольче
-									</div>
-									<div class="col-2 m-0">2 шт</div>
-									<div class="col-sm-2 d-none d-sm-block">20.00</div>
-									<div class="col-sm-1 d-none d-sm-block">40</div>
-									<div class="col-1">
-										<button type="button" class="close" aria-label="Close">
-											<span aria-hidden="true">&times;</span>
-										</button>
-									</div>
-								</div>	
-							</div>
-							<div class="text-center">
-								Чтобы сделать предзаказ, нажмите, пожалуйста, кнопку "Добавить блюдо"
-							</div>
-							<div class="text-center my-4">
-								<button type="button" class="btn btn-info mb-3" data-toggle="modal" data-target="#orderModal">Добавить блюдо</button>
-							</div>
-						</div> -->
-						<div class="form-group">
-							<label for="message">Дополнительная информация:</label>
-							<textarea class="form-control" id="message" name="message"/>
-							</textarea>
-						</div>
-						<button type="submit" class="btn btn-info btn-block my-3" id="buttonReservation">Забронировать столик</button>
-						<div class="text-center text-success d-none" id="tableOK">Ваша заявка принята. В ближайшее время с Вами свяжется администратор</div>
-					</form>
-					<div class="col-md-2"></div>
-				</div>
-			</div>
-		</section>
 
-<!-- Контакты	 -->		
-		<section id="contacts" class="my-4">
-			<h2 class="text-center display-5">Контакты</h2>
-			<div class="container-fluid">
-				<div class="row text-center">
-					<div class="col-sm-5 mb-4">
-						<div class="mb-3"><span class="font-weight-bold">Наш телефон:</span><br/>
-							+375 75 775 75 75
-						</div>
-						<div class="mb-3"><span class="font-weight-bold">Наш адрес:</span><br/>
-							г.Минск, ул.Ресторанная, 37
-						</div>
-						<div class="mb-3"><span class="font-weight-bold">Наш e-mail:</span><br/>
-							elteide@gmail.com
-						</div>
-						<div><span class="font-weight-bold">Время работы:</span><br/>
-							Ежедневно с 10:00 до 02:00
-						</div>
-					</div>
-					<div class="col-sm-7">
-						<span class="font-weight-bold">Наш ресторан на карте</span>
-						<a href="https://www.google.by/maps/place/Restaurante+Santiago+del+Teide/@28.2865197,-16.7943607,12.25z/data=!4m8!1m2!2m1!1sel+teide+restaurant!3m4!1s0x0:0x26d2d64fe7674cb4!8m2!3d28.2962189!4d-16.8153477" target="_blank">
-							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d94540.69526622462!2d-16.794360699501393!3d28.286519699461298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x26d2d64fe7674cb4!2sRestaurante+Santiago+del+Teide!5e0!3m2!1sru!2sby!4v1519921083195" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
-						</a>
-					</div>
-				</div>
-			</div>
-		</section>
-<!-- Формы для входа и регистрации	 -->		
-		<section class="text-center" id="signin">
-			<form class="form-signin">
-				<img class="mb-4" src="assets/img/logo2.png" alt="Лого" height="100">
-				<h1 class="h3 mb-3 font-weight-normal">С возвращением</h1>
-				<span class="d-none text-center text-danger">Пользователь не найден</span>
-				<label for="inputEmail" class="sr-only">Введите e-mail</label>
-				<input type="email" id="inputEmail" class="form-control my-2" placeholder="Введите e-mail" name="email"/>
-				<label for="inputPassword" class="sr-only">Введите пароль</label>
-				<input type="password" id="inputPassword" class="form-control my-2" placeholder="Введите пароль"/>
-				<div class="checkbox mb-3">
-					<label>
-						<input type="checkbox"/> Запомнить меня
-					</label>
-				</div>
-				<button class="btn btn-lg btn-info btn-block" id="buttonSignin" type="submit">Войти</button>
-			</form>
-		</section>
-			
-		<section class="text-center" id="signup">
-			<img class="my-4" src="assets/img/logo2.png" alt="Лого" height="100">
-			<div class="d-none text-center text-info my-4 h5" id="welldone">Вы успешно зарегистрированы. Войдите, пожалуйста, под своим логином и паролем
-				<div class="my-3"><a href="#Signin" class="btn btn-info mx-auto">Перейти</a></div>
-			</div>
-			<form class="form-signup">
-				<h1 class="h3 mb-3 font-weight-normal">Зарегистрироваться</h1>
-				<label for="clientName" class="sr-only">Ваше имя</label>
-				<input type="text" id="clientName" class="form-control my-2" placeholder="Введите имя"/>
-				<label for="clientPassword" class="sr-only">Пароль</label>
-				<span class="text-center text-info" id="wrongPasswords"></span>
-				<input type="password" id="clientPassword" class="form-control my-2" placeholder="Введите пароль"/>
-				<label for="confirmPassword" class="sr-only">Подтвердите пароль</label>
-				<input type="password" id="confirmPassword" class="form-control my-2" placeholder="Подтвердите пароль"/>
-				<label for="clientEmail" class="sr-only">Ваш e-mail</label>
-				<input type="email" id="clientEmail" class="form-control my-2" placeholder="Введите e-mail" name="email"/>
-				<span class="text-center text-danger emailError d-none">Такой email уже зарегистрирован</span>
-				<label for="clientPhone" class="sr-only">Ваш телефон</label>
-				<input type="tel" id="clientPhone" class="form-control my-2" placeholder="Введите номер телефона" name="phone"/>
-				<span class="d-none text-center text-danger" id="allFieldsRequired">Все поля обязательны для заполнения</span>
-				<button class="btn btn-lg btn-info btn-block mt-2" id="buttonSignup" type="submit">Зарегистрироваться</button>
-			</form>
-		</section>
-
-<!-- Вид для повара -->
-		<section id="containerChief" class="container my-4">
-			<!-- здесь был template id="containerChiefTemplate-->
-<!-- 				<div class="card-deck my-3">
-					<div class="card mb-4 box-shadow">
-						<div class="card-header">
-							<h5 class="my-0">18:30</h5>
-						</div>
-						<button class="btn btn-dark btn-block font-weight-bold">Принять заказ</button>
-						<div class="card-body">
-							<h6 class="card-subtitle mb-2 text-muted">Столик №2</h6>
-							<div class="row">
-								<div class="card-text col-10">
-									<p>Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</p>
+				<section class="carousel slide" data-ride="carousel" id="slider">
+					<ul class="carousel-indicators">
+						<li data-target="#slider" data-slide-to="0"></li>
+						<li data-target="#slider" data-slide-to="1"></li>
+						<li data-target="#slider" data-slide-to="2"></li>
+					</ul>
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<a href="#Menu" class="active">
+								<img src="assets/img/menu.png" alt="Меню">
+								<div class="carousel-caption">
+									<span class="h3">Меню</span>
 								</div>
-								<div class="col-2 font-weight-bold">2</div>
-							</div>
-							<h6 class="card-title">Без лука</h6>
-							<h6 class="card-title text-danger">Привет от администратора</h6>
+							</a>
 						</div>
-						<div class="card-footer d-flex justify-content-between">
-							<button class="btn btn-info">В процессе</button>
-							<button class="btn btn-success">Готово</button>
+						<div class="carousel-item">
+							<a href="#TableReservation">
+								<img src="assets/img/restaurant.png" alt="Заказать столик">
+								<div class="carousel-caption">
+									<span class="h3">Заказать столик</span>
+								</div>
+							</a>
+						</div>
+						<div class="carousel-item">
+							<a href="#Contacts">
+								<img src="assets/img/location.png" alt="Наши контакты и месторасположение">
+								<div class="carousel-caption">
+									<span class="h3">Проверить месторасположение</span>
+								</div>
+							</a>
+						</div>
+					 </div>
+					<a class="carousel-control-prev" href="#slider" data-slide="prev">
+						<span class="carousel-control-prev-icon"></span>
+					</a>
+					<a class="carousel-control-next" href="#slider" data-slide="next">
+						<span class="carousel-control-next-icon"></span>
+					</a>
+				</section>	
+				
+				<section id="menuCategories" class="my-4">
+					<div class="container-fluid">
+						<h2 class="text-center display-3">Меню</h2>
+						<div class="row">
+							<!--здесь был template id=menuCategoriesTemplate-->
 						</div>
 					</div>
+				</section>	
+
+		<!-- Меню -->
+				<section id="categoryMeals">
+				<!--здесь был template id=categoryMealsTemplate-->
+					<!-- <section id="starter" class="my-4">
+						<div class=" h2 text-dark my-3 text-center">Закуски</div>
+						<div class="menu-item mx-5 px-4 my-3">
+							<h5 class="menu-post">
+								<span class="menu-title">Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</span>
+								<span class="menu-dots"></span>
+								<span class="menu-price">50.00</span>
+							</h5>
+							<p class="my-0">(1/290)</p>
+						</div>
+						<div class="menu-item mx-5 px-4 my-3">
+							<h5 class="menu-post">
+								<span class="menu-title">Томлёный балантин из утки с овощами агродольче</span>
+								<span class="menu-dots"></span>
+								<span class="menu-price">20.00</span>
+							</h5>
+							<p class="my-0">(1/235)</p>
+						</div>
+						<div class="menu-item mx-5 px-4 my-3">
+							<h5 class="menu-post">
+								<span class="menu-title">Кальмар су-вид с теплым рататуем, зеленым салатом и винным соусом</span>
+								<span class="menu-dots"></span>
+								<span class="menu-price">30.00</span>
+							</h5>
+							<p class="my-0">(1/260)</p>
+						</div>
+						<div class="menu-item mx-5 px-4 my-3">
+							<h5 class="menu-post">
+								<span class="menu-title">Подкопчённый лосось с лимонно-мятным йогуртом, цуккини «scapeсe» и микс салатом</span>
+								<span class="menu-dots"></span>
+								<span class="menu-price">45.00</span>
+							</h5>
+							<p class="my-0">(1/310)</p>
+						</div>
+						<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
+							<a href="#Dessert" class="fa fa-chevron-left" ></a>
+							<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
+							<a href="#Soup" class="fa fa-chevron-right"></a>
+						</div>
+					</section>
+						
+					<section id="soup" class="my-4">
+						<div class=" h2 text-dark my-3 text-center">Паста и супы</div>
+						<div class="menu-item mx-5 px-4 my-3">
+							<h5 class="menu-post">
+								<span class="menu-title">Зелёные равиоли с уткой, хрустящим луком пореем и черным и белым соусом</span>
+								<span class="menu-dots"></span>
+								<span class="menu-price">20.00</span>
+							</h5>
+							<p class="my-0">(1/330)</p>
+						</div>
+						<div class="menu-item mx-5 px-4 my-3">
+							<h5 class="menu-post">
+								<span class="menu-title">Суп из белых грибов с нутом</span>
+								<span class="menu-dots"></span>
+								<span class="menu-price">25.00</span>
+							</h5>
+							<p class="my-0">(1/250)</p>
+						</div>
+						<div class="menu-item mx-5 px-4 my-3">
+							<h5 class="menu-post">
+								<span class="menu-title">Цветные тальятелле с морепродуктами и пеной из лайма</span>
+								<span class="menu-dots"></span>
+								<span class="menu-price">30.00</span>
+							</h5>
+							<p class="my-0">(1/300)</p>
+						</div>
+						<div class="menu-item mx-5 px-4 my-3">
+							<h5 class="menu-post">
+								<span class="menu-title">Паста «pacchero allo scoglio» с диким сибасом и соусом из свежих трав</span>
+								<span class="menu-dots"></span>
+								<span class="menu-price">45.00</span>
+							</h5>
+							<p class="my-0">(1/360)</p>
+						</div>
+						<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
+							<a href="#Starter" class="fa fa-chevron-left" ></a>
+							<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
+							<a href="#Fish" class="fa fa-chevron-right"></a>
+						</div>
+					</section>
 					
-						<div class="card mb-4 box-shadow">
-						<div class="card-header">
-							<h5 class="my-0">18:30</h5>
+					<section id="fish" class="my-4">
+						<div class=" h2 text-dark my-3 text-center">Блюда из рыбы</div>
+						<div class="menu-item mx-5 px-4 my-3">
+							<h5 class="menu-post">
+								<span class="menu-title">Дикий сибас на гриле с оливами таджаска, свежим шпинатом и свекольным соусом</span>
+								<span class="menu-dots"></span>
+								<span class="menu-price">80.00</span>
+							</h5>
+							<p class="my-0">(1/270)</p>
 						</div>
-						<button class="btn btn-dark btn-block font-weight-bold">Принять заказ</button>
-						<div class="card-body">
-							<h6 class="card-subtitle mb-2 text-muted">Столик №2</h6>
-							<div class="row">
-								<div class="card-text col-10">
-									<p>Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</p>
-								</div>
-								<div class="col-2 font-weight-bold">2</div>
-							</div>
-							<h6 class="card-title">Без лука</h6>
-							<h6 class="card-title text-danger">Привет от администратора</h6>
+						<div class="menu-item mx-5 px-4 my-3">
+							<h5 class="menu-post">
+								<span class="menu-title">Сэндвич из домашнего хлеба с мягким лобстером и картофелем </span>
+								<span class="menu-dots"></span>
+								<span class="menu-price">90.00</span>
+							</h5>
+							<p class="my-0">(1/525)</p>
 						</div>
-						<div class="card-footer d-flex justify-content-between">
-							<button class="btn btn-info">В процессе</button>
-							<button class="btn btn-success">Готово</button>
+						<div class="menu-item mx-5 px-4 my-3">
+							<h5 class="menu-post">
+								<span class="menu-title">Конфи из дикой трески с цитрусовым картофельным пюре и салатом из сельдерея</span>
+								<span class="menu-dots"></span>
+								<span class="menu-price">40.00</span>
+							</h5>
+							<p class="my-0">(1/330)</p>
 						</div>
-					</div>
-				
-					<div class="card mb-4 box-shadow">
-						<div class="card-header">
-							<h5 class="my-0">18:30</h5>
+						<div class="menu-item mx-5 px-4 my-3">
+							<h5 class="menu-post">
+								<span class="menu-title">Сибас в ароматической соли</span>
+								<span class="menu-dots"></span>
+								<span class="menu-price">20.00</span>
+							</h5>
+							<p class="my-0">(1/250)</p>
 						</div>
-						<button class="btn btn-dark btn-block font-weight-bold">Принять заказ</button>
-						<div class="card-body">
-							<h6 class="card-subtitle mb-2 text-muted">Столик №2</h6>
-							<div class="row">
-								<div class="card-text col-10">
-									<p>Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</p>
-								</div>
-								<div class="col-2 font-weight-bold">2</div>
-							</div>
-							<h6 class="card-title">Без лука</h6>
-							<h6 class="card-title text-danger">Привет от администратора</h6>
+						<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
+							<a href="#Soup" class="fa fa-chevron-left" ></a>
+							<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
+							<a href="#Meat" class="fa fa-chevron-right"></a>
 						</div>
-						<div class="card-footer d-flex justify-content-between">
-							<button class="btn btn-info">В процессе</button>
-							<button class="btn btn-success">Готово</button>
+					</section>
+					
+					<section id="meat" class="my-4">
+						<div class=" h2 text-dark my-3 text-center">Блюда из мяса</div>
+						<div class="menu-item mx-5 px-4 my-3">
+							<h5 class="menu-post">
+								<span class="menu-title">Стейк Риб-ай с медовой морковью, грибами порто белло и рукколой</span>
+								<span class="menu-dots"></span>
+								<span class="menu-price">90.00</span>
+							</h5>
+							<p class="my-0">(1/420)</p>
 						</div>
-					</div>
-										
-					<div class="card mb-4 box-shadow">
-						<div class="card-header">
-							<h5 class="my-0">18:30</h5>
+						<div class="menu-item mx-5 px-4 my-3">
+							<h5 class="menu-post">
+								<span class="menu-title">Говядина Веллингтон, запечённая в домашнем хлебе с грибами и пармской ветчиной</span>
+								<span class="menu-dots"></span>
+								<span class="menu-price">45.00</span>
+							</h5>
+							<p class="my-0">(1/410)</p>
 						</div>
-						<button class="btn btn-dark btn-block font-weight-bold">Принять заказ</button>
-						<div class="card-body">
-							<h6 class="card-subtitle mb-2 text-muted">Столик №2</h6>
-							<div class="row">
-								<div class="card-text col-10">
-									<p>Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</p>
-								</div>
-								<div class="col-2 font-weight-bold">2</div>
-							</div>
-							<h6 class="card-title">Без лука</h6>
-							<h6 class="card-title text-danger">Привет от администратора</h6>
+						<div class="menu-item mx-5 px-4 my-3">
+							<h5 class="menu-post">
+								<span class="menu-title">Филе телятины с горчичным соусом на подушке из краснокочанной капусты и кремом из цветной капусты</span>
+								<span class="menu-dots"></span>
+								<span class="menu-price">40.00</span>
+							</h5>
+							<p class="my-0">(1/400)</p>
 						</div>
-						<div class="card-footer d-flex justify-content-between">
-							<button class="btn btn-info">В процессе</button>
-							<button class="btn btn-success">Готово</button>
+						<div class="menu-item mx-5 px-4 my-3">
+							<h5 class="menu-post">
+								<span class="menu-title">Каре ягнёнка «a modo mio» с пюре из топинамбура, зеленым салатом и соусом из розмарина</span>
+								<span class="menu-dots"></span>
+								<span class="menu-price">45.00</span>
+							</h5>
+							<p class="my-0">(1/410)</p>
 						</div>
-					</div>
-														
-					<div class="card mb-4 box-shadow">
-						<div class="card-header">
-							<h5 class="my-0">18:30</h5>
+						<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
+							<a href="#Fish" class="fa fa-chevron-left" ></a>
+							<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
+							<a href="#Sidedish" class="fa fa-chevron-right"></a>
 						</div>
-						<button class="btn btn-dark btn-block font-weight-bold">Принять заказ</button>
-						<div class="card-body">
-							<h6 class="card-subtitle mb-2 text-muted">Столик №2</h6>
-							<div class="row">
-								<div class="card-text col-10">
-									<p>Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</p>
-								</div>
-								<div class="col-2 font-weight-bold">2</div>
-							</div>
-							<h6 class="card-title ">Без лука</h6>
-							<h6 class="card-title text-danger">Привет от администратора</h6>
+					</section>
+					
+					<section id="sidedish" class="my-4">
+						<div class=" h2 text-dark my-3 text-center">Гарниры</div>
+						<div class="menu-item mx-5 px-4 my-3">
+							<h5 class="menu-post">
+								<span class="menu-title">Запечённый картофель с розмарином</span>
+								<span class="menu-dots"></span>
+								<span class="menu-price">15.00</span>
+							</h5>
+							<p class="my-0">(1/150)</p>
 						</div>
-						<div class="card-footer d-flex justify-content-between">
-							<button class="btn btn-info">В процессе</button>
-							<button class="btn btn-success">Готово</button>
+						<div class="menu-item mx-5 px-4 my-3">
+							<h5 class="menu-post">
+								<span class="menu-title">Брокколи на пару с пряным маслом</span>
+								<span class="menu-dots"></span>
+								<span class="menu-price">10.00</span>
+							</h5>
+							<p class="my-0">(1/115)</p>
 						</div>
-					</div>
-				</div> -->
-		</section>
-		
-<!-- Вид для официанта -->
-		<section id="newOrder" class="my-4">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-md-6">
-						<aside>
-							<div id="accordion">
-							<!--Здесь был template id="accordionTemplate"-->
-								<!-- <div class="card">
-									<div class="card-header" id="starterWaiter" data-toggle="collapse" data-target="#collapseOne">
-										<h5 class="mb-0">
-											<button class="btn btn-link" aria-expanded="false" aria-controls="collapseOne">
-												<span class="h4">Закуски</span>
-											</button>
-										</h5>
+						<div class="menu-item mx-5 px-4 my-3">
+							<h5 class="menu-post">
+								<span class="menu-title">Соте из шампиньонов</span>
+								<span class="menu-dots"></span>
+								<span class="menu-price">10.00</span>
+							</h5>
+							<p class="my-0">(1/110)</p>
+						</div>
+						<div class="menu-item mx-5 px-4 my-3">
+							<h5 class="menu-post">
+								<span class="menu-title">Зеленый салат с сыром горгонзола и грушей</span>
+								<span class="menu-dots"></span>
+								<span class="menu-price">10.00</span>
+							</h5>
+							<p class="my-0">(1/110)</p>
+						</div>
+						<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
+							<a href="#Meat" class="fa fa-chevron-left" ></a>
+							<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
+							<a href="#Dessert" class="fa fa-chevron-right"></a>
+						</div>
+					</section>
+					
+					<section id="dessert" class="my-4">
+						<div class=" h2 text-dark my-3 text-center">Десерты</div>
+						<div class="menu-item mx-5 px-4 my-3">
+							<h5 class="menu-post">
+								<span class="menu-title">«Ciocolatoso» Тёплый шоколадный пирог, арахисовое мороженое, шоколадный мусс и солёный бисквит</span>
+								<span class="menu-dots"></span>
+								<span class="menu-price">15.00</span>
+							</h5>
+							<p class="my-0">(1/220)</p>
+						</div>
+						<div class="menu-item mx-5 px-4 my-3">
+							<h5 class="menu-post">
+								<span class="menu-title">«Тирамису della mamma» Кофейный бисквит, сабайон с марсалой и какао-порошком</span>
+								<span class="menu-dots"></span>
+								<span class="menu-price">20.00</span>
+							</h5>
+							<p class="my-0">(1/220)</p>
+						</div>
+						<div class="menu-item mx-5 px-4 my-3">
+							<h5 class="menu-post">
+								<span class="menu-title">Классический чизкейк с ягодным соусом</span>
+								<span class="menu-dots"></span>
+								<span class="menu-price">15.00</span>
+							</h5>
+							<p class="my-0">(1/230)</p>
+						</div>
+						<div class="menu-item mx-5 px-4 my-3">
+							<h5 class="menu-post">
+								<span class="menu-title">Домашнее мороженое (крема антика, шоколад, прополис, миндаль)</span>
+								<span class="menu-dots"></span>
+								<span class="menu-price">5.00</span>
+							</h5>
+							<p class="my-0">(1/50)</p>
+						</div>  
+						<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
+							<a href="#Sidedish" class="fa fa-chevron-left" ></a>
+							<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
+							<a href="#Starter" class="fa fa-chevron-right"></a>
+						</div>
+					</section> -->
+				</section>
+		<!-- Бронь столика -->
+				<section id="booking" class="my-4">
+					<h2 class="text-center display-5">Забронировать столик</h2>
+					<div class="container">
+						<div class="row">
+							<div class="col-md-2"></div>
+							<form class="col-md-8" name="formOrder" method="post">
+								<div class="row">
+									<div class="form-group col-md-6">
+										<label for="name">Ваше имя:<span class="text-danger">*</span></label>
+										<input type="text" class="form-control" id="name" name="name"/> 
 									</div>
-
-									<div id="collapseOne" class="collapse" aria-labelledby="starterWaiter" data-parent="#accordion">
-										<ul class="list-group">
-											<li class="list-group-item list-group-item-action">Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</li>
-											<li class="list-group-item list-group-item-action">Томлёный балантин из утки с овощами агродольче</li>
-											<li class="list-group-item list-group-item-action">Кальмар су-вид с теплым рататуем, зеленым салатом и винным соусом</li>
-											<li class="list-group-item list-group-item-action">Подкопчённый лосось с лимонно-мятным йогуртом, цуккини «scapeсe» и микс салатом</li>
-										</ul>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-header" id="soupWaiter" data-toggle="collapse" data-target="#collapseTwo">
-										<h5 class="mb-0">
-											<button class="btn btn-link collapsed" aria-expanded="false" aria-controls="collapseTwo">
-												<span class="h4">Паста и супы</span>
-											</button>
-										</h5>
-									</div>
-									<div id="collapseTwo" class="collapse" aria-labelledby="soupWaiter" data-parent="#accordion">
-										<ul class="list-group">
-											<li class="list-group-item list-group-item-action">Зелёные равиоли с уткой, хрустящим луком пореем и черным и белым соусом</li>
-											<li class="list-group-item list-group-item-action">Суп из белых грибов с нутом</li>
-											<li class="list-group-item list-group-item-action">Цветные тальятелле с морепродуктами и пеной из лайма</li>
-											<li class="list-group-item list-group-item-action">Паста «pacchero allo scoglio» с диким сибасом и соусом из свежих трав</li>
-										</ul>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-header" id="fishWaiter" data-toggle="collapse" data-target="#collapseThree">
-										<h5 class="mb-0">
-											<button class="btn btn-link collapsed" aria-expanded="false" aria-controls="collapseThree">
-												<span class="h4">Блюда из рыбы</span>
-											</button>
-										</h5>
-									</div>
-									<div id="collapseThree" class="collapse" aria-labelledby="fishWaiter" data-parent="#accordion">
-										<ul class="list-group">
-											<li class="list-group-item list-group-item-action">Дикий сибас на гриле с оливами таджаска, свежим шпинатом и свекольным соусом</li>
-											<li class="list-group-item list-group-item-action">Сэндвич из домашнего хлеба с мягким лобстером и картофелем</li>
-											<li class="list-group-item list-group-item-action">Конфи из дикой трески с цитрусовым картофельным пюре и салатом из сельдерея</li>
-											<li class="list-group-item list-group-item-action">Сибас в ароматической соли</li>
-										</ul>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-header" id="meatWaiter" data-toggle="collapse" data-target="#collapseFour">
-										<h5 class="mb-0">
-											<button class="btn btn-link collapsed" aria-expanded="false" aria-controls="collapseFour">
-												<span class="h4">Блюда из мяса</span>
-											</button>
-										</h5>
-									</div>
-									<div id="collapseFour" class="collapse" aria-labelledby="meatWaiter" data-parent="#accordion">
-										<ul class="list-group">
-											<li class="list-group-item list-group-item-action">Стейк Риб-ай с медовой морковью, грибами порто белло и рукколой</li>
-											<li class="list-group-item list-group-item-action">Говядина Веллингтон, запечённая в домашнем хлебе с грибами и пармской ветчиной</li>
-											<li class="list-group-item list-group-item-action">Филе телятины с горчичным соусом на подушке из краснокочанной капусты и кремом из цветной капусты</li>
-											<li class="list-group-item list-group-item-action">Каре ягнёнка «a modo mio» с пюре из топинамбура, зеленым салатом и соусом из розмарина</li>
-										</ul>
-									</div>
-								</div>
-								<div class="card">
-									<div class="card-header" id="sidedishWaiter" data-toggle="collapse" data-target="#collapseFive">
-										<h5 class="mb-0">
-											<button class="btn btn-link collapsed" aria-expanded="false" aria-controls="collapseFive">
-												<span class="h4">Гарниры</span>
-											</button>
-										</h5>
-									</div>
-									<div id="collapseFive" class="collapse" aria-labelledby="sidedishWaiter" data-parent="#accordion">
-										<ul class="list-group">
-											<li class="list-group-item list-group-item-action">Запечённый картофель с розмарином</li>
-											<li class="list-group-item list-group-item-action">Брокколи на пару с пряным маслом</li>
-											<li class="list-group-item list-group-item-action">Соте из шампиньонов</li>
-											<li class="list-group-item list-group-item-action">Зеленый салат с сыром горгонзола и грушей</li>
-										</ul>
+									<div class="form-group col-md-6">
+										<label for="number">Количество гостей:<span class="text-danger">*</span></label>
+										<input type="number" name="number" id="number" class="form-control" min="1" max="65"/>
 									</div>
 								</div>
-								<div class="card">
-									<div class="card-header" id="desertWaiter" data-toggle="collapse" data-target="#collapseSix">
-										<h5 class="mb-0">
-											<button class="btn btn-link collapsed" aria-expanded="false" aria-controls="collapseSix">
-												<span class="h4">Десерты</span>
-											</button>
-										</h5>
+								<div class="row">
+									<div class="form-group col-md-6">
+										<label for="datepicker">Дата визита:<span class="text-danger">*</span></label>
+										<input type="text" class="form-control" id="datepicker" name="date"/>
 									</div>
-									<div id="collapseSix" class="collapse" aria-labelledby="desertWaiter" data-parent="#accordion">
-										<ul class="list-group">
-											<li class="list-group-item list-group-item-action">«Ciocolatoso» Тёплый шоколадный пирог, арахисовое мороженое, шоколадный мусс и солёный бисквит</li>
-											<li class="list-group-item list-group-item-action">«Тирамису della mamma» Кофейный бисквит, сабайон с марсалой и какао-порошком</li>
-											<li class="list-group-item list-group-item-action">Классический чизкейк с ягодным соусом</li>
-											<li class="list-group-item list-group-item-action">Домашнее мороженое (крема антика, шоколад, прополис, миндаль)</li>
-										</ul>
+									<div class="form-group col-md-6">
+										<label for="time">Время визита:<span class="text-danger">*</span></label>
+										<input type="text" class="form-control" id="time" name="time"/>
+									</div>
+								</div>
+								<div class="row">
+									<div class="form-group col-md-6">
+										<label for="email">Ваш e-mail:</label>
+										<input type="text" class="form-control" id="email" name="email">
+									</div>
+									<div class="form-group col-md-6">
+										<label for="phone">Ваш телефон:<span class="text-danger">*</span></label>
+										<input type="text" class="form-control" id="phone" name="phone"/>
+									</div>
+								</div>
+								<small class="row mx-auto mt-0 mb-4"><span class="text-danger">*</span> - Поля, обязательные для заполненения</small>
+								<!-- <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
+									 <div class="modal-dialog" role="document">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title" id="orderModalLabel">Выбрать блюдо</h5>
+												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+												</button>
+											</div>
+											<div class="modal-body">
+												<div class="container-fluid">
+													<div class="row my-2">
+														<div class="col-6">Блюдо</div>
+														<div class="col-3">Количество</div>
+														<div class="col-3">Цена</div>
+													</div>
+													<div id="modalMenu"> -->
+													<!-- здесь был template id=modalMenuTemplate-->
+														<!-- <div class="row my-2">
+															<div class="col-12 font-weight-bold">Закуски</div>
+														</div>
+														<div class="row mb-2">
+															<div class="col-7">
+																Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца
+															</div>
+															<div class="col-2 m-0">
+																<input type="number" min="0" name="guests" class=" col-sm-12 px-0 border-0" value="0"/>
+															</div>
+															<div class="col-3">50.00</div>
+														</div>
+														<div class="row mb-2">
+															<div class="col-7">
+																Томлёный балантин из утки с овощами агродольче
+															</div>
+															<div class="col-2 m-0">
+																<input type="number" min="9" name="guests" class=" col-sm-12 px-0 border-0" value="0"/>
+															</div>
+															<div class="col-3">20.00</div>
+														</div>
+														<div class="row my-2">
+															<div class="col-12 font-weight-bold">Паста и супы</div>
+														</div>
+														<div class="row mb-2">
+															<div class="col-7">
+																Чего-то там hjfbv,jdhfbv,jdh  jfhbvdfjhvb,dsjhfbv jfhbv,djfhvb,jfshdvb,jfdshvbs
+															</div>
+															<div class="col-2 m-0">
+																<input type="number" min="9" name="guests" class=" col-sm-12 px-0 border-0" value="0"/>
+															</div>
+															<div class="col-3">20.00</div>
+														</div>
+														<div class="row mb-2">
+															<div class="col-7">
+																Чего-то там hjfbv,jdhfbv,jdh  jfhbvdfjhvb,dsjhfbv jfhbv,djfhvb,jfshdvb,jfdshvbs
+															</div>
+															<div class="col-2 m-0">
+																<input type="number" min="0" name="guests" class="col-sm-12 px-0 border-0" value="0"/>
+															</div>
+															<div class="col-3">20.00</div>
+														</div> -->
+		<!-- 											</div>
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+												<button type="button" class="btn btn-info">Сохранить</button>
+											</div>
+										</div>
+									 </div>
+								</div> -->
+								<!-- <div class="form-group">
+									<div class="font-weight-bold h5">Ваш заказ</div>
+									<div class="border border-info rounded px-2" id="order">
+										<div class="row my-2 font-weight-bold">
+											<div class="col-sm-5 d-none d-sm-block">Название блюда</div>
+											<div class="col-sm-3 text-center d-none d-sm-block">Количество</div>
+											<div class="col-sm-1 d-none d-sm-block">Цена</div>
+											<div class="col-sm-3 text-center d-none d-sm-block">Стоимость</div>
+										</div>
+										<div class="row mb-2">
+											<div class="col-9 col-sm-6">
+												Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца
+											</div>
+											<div class="col-2 m-0">2 шт</div>
+											<div class="d-none col-sm-2 d-sm-block">50.00</div>
+											<div class="d-none col-sm-1 d-sm-block">100</div>
+											<div class="col-1">
+												<button type="button" class="close" aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+												</button>
+											</div>
+										</div>
+										<div class="row mb-2">
+											<div class="col-9 col-sm-6">
+												Томлёный балантин из утки с овощами агродольче
+											</div>
+											<div class="col-2 m-0">2 шт</div>
+											<div class="col-sm-2 d-none d-sm-block">20.00</div>
+											<div class="col-sm-1 d-none d-sm-block">40</div>
+											<div class="col-1">
+												<button type="button" class="close" aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+												</button>
+											</div>
+										</div>	
+									</div>
+									<div class="text-center">
+										Чтобы сделать предзаказ, нажмите, пожалуйста, кнопку "Добавить блюдо"
+									</div>
+									<div class="text-center my-4">
+										<button type="button" class="btn btn-info mb-3" data-toggle="modal" data-target="#orderModal">Добавить блюдо</button>
 									</div>
 								</div> -->
-							</div>
-						</aside>
+								<div class="form-group">
+									<label for="message">Дополнительная информация:</label>
+									<textarea class="form-control" id="message" name="message"/>
+									</textarea>
+								</div>
+								<button type="submit" class="btn btn-info btn-block my-3" id="buttonReservation">Забронировать столик</button>
+								<div class="text-center text-success d-none" id="tableOK">Ваша заявка принята. В ближайшее время с Вами свяжется администратор</div>
+							</form>
+							<div class="col-md-2"></div>
+						</div>
 					</div>
+				</section>
 
-					<div class="col-md-6" id="guestOrder">
-						<!-- Здесь был template id="guestOrderTemplate" -->
-						<!-- <div class="row my-3 no-gutters">
-							<div class="col-sm-6 my-2">
-								<span>Номер столика</span>
-								<select name="table-number">
-									<option value="0">№</option>
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-									<option value="6">6</option>
-									<option value="7">7</option>
-									<option value="8">8</option>
-								</select> 
-							</div>
-							<div class="col-sm-6 text-left text-sm-right my-2">
-								<label for="orderTime">Готовность, мин</label>
-								<input class="w-25" type="number" name="order-time" id="orderTime" value="0" step="15"/>
-							</div>
-						</div>
-						<ul class="list-group list-group-flush">
-							<li class="list-group-item">
-								<div class="row">
-									<div class="col-9">yhryhrthrthtrttt ttttttttttttttttt ttttttttt tttttt ttttttt tttt</div>
-									<input type="number" name="count" class="col-1 px-0 border-0" min="1" value="1"/>
-									<div class="col-2 d-flex align-items-center">
-										<button type="button" class="close" aria-label="Close">
-											<span aria-hidden="true">&times;</span>
-										</button>
-									</div>
+		<!-- Контакты	 -->		
+				<section id="contacts" class="my-4">
+					<h2 class="text-center display-5">Контакты</h2>
+					<div class="container-fluid">
+						<div class="row text-center">
+							<div class="col-sm-5 mb-4">
+								<div class="mb-3"><span class="font-weight-bold">Наш телефон:</span><br/>
+									+375 75 775 75 75
 								</div>
-							</li>
-							<li class="list-group-item">
-								<div class="row">
-									<div class="col-9">Подкопчённый лосось с лимонно-мятным йогуртом, цуккини «scapeсe» и микс салатом</div>
-									<input type="number" name="count" class="col-1 px-0 border-0" min="1" value="1"/>
-									<div class="col-2 d-flex align-items-center">
-										<button type="button" class="close" aria-label="Close">
-											<span aria-hidden="true">&times;</span>
-										</button>
-									</div>
+								<div class="mb-3"><span class="font-weight-bold">Наш адрес:</span><br/>
+									г.Минск, ул.Ресторанная, 37
 								</div>
-							</li>
-							<li class="list-group-item">
-								<div class="row">
-									<div class="col-9">Подкопчённый лосось с лимонно-мятным йогуртом, цуккини «scapeсe» и микс салатом</div>
-									<input type="number" name="count" class="col-1 px-0 border-0" min="1" value="1"/>
-									<div class="col-2 d-flex align-items-center">
-										<button type="button" class="close" aria-label="Close">
-											<span aria-hidden="true">&times;</span>
-										</button>
-									</div>
+								<div class="mb-3"><span class="font-weight-bold">Наш e-mail:</span><br/>
+									elteide@gmail.com
 								</div>
-							</li>
-						</ul>
-						<div class="row">
-							<div class="my-4 col-12 w-100">
-								<textarea name="messageWaiter" id="messageWaiter" class="w-100 border border-info rounded p-2" placeholder="Примечания"></textarea>
-							</div>
-						</div>
-						<button type="submit" class="btn btn-info my-1">Оформить заказ</button> -->
-					</div>
-				</div>
-			</div>
-		</section>
-			
-		<section id="containerOrderWaiter" class="my-4">
-			<div class="container">
-				<a href="#NewOrder" class="btn btn-info btn-block mt-4">Добавить <span class="fa fa-plus"></span></a><br/>
-				<div class="card-deck mb-3" id="orderListWaiter">
-				<!-- Здесь был template id="orderListWaiterTemplate"-->
-<!-- 					<div class="card mb-4 box-shadow">
-						<div class="card-header d-flex justify-content-between">
-							<span class="h5 my-0">18:30</span>
-							<span class="fa fa-pencil-square-o text-right pt-1"></span>
-						</div>
-						<div class="card-body">
-							<h6 class="card-subtitle mb-2 text-muted">Столик №2</h6>
-							<div class="row">
-								<div class="card-text col-10">
-									<p>Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</p>
+								<div><span class="font-weight-bold">Время работы:</span><br/>
+									Ежедневно с 10:00 до 02:00
 								</div>
-								<div class="col-2 font-weight-bold">2</div>
 							</div>
-							<div class="row">
-								<div class="card-text col-10">
-									<p>Запечённый осьминог с ttt и крем-соусом из красного перца</p>
-								</div>
-								<div class="col-2 font-weight-bold">4</div>
+							<div class="col-sm-7">
+								<span class="font-weight-bold">Наш ресторан на карте</span>
+								<a href="https://www.google.by/maps/place/Restaurante+Santiago+del+Teide/@28.2865197,-16.7943607,12.25z/data=!4m8!1m2!2m1!1sel+teide+restaurant!3m4!1s0x0:0x26d2d64fe7674cb4!8m2!3d28.2962189!4d-16.8153477" target="_blank">
+									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d94540.69526622462!2d-16.794360699501393!3d28.286519699461298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x26d2d64fe7674cb4!2sRestaurante+Santiago+del+Teide!5e0!3m2!1sru!2sby!4v1519921083195" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+								</a>
 							</div>
-							<h6 class="card-title">Без лука</h6>
-							<h6 class="card-title text-danger">Привет от администратора</h6>
-							<div class="row mt-3 text-info font-weight-bold">
-								<div class="card-text col-7">Сумма</div>
-								<div class="card-text col-5">225.00</div>
-							</div>
-						</div>
-						<div class="card-footer d-flex justify-content-between">
-							<button class="btn btn-success btn-block">Готово</button>
 						</div>
 					</div>
-
-					<div class="card mb-4 box-shadow">
-						<div class="card-header d-flex justify-content-between">
-							<span class="h5 my-0">18:30</span>
-							<span class="fa fa-pencil-square-o text-right pt-1"></span>
+				</section>
+		<!-- Формы для входа и регистрации	 -->		
+				<section class="text-center" id="signin">
+					<form class="form-signin">
+						<img class="mb-4" src="assets/img/logo2.png" alt="Лого" height="100">
+						<h1 class="h3 mb-3 font-weight-normal">С возвращением</h1>
+						<span class="d-none text-center text-danger">Пользователь не найден</span>
+						<label for="inputEmail" class="sr-only">Введите e-mail</label>
+						<input type="email" id="inputEmail" class="form-control my-2" placeholder="Введите e-mail" name="email"/>
+						<label for="inputPassword" class="sr-only">Введите пароль</label>
+						<input type="password" id="inputPassword" class="form-control my-2" placeholder="Введите пароль"/>
+						<div class="checkbox mb-3">
+							<label>
+								<input type="checkbox"/> Запомнить меня
+							</label>
 						</div>
-						<div class="card-body">
-							<h6 class="card-subtitle mb-2 text-muted">Столик №2</h6>
-							<div class="row">
-								<div class="card-text col-10">
-									<p>Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</p>
-								</div>
-								<div class="col-2 font-weight-bold">2</div>
-							</div>
-							<div class="row">
-								<div class="card-text col-10">
-									<p>Запечённый осьминог с ttt и крем-соусом из красного перца</p>
-								</div>
-								<div class="col-2 font-weight-bold">4</div>
-							</div>
-							<h6 class="card-title">Без лука</h6>
-							<h6 class="card-title text-danger">Привет от администратора</h6>
-							<div class="row mt-3 text-info font-weight-bold">
-								<div class="card-text col-7">Сумма</div>
-								<div class="card-text col-5">225.00</div>
-							</div>
-						</div>
-						<div class="card-footer d-flex justify-content-between">
-							<button class="btn btn-success btn-block">Готово</button>
-						</div>
-					</div>
-				
-					<div class="card mb-4 box-shadow">
-						<div class="card-header d-flex justify-content-between">
-							<span class="h5 my-0">18:30</span>
-							<span class="fa fa-pencil-square-o text-right pt-1"></span>
-						</div>
-						<div class="card-body">
-							<h6 class="card-subtitle mb-2 text-muted">Столик №2</h6>
-							<div class="row">
-								<div class="card-text col-10">
-									<p>Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</p>
-								</div>
-								<div class="col-2 font-weight-bold">2</div>
-							</div>
-							<div class="row">
-								<div class="card-text col-10">
-									<p>Запечённый осьминог с ttt и крем-соусом из красного перца</p>
-								</div>
-								<div class="col-2 font-weight-bold">4</div>
-							</div>
-							<h6 class="card-title">Без лука</h6>
-							<h6 class="card-title text-danger">Привет от администратора</h6>
-							<div class="row mt-3 text-info font-weight-bold">
-								<div class="card-text col-7">Сумма</div>
-								<div class="card-text col-5">225.00</div>
-							</div>
-						</div>
-						<div class="card-footer d-flex justify-content-between">
-							<button class="btn btn-success btn-block">Готово</button>
-						</div>
-					</div>
-										
-					<div class="card mb-4 box-shadow">
-						<div class="card-header d-flex justify-content-between">
-							<span class="h5 my-0">18:30</span>
-							<span class="fa fa-pencil-square-o text-right pt-1"></span>
-						</div>
-						<div class="card-body">
-							<h6 class="card-subtitle mb-2 text-muted">Столик №2</h6>
-							<div class="row">
-								<div class="card-text col-10">
-									<p>Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</p>
-								</div>
-								<div class="col-2 font-weight-bold">2</div>
-							</div>
-							<div class="row">
-								<div class="card-text col-10">
-									<p>Запечённый осьминог с ttt и крем-соусом из красного перца</p>
-								</div>
-								<div class="col-2 font-weight-bold">4</div>
-							</div>
-							<h6 class="card-title">Без лука</h6>
-							<h6 class="card-title text-danger">Привет от администратора</h6>
-							<div class="row mt-3 text-info font-weight-bold">
-								<div class="card-text col-7">Сумма</div>
-								<div class="card-text col-5">225.00</div>
-							</div>
-						</div>
-						<div class="card-footer d-flex justify-content-between">
-							<button class="btn btn-success btn-block">Готово</button>
-						</div>
-					</div>
-														
-					<div class="card mb-4 box-shadow">
-						<div class="card-header d-flex justify-content-between">
-							<span class="h5 my-0">18:30</span>
-							<span class="fa fa-pencil-square-o text-right pt-1"></span>
-						</div>
-						<div class="card-body">
-							<h6 class="card-subtitle mb-2 text-muted">Столик №2</h6>
-							<div class="row">
-								<div class="card-text col-10">
-									<p>Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</p>
-								</div>
-								<div class="col-2 font-weight-bold">2</div>
-							</div>
-							<div class="row">
-								<div class="card-text col-10">
-									<p>Запечённый осьминог с ttt и крем-соусом из красного перца</p>
-								</div>
-								<div class="col-2 font-weight-bold">4</div>
-							</div>
-							<h6 class="card-title">Без лука</h6>
-							<h6 class="card-title text-danger">Привет от администратора</h6>
-							<div class="row mt-3 text-info font-weight-bold">
-								<div class="card-text col-7">Сумма</div>
-								<div class="card-text col-5">225.00</div>
-							</div>
-						</div>
-						<div class="card-footer d-flex justify-content-between">
-							<button class="btn btn-success btn-block">Готово</button>
-						</div>
-					</div> -->
+						<button class="btn btn-lg btn-info btn-block" id="buttonSignin" type="submit">Войти</button>
+					</form>
+				</section>
 					
-				</div>
-			</div>
-		</section>
+				<section class="text-center" id="signup">
+					<img class="my-4" src="assets/img/logo2.png" alt="Лого" height="100">
+					<div class="d-none text-center text-info my-4 h5" id="welldone">Вы успешно зарегистрированы. Войдите, пожалуйста, под своим логином и паролем
+						<div class="my-3"><a href="#Signin" class="btn btn-info mx-auto">Перейти</a></div>
+					</div>
+					<form class="form-signup">
+						<h1 class="h3 mb-3 font-weight-normal">Зарегистрироваться</h1>
+						<label for="clientName" class="sr-only">Ваше имя</label>
+						<input type="text" id="clientName" class="form-control my-2" placeholder="Введите имя"/>
+						<label for="clientPassword" class="sr-only">Пароль</label>
+						<span class="text-center text-info" id="wrongPasswords"></span>
+						<input type="password" id="clientPassword" class="form-control my-2" placeholder="Введите пароль"/>
+						<label for="confirmPassword" class="sr-only">Подтвердите пароль</label>
+						<input type="password" id="confirmPassword" class="form-control my-2" placeholder="Подтвердите пароль"/>
+						<label for="clientEmail" class="sr-only">Ваш e-mail</label>
+						<input type="email" id="clientEmail" class="form-control my-2" placeholder="Введите e-mail" name="email"/>
+						<span class="text-center text-danger emailError d-none">Такой email уже зарегистрирован</span>
+						<label for="clientPhone" class="sr-only">Ваш телефон</label>
+						<input type="tel" id="clientPhone" class="form-control my-2" placeholder="Введите номер телефона" name="tel"/>
+						<div class="d-none text-center text-danger" id="allFieldsRequired">Все поля обязательны для заполнения</div>
+						<button class="btn btn-lg btn-info btn-block mt-2" id="buttonSignup" type="submit">Зарегистрироваться</button>
+					</form>
+				</section>
 
-<!-- Вид для администратора -->
-<!-- 		<section id="schedule" class="my-4">
-			<div class="container-fluid">
-				<h2 class="text-center">Расписание на <span>21.03.2018</h2>
-				<table class="table table-bordered table-hover table-responsive-lg text-center mb-3">
-					<thead>
-						<tr>
-							<th>Столик№ \Часы</th>
-							<th>09</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th>
-							<th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>01</th><th>02</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td><a href="#Table" class="btn btn-block font-weight-bold" role="button" aria-pressed="true">1</a></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-							<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-						</tr>
-						<tr>
-							<td><a href="#Table" class="btn btn-block font-weight-bold" role="button" aria-pressed="true">2</a></td><td></td><td></td><td class="bg-info"></td><td class="bg-info"></td><td class="bg-info"></td><td></td><td></td><td></td>
-							<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-						</tr>
-						<tr>
-							<td><a href="#Table" class="btn btn-block font-weight-bold" role="button" aria-pressed="true">3</a></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-							<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-						</tr>
-						<tr>
-							<td><a href="#Table" class="btn btn-block font-weight-bold" role="button" aria-pressed="true">4</a></td><td class="bg-info"></td><td class="bg-info"></td><td class="bg-info"></td><td></td><td></td><td></td><td></td><td></td>
-							<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-						</tr>
-						<tr>
-							<td><a href="#Table" class="btn btn-block font-weight-bold" role="button" aria-pressed="true">5</a></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-							<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-						</tr>
-						<tr>
-							<td><a href="#Table" class="btn btn-block font-weight-bold" role="button" aria-pressed="true">6</a></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-							<td></td><td></td><td></td><td></td><td></td><td class="bg-info"></td><td class="bg-info"></td><td class="bg-info"></td><td></td><td></td>
-						</tr>
-						<tr>
-							<td><a href="#Table" class="btn btn-block font-weight-bold" role="button" aria-pressed="true">7</a></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-							<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-						</tr>
-						<tr>
-							<td><a href="#Table" class="btn btn-block font-weight-bold" role="button" aria-pressed="true">8</a></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-							<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</section>
+		<!-- Вид для повара -->
+				<section id="containerChief" class="container my-4">
+					<!-- здесь был template id="containerChiefTemplate-->
+		<!-- 				<div class="card-deck my-3">
+							<div class="card mb-4 box-shadow">
+								<div class="card-header">
+									<h5 class="my-0">18:30</h5>
+								</div>
+								<button class="btn btn-dark btn-block font-weight-bold">Принять заказ</button>
+								<div class="card-body">
+									<h6 class="card-subtitle mb-2 text-muted">Столик №2</h6>
+									<div class="row">
+										<div class="card-text col-10">
+											<p>Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</p>
+										</div>
+										<div class="col-2 font-weight-bold">2</div>
+									</div>
+									<h6 class="card-title">Без лука</h6>
+									<h6 class="card-title text-danger">Привет от администратора</h6>
+								</div>
+								<div class="card-footer d-flex justify-content-between">
+									<button class="btn btn-info">В процессе</button>
+									<button class="btn btn-success">Готово</button>
+								</div>
+							</div>
+							
+								<div class="card mb-4 box-shadow">
+								<div class="card-header">
+									<h5 class="my-0">18:30</h5>
+								</div>
+								<button class="btn btn-dark btn-block font-weight-bold">Принять заказ</button>
+								<div class="card-body">
+									<h6 class="card-subtitle mb-2 text-muted">Столик №2</h6>
+									<div class="row">
+										<div class="card-text col-10">
+											<p>Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</p>
+										</div>
+										<div class="col-2 font-weight-bold">2</div>
+									</div>
+									<h6 class="card-title">Без лука</h6>
+									<h6 class="card-title text-danger">Привет от администратора</h6>
+								</div>
+								<div class="card-footer d-flex justify-content-between">
+									<button class="btn btn-info">В процессе</button>
+									<button class="btn btn-success">Готово</button>
+								</div>
+							</div>
+						
+							<div class="card mb-4 box-shadow">
+								<div class="card-header">
+									<h5 class="my-0">18:30</h5>
+								</div>
+								<button class="btn btn-dark btn-block font-weight-bold">Принять заказ</button>
+								<div class="card-body">
+									<h6 class="card-subtitle mb-2 text-muted">Столик №2</h6>
+									<div class="row">
+										<div class="card-text col-10">
+											<p>Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</p>
+										</div>
+										<div class="col-2 font-weight-bold">2</div>
+									</div>
+									<h6 class="card-title">Без лука</h6>
+									<h6 class="card-title text-danger">Привет от администратора</h6>
+								</div>
+								<div class="card-footer d-flex justify-content-between">
+									<button class="btn btn-info">В процессе</button>
+									<button class="btn btn-success">Готово</button>
+								</div>
+							</div>
+												
+							<div class="card mb-4 box-shadow">
+								<div class="card-header">
+									<h5 class="my-0">18:30</h5>
+								</div>
+								<button class="btn btn-dark btn-block font-weight-bold">Принять заказ</button>
+								<div class="card-body">
+									<h6 class="card-subtitle mb-2 text-muted">Столик №2</h6>
+									<div class="row">
+										<div class="card-text col-10">
+											<p>Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</p>
+										</div>
+										<div class="col-2 font-weight-bold">2</div>
+									</div>
+									<h6 class="card-title">Без лука</h6>
+									<h6 class="card-title text-danger">Привет от администратора</h6>
+								</div>
+								<div class="card-footer d-flex justify-content-between">
+									<button class="btn btn-info">В процессе</button>
+									<button class="btn btn-success">Готово</button>
+								</div>
+							</div>
+																
+							<div class="card mb-4 box-shadow">
+								<div class="card-header">
+									<h5 class="my-0">18:30</h5>
+								</div>
+								<button class="btn btn-dark btn-block font-weight-bold">Принять заказ</button>
+								<div class="card-body">
+									<h6 class="card-subtitle mb-2 text-muted">Столик №2</h6>
+									<div class="row">
+										<div class="card-text col-10">
+											<p>Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</p>
+										</div>
+										<div class="col-2 font-weight-bold">2</div>
+									</div>
+									<h6 class="card-title ">Без лука</h6>
+									<h6 class="card-title text-danger">Привет от администратора</h6>
+								</div>
+								<div class="card-footer d-flex justify-content-between">
+									<button class="btn btn-info">В процессе</button>
+									<button class="btn btn-success">Готово</button>
+								</div>
+							</div>
+						</div> -->
+				</section>
 				
-		<section id="accordionAdministrator" class="my-4">
-			<div class="container-fluid">
-				<div class="bg-info rounded p-2 d-flex justify-content-between">
-					<span class="h5 text-left text-light">Столик №6 на сегодня</span>
-					<a href="#TableReservation" class="btn btn-info fa fa-plus"></a>
-				</div>
+		<!-- Вид для официанта -->
+				<section id="newOrder" class="my-4">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-md-6">
+								<aside>
+									<div id="accordion">
+									<!--Здесь был template id="accordionTemplate"-->
+										<!-- <div class="card">
+											<div class="card-header" id="starterWaiter" data-toggle="collapse" data-target="#collapseOne">
+												<h5 class="mb-0">
+													<button class="btn btn-link" aria-expanded="false" aria-controls="collapseOne">
+														<span class="h4">Закуски</span>
+													</button>
+												</h5>
+											</div>
 
-				<div class="collapse multi-collapse show" id="multiCollapse1">
-					<div class="card">
-						<div class="card-header" id="headingAdministrator1" data-toggle="collapse" data-target="#firstGuest">
-							<h5 class="mb-0 text-center">
-								<button class="btn btn-link collapsed"  aria-expanded="false" aria-controls="firstGuest">
-									<span class="mx-auto">11:00 - 14:00 Дмитрий</span>
-									<span class="fa fa-apple text-success"></span>
-								</button>
-							</h5>
+											<div id="collapseOne" class="collapse" aria-labelledby="starterWaiter" data-parent="#accordion">
+												<ul class="list-group">
+													<li class="list-group-item list-group-item-action">Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</li>
+													<li class="list-group-item list-group-item-action">Томлёный балантин из утки с овощами агродольче</li>
+													<li class="list-group-item list-group-item-action">Кальмар су-вид с теплым рататуем, зеленым салатом и винным соусом</li>
+													<li class="list-group-item list-group-item-action">Подкопчённый лосось с лимонно-мятным йогуртом, цуккини «scapeсe» и микс салатом</li>
+												</ul>
+											</div>
+										</div>
+										<div class="card">
+											<div class="card-header" id="soupWaiter" data-toggle="collapse" data-target="#collapseTwo">
+												<h5 class="mb-0">
+													<button class="btn btn-link collapsed" aria-expanded="false" aria-controls="collapseTwo">
+														<span class="h4">Паста и супы</span>
+													</button>
+												</h5>
+											</div>
+											<div id="collapseTwo" class="collapse" aria-labelledby="soupWaiter" data-parent="#accordion">
+												<ul class="list-group">
+													<li class="list-group-item list-group-item-action">Зелёные равиоли с уткой, хрустящим луком пореем и черным и белым соусом</li>
+													<li class="list-group-item list-group-item-action">Суп из белых грибов с нутом</li>
+													<li class="list-group-item list-group-item-action">Цветные тальятелле с морепродуктами и пеной из лайма</li>
+													<li class="list-group-item list-group-item-action">Паста «pacchero allo scoglio» с диким сибасом и соусом из свежих трав</li>
+												</ul>
+											</div>
+										</div>
+										<div class="card">
+											<div class="card-header" id="fishWaiter" data-toggle="collapse" data-target="#collapseThree">
+												<h5 class="mb-0">
+													<button class="btn btn-link collapsed" aria-expanded="false" aria-controls="collapseThree">
+														<span class="h4">Блюда из рыбы</span>
+													</button>
+												</h5>
+											</div>
+											<div id="collapseThree" class="collapse" aria-labelledby="fishWaiter" data-parent="#accordion">
+												<ul class="list-group">
+													<li class="list-group-item list-group-item-action">Дикий сибас на гриле с оливами таджаска, свежим шпинатом и свекольным соусом</li>
+													<li class="list-group-item list-group-item-action">Сэндвич из домашнего хлеба с мягким лобстером и картофелем</li>
+													<li class="list-group-item list-group-item-action">Конфи из дикой трески с цитрусовым картофельным пюре и салатом из сельдерея</li>
+													<li class="list-group-item list-group-item-action">Сибас в ароматической соли</li>
+												</ul>
+											</div>
+										</div>
+										<div class="card">
+											<div class="card-header" id="meatWaiter" data-toggle="collapse" data-target="#collapseFour">
+												<h5 class="mb-0">
+													<button class="btn btn-link collapsed" aria-expanded="false" aria-controls="collapseFour">
+														<span class="h4">Блюда из мяса</span>
+													</button>
+												</h5>
+											</div>
+											<div id="collapseFour" class="collapse" aria-labelledby="meatWaiter" data-parent="#accordion">
+												<ul class="list-group">
+													<li class="list-group-item list-group-item-action">Стейк Риб-ай с медовой морковью, грибами порто белло и рукколой</li>
+													<li class="list-group-item list-group-item-action">Говядина Веллингтон, запечённая в домашнем хлебе с грибами и пармской ветчиной</li>
+													<li class="list-group-item list-group-item-action">Филе телятины с горчичным соусом на подушке из краснокочанной капусты и кремом из цветной капусты</li>
+													<li class="list-group-item list-group-item-action">Каре ягнёнка «a modo mio» с пюре из топинамбура, зеленым салатом и соусом из розмарина</li>
+												</ul>
+											</div>
+										</div>
+										<div class="card">
+											<div class="card-header" id="sidedishWaiter" data-toggle="collapse" data-target="#collapseFive">
+												<h5 class="mb-0">
+													<button class="btn btn-link collapsed" aria-expanded="false" aria-controls="collapseFive">
+														<span class="h4">Гарниры</span>
+													</button>
+												</h5>
+											</div>
+											<div id="collapseFive" class="collapse" aria-labelledby="sidedishWaiter" data-parent="#accordion">
+												<ul class="list-group">
+													<li class="list-group-item list-group-item-action">Запечённый картофель с розмарином</li>
+													<li class="list-group-item list-group-item-action">Брокколи на пару с пряным маслом</li>
+													<li class="list-group-item list-group-item-action">Соте из шампиньонов</li>
+													<li class="list-group-item list-group-item-action">Зеленый салат с сыром горгонзола и грушей</li>
+												</ul>
+											</div>
+										</div>
+										<div class="card">
+											<div class="card-header" id="desertWaiter" data-toggle="collapse" data-target="#collapseSix">
+												<h5 class="mb-0">
+													<button class="btn btn-link collapsed" aria-expanded="false" aria-controls="collapseSix">
+														<span class="h4">Десерты</span>
+													</button>
+												</h5>
+											</div>
+											<div id="collapseSix" class="collapse" aria-labelledby="desertWaiter" data-parent="#accordion">
+												<ul class="list-group">
+													<li class="list-group-item list-group-item-action">«Ciocolatoso» Тёплый шоколадный пирог, арахисовое мороженое, шоколадный мусс и солёный бисквит</li>
+													<li class="list-group-item list-group-item-action">«Тирамису della mamma» Кофейный бисквит, сабайон с марсалой и какао-порошком</li>
+													<li class="list-group-item list-group-item-action">Классический чизкейк с ягодным соусом</li>
+													<li class="list-group-item list-group-item-action">Домашнее мороженое (крема антика, шоколад, прополис, миндаль)</li>
+												</ul>
+											</div>
+										</div> -->
+									</div>
+								</aside>
+							</div>
+
+							<div class="col-md-6" id="guestOrder">
+								<!-- Здесь был template id="guestOrderTemplate" -->
+								<!-- <div class="row my-3 no-gutters">
+									<div class="col-sm-6 my-2">
+										<span>Номер столика</span>
+										<select name="table-number">
+											<option value="0">№</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+											<option value="6">6</option>
+											<option value="7">7</option>
+											<option value="8">8</option>
+										</select> 
+									</div>
+									<div class="col-sm-6 text-left text-sm-right my-2">
+										<label for="orderTime">Готовность, мин</label>
+										<input class="w-25" type="number" name="order-time" id="orderTime" value="0" step="15"/>
+									</div>
+								</div>
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item">
+										<div class="row">
+											<div class="col-9">yhryhrthrthtrttt ttttttttttttttttt ttttttttt tttttt ttttttt tttt</div>
+											<input type="number" name="count" class="col-1 px-0 border-0" min="1" value="1"/>
+											<div class="col-2 d-flex align-items-center">
+												<button type="button" class="close" aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+												</button>
+											</div>
+										</div>
+									</li>
+									<li class="list-group-item">
+										<div class="row">
+											<div class="col-9">Подкопчённый лосось с лимонно-мятным йогуртом, цуккини «scapeсe» и микс салатом</div>
+											<input type="number" name="count" class="col-1 px-0 border-0" min="1" value="1"/>
+											<div class="col-2 d-flex align-items-center">
+												<button type="button" class="close" aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+												</button>
+											</div>
+										</div>
+									</li>
+									<li class="list-group-item">
+										<div class="row">
+											<div class="col-9">Подкопчённый лосось с лимонно-мятным йогуртом, цуккини «scapeсe» и микс салатом</div>
+											<input type="number" name="count" class="col-1 px-0 border-0" min="1" value="1"/>
+											<div class="col-2 d-flex align-items-center">
+												<button type="button" class="close" aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+												</button>
+											</div>
+										</div>
+									</li>
+								</ul>
+								<div class="row">
+									<div class="my-4 col-12 w-100">
+										<textarea name="messageWaiter" id="messageWaiter" class="w-100 border border-info rounded p-2" placeholder="Примечания"></textarea>
+									</div>
+								</div>
+								<button type="submit" class="btn btn-info my-1">Оформить заказ</button> -->
+							</div>
+						</div>
+					</div>
+				</section>
+					
+				<section id="containerOrderWaiter" class="my-4">
+					<div class="container">
+						<a href="#NewOrder" class="btn btn-info btn-block mt-4">Добавить <span class="fa fa-plus"></span></a><br/>
+						<div class="card-deck mb-3" id="orderListWaiter">
+						<!-- Здесь был template id="orderListWaiterTemplate"-->
+		<!-- 					<div class="card mb-4 box-shadow">
+								<div class="card-header d-flex justify-content-between">
+									<span class="h5 my-0">18:30</span>
+									<span class="fa fa-pencil-square-o text-right pt-1"></span>
+								</div>
+								<div class="card-body">
+									<h6 class="card-subtitle mb-2 text-muted">Столик №2</h6>
+									<div class="row">
+										<div class="card-text col-10">
+											<p>Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</p>
+										</div>
+										<div class="col-2 font-weight-bold">2</div>
+									</div>
+									<div class="row">
+										<div class="card-text col-10">
+											<p>Запечённый осьминог с ttt и крем-соусом из красного перца</p>
+										</div>
+										<div class="col-2 font-weight-bold">4</div>
+									</div>
+									<h6 class="card-title">Без лука</h6>
+									<h6 class="card-title text-danger">Привет от администратора</h6>
+									<div class="row mt-3 text-info font-weight-bold">
+										<div class="card-text col-7">Сумма</div>
+										<div class="card-text col-5">225.00</div>
+									</div>
+								</div>
+								<div class="card-footer d-flex justify-content-between">
+									<button class="btn btn-success btn-block">Готово</button>
+								</div>
+							</div>
+
+							<div class="card mb-4 box-shadow">
+								<div class="card-header d-flex justify-content-between">
+									<span class="h5 my-0">18:30</span>
+									<span class="fa fa-pencil-square-o text-right pt-1"></span>
+								</div>
+								<div class="card-body">
+									<h6 class="card-subtitle mb-2 text-muted">Столик №2</h6>
+									<div class="row">
+										<div class="card-text col-10">
+											<p>Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</p>
+										</div>
+										<div class="col-2 font-weight-bold">2</div>
+									</div>
+									<div class="row">
+										<div class="card-text col-10">
+											<p>Запечённый осьминог с ttt и крем-соусом из красного перца</p>
+										</div>
+										<div class="col-2 font-weight-bold">4</div>
+									</div>
+									<h6 class="card-title">Без лука</h6>
+									<h6 class="card-title text-danger">Привет от администратора</h6>
+									<div class="row mt-3 text-info font-weight-bold">
+										<div class="card-text col-7">Сумма</div>
+										<div class="card-text col-5">225.00</div>
+									</div>
+								</div>
+								<div class="card-footer d-flex justify-content-between">
+									<button class="btn btn-success btn-block">Готово</button>
+								</div>
+							</div>
+						
+							<div class="card mb-4 box-shadow">
+								<div class="card-header d-flex justify-content-between">
+									<span class="h5 my-0">18:30</span>
+									<span class="fa fa-pencil-square-o text-right pt-1"></span>
+								</div>
+								<div class="card-body">
+									<h6 class="card-subtitle mb-2 text-muted">Столик №2</h6>
+									<div class="row">
+										<div class="card-text col-10">
+											<p>Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</p>
+										</div>
+										<div class="col-2 font-weight-bold">2</div>
+									</div>
+									<div class="row">
+										<div class="card-text col-10">
+											<p>Запечённый осьминог с ttt и крем-соусом из красного перца</p>
+										</div>
+										<div class="col-2 font-weight-bold">4</div>
+									</div>
+									<h6 class="card-title">Без лука</h6>
+									<h6 class="card-title text-danger">Привет от администратора</h6>
+									<div class="row mt-3 text-info font-weight-bold">
+										<div class="card-text col-7">Сумма</div>
+										<div class="card-text col-5">225.00</div>
+									</div>
+								</div>
+								<div class="card-footer d-flex justify-content-between">
+									<button class="btn btn-success btn-block">Готово</button>
+								</div>
+							</div>
+												
+							<div class="card mb-4 box-shadow">
+								<div class="card-header d-flex justify-content-between">
+									<span class="h5 my-0">18:30</span>
+									<span class="fa fa-pencil-square-o text-right pt-1"></span>
+								</div>
+								<div class="card-body">
+									<h6 class="card-subtitle mb-2 text-muted">Столик №2</h6>
+									<div class="row">
+										<div class="card-text col-10">
+											<p>Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</p>
+										</div>
+										<div class="col-2 font-weight-bold">2</div>
+									</div>
+									<div class="row">
+										<div class="card-text col-10">
+											<p>Запечённый осьминог с ttt и крем-соусом из красного перца</p>
+										</div>
+										<div class="col-2 font-weight-bold">4</div>
+									</div>
+									<h6 class="card-title">Без лука</h6>
+									<h6 class="card-title text-danger">Привет от администратора</h6>
+									<div class="row mt-3 text-info font-weight-bold">
+										<div class="card-text col-7">Сумма</div>
+										<div class="card-text col-5">225.00</div>
+									</div>
+								</div>
+								<div class="card-footer d-flex justify-content-between">
+									<button class="btn btn-success btn-block">Готово</button>
+								</div>
+							</div>
+																
+							<div class="card mb-4 box-shadow">
+								<div class="card-header d-flex justify-content-between">
+									<span class="h5 my-0">18:30</span>
+									<span class="fa fa-pencil-square-o text-right pt-1"></span>
+								</div>
+								<div class="card-body">
+									<h6 class="card-subtitle mb-2 text-muted">Столик №2</h6>
+									<div class="row">
+										<div class="card-text col-10">
+											<p>Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</p>
+										</div>
+										<div class="col-2 font-weight-bold">2</div>
+									</div>
+									<div class="row">
+										<div class="card-text col-10">
+											<p>Запечённый осьминог с ttt и крем-соусом из красного перца</p>
+										</div>
+										<div class="col-2 font-weight-bold">4</div>
+									</div>
+									<h6 class="card-title">Без лука</h6>
+									<h6 class="card-title text-danger">Привет от администратора</h6>
+									<div class="row mt-3 text-info font-weight-bold">
+										<div class="card-text col-7">Сумма</div>
+										<div class="card-text col-5">225.00</div>
+									</div>
+								</div>
+								<div class="card-footer d-flex justify-content-between">
+									<button class="btn btn-success btn-block">Готово</button>
+								</div>
+							</div> -->
+							
+						</div>
+					</div>
+				</section>
+
+		<!-- Вид для администратора -->
+		<!-- 		<section id="schedule" class="my-4">
+					<div class="container-fluid">
+						<h2 class="text-center">Расписание на <span>21.03.2018</h2>
+						<table class="table table-bordered table-hover table-responsive-lg text-center mb-3">
+							<thead>
+								<tr>
+									<th>Столик№ \Часы</th>
+									<th>09</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th>
+									<th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>01</th><th>02</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><a href="#Table" class="btn btn-block font-weight-bold" role="button" aria-pressed="true">1</a></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+									<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+								</tr>
+								<tr>
+									<td><a href="#Table" class="btn btn-block font-weight-bold" role="button" aria-pressed="true">2</a></td><td></td><td></td><td class="bg-info"></td><td class="bg-info"></td><td class="bg-info"></td><td></td><td></td><td></td>
+									<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+								</tr>
+								<tr>
+									<td><a href="#Table" class="btn btn-block font-weight-bold" role="button" aria-pressed="true">3</a></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+									<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+								</tr>
+								<tr>
+									<td><a href="#Table" class="btn btn-block font-weight-bold" role="button" aria-pressed="true">4</a></td><td class="bg-info"></td><td class="bg-info"></td><td class="bg-info"></td><td></td><td></td><td></td><td></td><td></td>
+									<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+								</tr>
+								<tr>
+									<td><a href="#Table" class="btn btn-block font-weight-bold" role="button" aria-pressed="true">5</a></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+									<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+								</tr>
+								<tr>
+									<td><a href="#Table" class="btn btn-block font-weight-bold" role="button" aria-pressed="true">6</a></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+									<td></td><td></td><td></td><td></td><td></td><td class="bg-info"></td><td class="bg-info"></td><td class="bg-info"></td><td></td><td></td>
+								</tr>
+								<tr>
+									<td><a href="#Table" class="btn btn-block font-weight-bold" role="button" aria-pressed="true">7</a></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+									<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+								</tr>
+								<tr>
+									<td><a href="#Table" class="btn btn-block font-weight-bold" role="button" aria-pressed="true">8</a></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+									<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</section>
+						
+				<section id="accordionAdministrator" class="my-4">
+					<div class="container-fluid">
+						<div class="bg-info rounded p-2 d-flex justify-content-between">
+							<span class="h5 text-left text-light">Столик №6 на сегодня</span>
+							<a href="#TableReservation" class="btn btn-info fa fa-plus"></a>
 						</div>
 
-						<div id="firstGuest" class="collapse" aria-labelledby="headingAdministrator1" data-parent="#accordionAdministrator">
-							<div class="card-body">
-								<div class="row">
-									<div class="col-md-6">
-										<div>Имя: <span>Дмитрий</span></div>
-									</div>
-									<div class="col-md-6">
-										<div>Количество гостей: <span>5</span></div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-6">
-										<div>Дата визита: <span>21.03.2018</span></div>
-									</div>
-									<div class="col-md-6">
-										<div>Время визита: <span>11:00</span></div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-6">
-										<div>E-mail: <span>test@ts.by</span></div>
-									</div>
-									<div class="col-md-6">
-										<div>Номер телефона: <span>+375 75 775 75 75</span></div>
-									</div>
+						<div class="collapse multi-collapse show" id="multiCollapse1">
+							<div class="card">
+								<div class="card-header" id="headingAdministrator1" data-toggle="collapse" data-target="#firstGuest">
+									<h5 class="mb-0 text-center">
+										<button class="btn btn-link collapsed"  aria-expanded="false" aria-controls="firstGuest">
+											<span class="mx-auto">11:00 - 14:00 Дмитрий</span>
+											<span class="fa fa-apple text-success"></span>
+										</button>
+									</h5>
 								</div>
 
-								<div class="font-weight-bold h5 text-center mt-4 mb-2">Заказ</div>
-								<div class="border border-info rounded px-2" id="orderAdministrator">
-									<div class="row my-2 font-weight-bold">
-										<div class="col-sm-4 d-none d-sm-block">Название блюда</div>
-										<div class="col-sm-3 text-center d-none d-sm-block">Количество</div>
-										<div class="col-sm-2 d-none d-sm-block">Цена</div>
-										<div class="col-sm-2 text-center d-none d-sm-block">Стоимость</div>
+								<div id="firstGuest" class="collapse" aria-labelledby="headingAdministrator1" data-parent="#accordionAdministrator">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-6">
+												<div>Имя: <span>Дмитрий</span></div>
+											</div>
+											<div class="col-md-6">
+												<div>Количество гостей: <span>5</span></div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<div>Дата визита: <span>21.03.2018</span></div>
+											</div>
+											<div class="col-md-6">
+												<div>Время визита: <span>11:00</span></div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<div>E-mail: <span>test@ts.by</span></div>
+											</div>
+											<div class="col-md-6">
+												<div>Номер телефона: <span>+375 75 775 75 75</span></div>
+											</div>
+										</div>
+
+										<div class="font-weight-bold h5 text-center mt-4 mb-2">Заказ</div>
+										<div class="border border-info rounded px-2" id="orderAdministrator">
+											<div class="row my-2 font-weight-bold">
+												<div class="col-sm-4 d-none d-sm-block">Название блюда</div>
+												<div class="col-sm-3 text-center d-none d-sm-block">Количество</div>
+												<div class="col-sm-2 d-none d-sm-block">Цена</div>
+												<div class="col-sm-2 text-center d-none d-sm-block">Стоимость</div>
+											</div>
+											<div class="row mb-2">
+												<div class="col-9 col-sm-5">
+													Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца
+												</div>
+												<div class="col-2 m-0">2 шт</div>
+												<div class="d-none col-sm-2 d-sm-block">50.00</div>
+												<div class="d-none col-sm-2 d-sm-block text-center">100.00</div>
+												<div class="col-1">
+													<button type="button" class="close" aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+											</div>
+											<div class="row mb-2">
+												<div class="col-9 col-sm-5">
+													Томлёный балантин из утки с овощами агродольче
+												</div>
+												<div class="col-2 m-0">2 шт</div>
+												<div class="col-sm-2 d-none d-sm-block">20.00</div>
+												<div class="col-sm-2 d-none d-sm-block text-center">40.00</div>
+												<div class="col-1">
+													<button type="button" class="close" aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+											</div>	
+										</div>
+										<div class="text-center mt-4">
+											<button type="button" class="btn btn-info mr-2 mb-3">Редактировать бронь</button>
+											<button type="button" class="btn btn-info ml-2 mb-3">Отменить бронь</button>
+										</div>
 									</div>
-									<div class="row mb-2">
-										<div class="col-9 col-sm-5">
-											Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца
-										</div>
-										<div class="col-2 m-0">2 шт</div>
-										<div class="d-none col-sm-2 d-sm-block">50.00</div>
-										<div class="d-none col-sm-2 d-sm-block text-center">100.00</div>
-										<div class="col-1">
-											<button type="button" class="close" aria-label="Close">
-												<span aria-hidden="true">&times;</span>
-											</button>
-										</div>
-									</div>
-									<div class="row mb-2">
-										<div class="col-9 col-sm-5">
-											Томлёный балантин из утки с овощами агродольче
-										</div>
-										<div class="col-2 m-0">2 шт</div>
-										<div class="col-sm-2 d-none d-sm-block">20.00</div>
-										<div class="col-sm-2 d-none d-sm-block text-center">40.00</div>
-										<div class="col-1">
-											<button type="button" class="close" aria-label="Close">
-												<span aria-hidden="true">&times;</span>
-											</button>
-										</div>
-									</div>	
 								</div>
-								<div class="text-center mt-4">
-									<button type="button" class="btn btn-info mr-2 mb-3">Редактировать бронь</button>
-									<button type="button" class="btn btn-info ml-2 mb-3">Отменить бронь</button>
+							</div>
+						</div>
+						
+						<div class="collapse multi-collapse show" id="multiCollapse2">
+							<div class="card">
+								<div class="card-header" id="headingAdministrator2" data-toggle="collapse" data-target="#secondGuest">
+									<h5 class="mb-0 text-center">
+										<button class="btn btn-link collapsed"  aria-expanded="false" aria-controls="secondGuest">
+											<span class="mx-auto">11:00 - 14:00 Дмитрий</span>
+										</button>
+									</h5>
+								</div>
+
+								<div id="secondGuest" class="collapse" aria-labelledby="headingAdministrator2" data-parent="#accordionAdministrator">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-6">
+												<div>Имя: <span>Дмитрий</span></div>
+											</div>
+											<div class="col-md-6">
+												<div>Количество гостей: <span>5</span></div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<div>Дата визита: <span>21.03.2018</span></div>
+											</div>
+											<div class="col-md-6">
+												<div>Время визита: <span>11:00</span></div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<div>E-mail: <span>test@ts.by</span></div>
+											</div>
+											<div class="col-md-6">
+												<div>Номер телефона: <span>+375 75 775 75 75</span></div>
+											</div>
+										</div>
+
+										
+										<div class="text-center mt-4">
+											<button type="button" class="btn btn-info mr-2 mb-3">Редактировать бронь</button>
+											<button type="button" class="btn btn-info ml-2 mb-3">Отменить бронь</button>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				
-				<div class="collapse multi-collapse show" id="multiCollapse2">
-					<div class="card">
-						<div class="card-header" id="headingAdministrator2" data-toggle="collapse" data-target="#secondGuest">
-							<h5 class="mb-0 text-center">
-								<button class="btn btn-link collapsed"  aria-expanded="false" aria-controls="secondGuest">
-									<span class="mx-auto">11:00 - 14:00 Дмитрий</span>
-								</button>
-							</h5>
+				</section> -->
+			</div>
+			<footer>
+				<div class="container-fluid bg-dark text-info">
+					<div class="row d-flex justify-content-between">
+						<div class="my-2 px-4">
+							<small><span class="font-weight-bold">Время работы:</span><br/>
+							Ежедневно с 10:00 до 02:00
+							</small>
 						</div>
 
-						<div id="secondGuest" class="collapse" aria-labelledby="headingAdministrator2" data-parent="#accordionAdministrator">
-							<div class="card-body">
-								<div class="row">
-									<div class="col-md-6">
-										<div>Имя: <span>Дмитрий</span></div>
-									</div>
-									<div class="col-md-6">
-										<div>Количество гостей: <span>5</span></div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-6">
-										<div>Дата визита: <span>21.03.2018</span></div>
-									</div>
-									<div class="col-md-6">
-										<div>Время визита: <span>11:00</span></div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-6">
-										<div>E-mail: <span>test@ts.by</span></div>
-									</div>
-									<div class="col-md-6">
-										<div>Номер телефона: <span>+375 75 775 75 75</span></div>
-									</div>
-								</div>
-
-								
-								<div class="text-center mt-4">
-									<button type="button" class="btn btn-info mr-2 mb-3">Редактировать бронь</button>
-									<button type="button" class="btn btn-info ml-2 mb-3">Отменить бронь</button>
-								</div>
-							</div>
+						<div class="my-2 px-4">
+							<small><span class="font-weight-bold">Наш адрес:</span><br/>
+							г.Минск, ул.Ресторанная, 37
+							</small>
 						</div>
 					</div>
+					<div class="d-flex mt-3 font-weight-normal font-italic mb-o">&copy; Валерия Колягина</div>
 				</div>
-			</div>
-		</section> -->
-
-		<footer>
-			<div class="container-fluid bg-dark text-info">
-				<div class="row d-flex justify-content-between">
-					<div class="my-2 px-4">
-						<small><span class="font-weight-bold">Время работы:</span><br/>
-						Ежедневно с 10:00 до 02:00
-						</small>
-					</div>
-
-					<div class="my-2 px-4">
-						<small><span class="font-weight-bold">Наш адрес:</span><br/>
-						г.Минск, ул.Ресторанная, 37
-						</small>
-					</div>
-				</div>
-				<div class="d-flex mt-3 font-weight-normal font-italic mb-o">&copy; Валерия Колягина</div>
-			</div>
-		</footer>
-<!-- templates -->
+			</footer>
+		</div>
+		<svg class="lds-spinner position-fixed gif d-none" width="50%" height="50%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid"><g transform="rotate(0 50 50)">
+			  <rect x="47" y="24" rx="9.4" ry="4.8" width="6" height="12" fill="#17a2b8">
+				<animate attributeName="opacity" values="1;0" times="0;1" dur="1s" begin="-0.9166666666666666s" repeatCount="indefinite"></animate>
+			  </rect>
+			</g><g transform="rotate(30 50 50)">
+			  <rect x="47" y="24" rx="9.4" ry="4.8" width="6" height="12" fill="#17a2b8">
+				<animate attributeName="opacity" values="1;0" times="0;1" dur="1s" begin="-0.8333333333333334s" repeatCount="indefinite"></animate>
+			  </rect>
+			</g><g transform="rotate(60 50 50)">
+			  <rect x="47" y="24" rx="9.4" ry="4.8" width="6" height="12" fill="#17a2b8">
+				<animate attributeName="opacity" values="1;0" times="0;1" dur="1s" begin="-0.75s" repeatCount="indefinite"></animate>
+			  </rect>
+			</g><g transform="rotate(90 50 50)">
+			  <rect x="47" y="24" rx="9.4" ry="4.8" width="6" height="12" fill="#17a2b8">
+				<animate attributeName="opacity" values="1;0" times="0;1" dur="1s" begin="-0.6666666666666666s" repeatCount="indefinite"></animate>
+			  </rect>
+			</g><g transform="rotate(120 50 50)">
+			  <rect x="47" y="24" rx="9.4" ry="4.8" width="6" height="12" fill="#17a2b8">
+				<animate attributeName="opacity" values="1;0" times="0;1" dur="1s" begin="-0.5833333333333334s" repeatCount="indefinite"></animate>
+			  </rect>
+			</g><g transform="rotate(150 50 50)">
+			  <rect x="47" y="24" rx="9.4" ry="4.8" width="6" height="12" fill="#17a2b8">
+				<animate attributeName="opacity" values="1;0" times="0;1" dur="1s" begin="-0.5s" repeatCount="indefinite"></animate>
+			  </rect>
+			</g><g transform="rotate(180 50 50)">
+			  <rect x="47" y="24" rx="9.4" ry="4.8" width="6" height="12" fill="#17a2b8">
+				<animate attributeName="opacity" values="1;0" times="0;1" dur="1s" begin="-0.4166666666666667s" repeatCount="indefinite"></animate>
+			  </rect>
+			</g><g transform="rotate(210 50 50)">
+			  <rect x="47" y="24" rx="9.4" ry="4.8" width="6" height="12" fill="#17a2b8">
+				<animate attributeName="opacity" values="1;0" times="0;1" dur="1s" begin="-0.3333333333333333s" repeatCount="indefinite"></animate>
+			  </rect>
+			</g><g transform="rotate(240 50 50)">
+			  <rect x="47" y="24" rx="9.4" ry="4.8" width="6" height="12" fill="#17a2b8">
+				<animate attributeName="opacity" values="1;0" times="0;1" dur="1s" begin="-0.25s" repeatCount="indefinite"></animate>
+			  </rect>
+			</g><g transform="rotate(270 50 50)">
+			  <rect x="47" y="24" rx="9.4" ry="4.8" width="6" height="12" fill="#17a2b8">
+				<animate attributeName="opacity" values="1;0" times="0;1" dur="1s" begin="-0.16666666666666666s" repeatCount="indefinite"></animate>
+			  </rect>
+			</g><g transform="rotate(300 50 50)">
+			  <rect x="47" y="24" rx="9.4" ry="4.8" width="6" height="12" fill="#17a2b8">
+				<animate attributeName="opacity" values="1;0" times="0;1" dur="1s" begin="-0.08333333333333333s" repeatCount="indefinite"></animate>
+			  </rect>
+			</g><g transform="rotate(330 50 50)">
+			  <rect x="47" y="24" rx="9.4" ry="4.8" width="6" height="12" fill="#17a2b8">
+				<animate attributeName="opacity" values="1;0" times="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animate>
+			  </rect>
+			</g>
+		</svg>
+	<!-- templates -->
 		<script id="menuCategoriesTemplate" type="text/x-handlebars-template">
 			{{#each categories}}
 				<div class="col-lg-4 col-md-6">

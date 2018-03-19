@@ -17,10 +17,16 @@ function TeideController() {
 					username: 'dmitry.kolyagin@ts.com',
 					password: 'ddd16481648'
 				},
+				crossDomain: true,
+				beforeSend: function() {
+					$('.gif').removeClass('d-none'); 
+				},
 				success: function(result) {
+					$('.gif').addClass('d-none');
 					resolve(result);
 				},
 				error: function(error) {
+					$('.gif').addClass('d-none');
 					reject(error);
 				}
 			});
@@ -84,6 +90,7 @@ function TeideController() {
 					if ((!$('#signin form').valid())) {return;}
 				},
 				context: this,
+				crossDomain: true,
 				success: function(result) {
 					if (result.length === 0) {
 						$('#signin span').removeClass('d-none');
@@ -138,6 +145,7 @@ function TeideController() {
 					'Authorization': this.tokenType + ' ' + this.accessToken,
 					'Content-Type': 'application/json'
 				},
+				crossDomain: true,
 				contentType: 'application/json',
 				data: JSON.stringify({
 					'name': $('#clientName').val(),
@@ -172,7 +180,7 @@ function TeideController() {
 			});
 		});
 	}
-	$(this.buttonSignup).on('click', this.regUser.bind(this));
+	$(this.buttonSignup).on('click', this.regUser.bind(this));                 
 	$('#confirmPassword').on('keyup', function() {
 		if (($('#clientPassword').val() !== $('#confirmPassword').val()) && $('#confirmPassword').val().length) {
 			$('#wrongPasswords').text('Пароли не совпадают');
@@ -234,6 +242,11 @@ function TeideController() {
 					minlength: 7,
 					maxlength: 12
 				},
+				tel: {
+					digits: true,
+					minlength: 7,
+					maxlength: 12
+				},
 				time: {
 					required: true
 				}
@@ -253,6 +266,11 @@ function TeideController() {
 				},
 				phone: {
 					required: 'Укажите телефон',
+					digits: 'Укажите только цифры',
+					minlength: 'Слишком короткий номер',
+					maxlength: 'Слишком длинный номер'
+				},
+				tel: {
 					digits: 'Укажите только цифры',
 					minlength: 'Слишком короткий номер',
 					maxlength: 'Слишком длинный номер'
@@ -281,6 +299,7 @@ function TeideController() {
 					'Content-Type': 'application/json'
 				},
 				contentType: 'application/json',
+				crossDomain: true,
 				data: JSON.stringify({
 					'name': $('#name').val(),
 					'guests': $('#number').val(),
@@ -324,26 +343,22 @@ function TeideController() {
 		}
 		teideController.waiterModel.updateViews();
 	}
-						//как лучше сделать: отрисовывать модель или собирать инпуты перед отправкой????????????
+						
 	this.deleteItem = function() {	//close button
 		delete teideController.waiterModel.newOrder.orderItems[$(this).attr('data-mealId')]; //повторяем чтобы получать актуальный Id - так как неизвестно когда будет вызов
 		teideController.waiterModel.updateViews();
 	}
 	this.countItems = function() {		//quantity change	
 		teideController.waiterModel.newOrder.orderItems[$(this).attr('data-mealId')].quantity = $(this).val();
-		teideController.waiterModel.updateViews();
 	}
 	this.changeOrderTime = function() {	//shift change
 		teideController.waiterModel.newOrder.timeShift = $(this).val();
-		teideController.waiterModel.updateViews();
 	}
 	this.saveMessage = function() { //save message from client
 		teideController.waiterModel.newOrder.message = $(this).val();
-		teideController.waiterModel.updateViews();
 	}
 	this.saveTable = function() { //save table
 		teideController.waiterModel.newOrder.table = $(this).val();
-		teideController.waiterModel.updateViews();
 	}
 
 	
@@ -365,7 +380,12 @@ function TeideController() {
 				data: JSON.stringify({
 					'newOrder': this.waiterModel.newOrder
 				}),
+				crossDomain: true,
+				beforeSend: function() {
+					$('.gif').removeClass('d-none'); 
+				},
 				success: function(result) {
+					$('.gif').addClass('d-none'); 
 					this.waiterModel.newOrder = {
 						table: '1',
 						timeShift: 0,
@@ -375,6 +395,7 @@ function TeideController() {
 					resolve(result);
 				},
 				error: function(error) {
+					$('.gif').addClass('d-none');
 					reject(error);
 				},
 			});
@@ -405,11 +426,17 @@ function TeideController() {
 						'status': 'Done'
 						}
 				}),
+				crossDomain: true,
+				beforeSend: function() {
+					$('.gif').removeClass('d-none'); 
+				},
 				success: function(result) {
+					$('.gif').addClass('d-none'); 
 					$(parentCard).addClass('d-none');
 					resolve(result);
 				},
 				error: function(error) {
+					$('.gif').addClass('d-none');
 					reject(error);
 				}
 			}); 
@@ -419,7 +446,7 @@ function TeideController() {
 	//обновлять данные для официанта автоматически
 	//обновлять через определенное время для повара
 	this.refreshDataWaiter = function() {
-		this.waiterModel.recieveOrders();
+		this.waiterModel.recieveOrdersTime();
 		this.waiterModel.updateViews();
 	}
 	
@@ -449,10 +476,16 @@ function TeideController() {
 						'status': 'In Progress'
 						}
 				}),
+				crossDomain: true,
+				beforeSend: function() {
+					$('.gif').removeClass('d-none'); 
+				},
 				success: function(result) {
+					$('.gif').addClass('d-none'); 
 					resolve(result);
 				},
 				error: function(error) {
+					$('.gif').addClass('d-none');
 					reject(error);
 				}
 			}); 
@@ -485,10 +518,16 @@ function TeideController() {
 						'status': 'Completed'
 						}
 				}),
+				crossDomain: true,
+				beforeSend: function() {
+					$('.gif').removeClass('d-none'); 
+				},
 				success: function(result) {
+					$('.gif').addClass('d-none'); 
 					resolve(result);
 				},
 				error: function(error) {
+					$('.gif').addClass('d-none');
 					reject(error);
 				}
 			}); 
