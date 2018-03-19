@@ -39,11 +39,12 @@ function TeideController() {
 	this.buttonOut = $('.button-out');
 	this.checkboxRememberMe = $('input[type="checkbox"]');
 	this.sayHi = function() {
-		$('#signin span').removeClass('d-none');   //оставить в контроллере? (или через модель? - но она вроже не нужна - нету данных как таковых)
+		$('#signin span').removeClass('d-none');  
 		$('.button-out').removeClass('d-none');
 		$('.button-enter').addClass('d-none');
 		$('.button-reg').addClass('d-none');
 		$('.hi-user').html('Добро пожаловать, ' + this.user.First_Name__c);
+		this.applyRole();
 	}
 	this.sayBye = function() {
 		$('#signin span').addClass('d-none');   
@@ -52,6 +53,17 @@ function TeideController() {
 		$('.button-reg').removeClass('d-none');
 		$('.hi-user').empty();
 		localStorage.removeItem('user');
+		localStorage.removeItem('futureOrder');
+		$('form[name=formOrder]')[0].reset();
+	}
+	this.applyRole = function() {
+		if (this.user.Role__c === 'Waiter') {
+			$('.waiterOrders').removeClass('d-none');
+			$('.chiefOrders').addClass('d-none');
+		} else if (this.user.Role__c === 'Chief') {
+			$('.chiefOrders').removeClass('d-none');
+			$('.waiterOrders').addClass('d-none');
+		} 
 	}
 	if (localStorage.getItem('user')) { 
 		this.user = JSON.parse(localStorage.getItem('user'));
@@ -80,13 +92,21 @@ function TeideController() {
 						if ($(this.checkboxRememberMe).is(':checked')) {
 							localStorage.setItem('user', JSON.stringify(this.user)); //localStorage
 						}
-						window.location.hash = 'Main';
+						if (this.user.Role__c === 'Waiter') {
+							window.location.hash = 'Waiter';
+						} else if (this.user.Role__c === 'Chief') {
+							window.location.hash = 'Chief';
+						} else {
+							window.location.hash = 'Main';
+						}
 						this.sayHi();
 																		//чтобы работало без перезагрузки
 							futureOrder.name = this.user['First_Name__c'];
 							futureOrder.email = this.user['Email__c'];
 							futureOrder.phone = this.user['Mobile__c'];
 							this.takeDataForOrder();
+							
+						this.applyRole();
 					}
 					resolve(result);
 				},
@@ -128,13 +148,15 @@ function TeideController() {
 				success: function(result) {
 					$('#welldone').removeClass('d-none');
 					$('.form-signup').addClass('d-none');
+					$('.form-signup')[0].reset();
 					resolve(result);
 				},
 				error: function(error) {
+					$('.emailError').removeClass('d-none');
 					reject(error);
 				},
 				beforeSend: function(xhr) {
-					$('#allFieldsRequired').addClass('d-none');
+					$('#allFieldsRequired, .emailError').addClass('d-none');
 					if ($('#clientPassword').val() !== $('#confirmPassword').val() || (!$('#signup form').valid())) {
 						xhr.abort(); //отмена ajax-запроса
 						return;
@@ -365,12 +387,47 @@ function TeideController() {
 		window.location.hash = 'NewOrder';  
 		teideController.waiterModel.orderMenuView.update();
 	}
+	//заказ передан клиенту - скрыть заказ 
+	this.cleanOrder = function() {
+		let parentCard = $(this).parents('.card');
+		return new Promise((resolve, reject) => {    //отправояем инфо на сервер, что есть изменения
+			let ajaxHandlerScript=teideController.instanceUrl + '/services/apexrest/OrderStatus';	
+			$.ajax(ajaxHandlerScript, { 
+				method:'post', 
+				headers: {
+					'Authorization': teideController.tokenType + ' ' + teideController.accessToken,
+					'Content-Type': 'application/json'
+				},
+				contentType: 'application/json',
+				data: JSON.stringify({
+					'newStatus': {
+						'id': $(parentCard).find('.buttonDone').attr('data-orderId'),
+						'status': 'Done'
+						}
+				}),
+				success: function(result) {
+					$(parentCard).addClass('d-none');
+					resolve(result);
+				},
+				error: function(error) {
+					reject(error);
+				}
+			}); 
+		});
+		teideController.waiterModel.updateViews();
+	}
+	//обновлять данные для официанта автоматически
+	//обновлять через определенное время для повара
+	this.refreshDataWaiter = function() {
+		this.waiterModel.recieveOrders();
+		this.waiterModel.updateViews();
+	}
 	
-
 	//chief
 	this.changeAll = function() {
 		let parentCard = $(this).parents('.chiefCard');
-		$(parentCard).css('backgroundColor','rgba(23, 162,184, 0.4)'); //изменяем фон
+		$(parentCard).addClass('inProgressOrder'); //изменяем фон
+		$(parentCard).removeClass('completedOrder');
 		$(parentCard).prependTo($(parentCard).parents('.card-deck-chief'));		//двигаем в начало
 		
 		$(parentCard).find('.takeOrder').addClass('d-none');   //неактивные кнопки
@@ -403,9 +460,10 @@ function TeideController() {
 		teideController.chiefModel.updateViews();
 	}
 	
-	this.changeAllReverse = function() {
+	this.changeAllReverse = function() {    //кнопка "готово"
 		let parentCard = $(this).parents('.chiefCard');
-		$(parentCard).css('backgroundColor','rgba(12, 247,10, 0.13)'); //изменяем фон
+		$(parentCard).addClass('completedOrder'); //изменяем фон
+		$(parentCard).removeClass('inProgressOrder');
 		$(parentCard).appendTo($(parentCard).parents('.card-deck-chief'));		//двигаем в конец
 		
 		$(parentCard).find('.takeOrder').addClass('d-none');
@@ -436,6 +494,12 @@ function TeideController() {
 			}); 
 		});
 		teideController.chiefModel.updateViews();
+	}
+	
+	//обновлять через определенное время для повара
+	this.refreshDataChief = function() {
+		this.chiefModel.recieveOrders();
+		this.chiefModel.updateViews();
 	}
 } 
 

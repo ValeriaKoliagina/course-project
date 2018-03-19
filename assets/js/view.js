@@ -8,7 +8,7 @@ function GlobalMenuView() {
 	this.update = function() {
 		this.compileTemplate('#menuCategoriesTemplate', '#menuCategories .row');
 		this.compileTemplate('#categoryMealsTemplate', '#categoryMeals');
-		this.compileTemplate('#modalMenuTemplate', '#modalMenu');
+/* 		this.compileTemplate('#modalMenuTemplate', '#modalMenu'); */
 	}
 	this.compileTemplate = function(tmpl, container) {
 		let source = $(tmpl).html();
@@ -80,6 +80,7 @@ function ReceivedOrdersWaiterView() {
 	this.update = function() {
 		this.compileTemplate('#orderListWaiterTemplate', '#orderListWaiter');
 		$('.fa-pencil-square-o').on('click', teideController.edit);
+		$('.buttonDone').on('click', teideController.cleanOrder);
 	}
 	this.compileTemplate = function(tmpl, container) {
 		let source = $(tmpl).html();
@@ -116,7 +117,7 @@ function ChiefView() {
 
 
 	
-function ModalMenuView() {
+/* function ModalMenuView() {
 	this.context = {};
 	this.currentModel = null;
 	this.init = function(model) {      
@@ -134,4 +135,4 @@ function ModalMenuView() {
 		$(container).empty();
 		$(container).append(html);
 	}
-} 
+}  */

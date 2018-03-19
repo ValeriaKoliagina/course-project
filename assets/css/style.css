@@ -132,3 +132,12 @@ label.error {
 	color: #ff0000;
 	font-weight: normal;
 }
+.inProgressOrder {
+	background-color: rgba(23, 162,184, 0.4);
+}
+.completedOrder {
+	background-color: rgba(12, 247,10, 0.13);
+}
+.card-header {
+	min-height: 57px;
+}

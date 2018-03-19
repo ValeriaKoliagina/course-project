@@ -59,13 +59,13 @@ function switchToStateFromURLHash() {
 			break;
 		case 'Menu':
 			teideController.menuModel.receiveCategories().then(function() {
-					$('#menuCategories').show('drop', null, 500)
+				$('#menuCategories').show('drop', null, 500)
 			});
 			break;
 		case 'Starter':
 			teideController.menuModel.receiveCategories().then(function() {
-					$('#categoryMeals').show();
-					$('#Starter').show('drop', null, 500);
+				$('#categoryMeals').show();
+				$('#Starter').show('drop', null, 500);
 			});
 			break;
 		case 'Soup':
@@ -76,26 +76,26 @@ function switchToStateFromURLHash() {
 			break;
 		case 'Fish':
 			teideController.menuModel.receiveCategories().then(function() {
-					$('#categoryMeals').show();
-					$('#Fish').show('drop', null, 500);
+				$('#categoryMeals').show();
+				$('#Fish').show('drop', null, 500);
 			});
 			break;
 		case 'Meat':
 			teideController.menuModel.receiveCategories().then(function() {
-					$('#categoryMeals').show();
-					$('#Meat').show('drop', null, 500);
+				$('#categoryMeals').show();
+				$('#Meat').show('drop', null, 500);
 			});
 			break;
 		case 'Sidedish':
 			teideController.menuModel.receiveCategories().then(function() {
-					$('#categoryMeals').show();
-					$('#Sidedish').show('drop', null, 500);
+				$('#categoryMeals').show();
+				$('#Sidedish').show('drop', null, 500);
 			});
 			break;
 		case 'Dessert':
 			teideController.menuModel.receiveCategories().then(function() {
-					$('#categoryMeals').show();
-					$('#Dessert').show('drop', null, 500);
+				$('#categoryMeals').show();
+				$('#Dessert').show('drop', null, 500);
 			});
 			break;
 		case 'TableReservation':
@@ -116,22 +116,36 @@ function switchToStateFromURLHash() {
 			$('.form-signup').removeClass('d-none');
 			break;
 		case 'Chief':
-			teideController.chiefModel.recieveOrders().then(function() {
-				$('#containerChief').show('drop', null, 500);
-				teideController.chiefModel.updateViews();
-			});
+			if (teideController.user && teideController.user.Role__c === 'Chief') {
+				teideController.chiefModel.recieveOrders().then(function() {
+					$('#containerChief').show('drop', null, 500);
+					teideController.chiefModel.updateViews();
+					setInterval(teideController.refreshDataChief.bind(teideController), 1000 * 60);
+				});
+			} else {
+				window.location.hash = 'Main';
+			}
 			break;
 		case 'Waiter':
-			teideController.waiterModel.recieveOrders().then(function() {
-				$('#containerOrderWaiter').show('drop', null, 500);
-				teideController.waiterModel.updateViews();
-			});
+			if (teideController.user && teideController.user.Role__c === 'Waiter') {
+				teideController.waiterModel.recieveOrders().then(function() {
+					$('#containerOrderWaiter').show('drop', null, 500);
+					teideController.waiterModel.updateViews();
+					setInterval(teideController.refreshDataWaiter.bind(teideController), 1000 * 60);
+				});
+			} else {
+				window.location.hash = 'Main';
+			}
 			break;
 		case 'NewOrder':
-			teideController.waiterModel.receiveCategories().then(function() {
-				$('#newOrder').show('drop', null, 500);
-				teideController.waiterModel.updateViews();
-			});
+			if (teideController.user && teideController.user.Role__c === 'Waiter') {
+				teideController.waiterModel.receiveCategories().then(function() {
+					$('#newOrder').show('drop', null, 500);
+					teideController.waiterModel.updateViews();
+				});
+			} else {
+				window.location.hash = 'Main';
+			}
 			break;
 /* 		case 'Schedule':
 			$('#schedule').show('drop', null, 500);
@@ -179,7 +193,8 @@ function befUnload(e) {
 
 //datepicker
 $('#datepicker').datepicker({
-  showAnim: "slideDown"
+  showAnim: "slideDown",
+  minDate: 0
 });
 
 //timepicker 
@@ -193,6 +208,11 @@ $('#time').datetimepicker({
 		'22:00', '22:30', '23:00', '23:30', '00:00', '00:30', '01:00'
 	]
 });
+// проверка на время - чтобы не мегьше чем сейчас
+/* $.validator.addMethod( "checkCurrentTime", function( value, element ) {
+	if (
+	return this.optional( element ) || /^([01]\d|2[0-3]|[0-9])(:[0-5]\d){1,2}$/.test( value );
+}, "Please enter a valid time, between 00:00 and 23:59" ); */
 
 //свернуть toggle в navbar
 $('.navbar-nav li a').on('click', function(){
