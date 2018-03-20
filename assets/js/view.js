@@ -114,25 +114,3 @@ function ChiefView() {
 		$(container).append(html);
 	}
 }
-
-
-	
-/* function ModalMenuView() {
-	this.context = {};
-	this.currentModel = null;
-	this.init = function(model) {      
-		this.currentModel = model;
-	}
-	
-	this.update = function() {
-		this.compileTemplate('#modalMenuTemplate', '#modalMenu');
-	}
-	this.compileTemplate = function(tmpl, container) {
-		let source = $(tmpl).html();
-		let template = Handlebars.compile(source);
-		this.context.categories = this.currentModel.categories;
-		let html = template(this.context);
-		$(container).empty();
-		$(container).append(html);
-	}
-}  */

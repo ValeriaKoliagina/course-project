@@ -6,7 +6,7 @@ function TeideController() {
 	this.tokenType;
 	this.getToken = function() {
 		return new Promise((resolve, reject) => {
-			let ajaxHandlerScript='https://login.salesforce.com/services/oauth2/token';	
+			let ajaxHandlerScript='https://sfpxy.herokuapp.com/services/oauth2/token';	
 			$.ajax(ajaxHandlerScript, { 
 				method:'post', 
 				dataType:'json', 
@@ -15,7 +15,7 @@ function TeideController() {
 					client_id: '3MVG9d8..z.hDcPKxoBHrwVfavnMPe8sXCXOUHaqjCgfY2_0zZZWEkAvh8sGvYevncdGi2MBIWdD7hD9upPxv',
 					client_secret: '5082174339454021489',
 					username: 'dmitry.kolyagin@ts.com',
-					password: 'ddd16481648'
+					password: 'dmitry123'
 				},
 				crossDomain: true,
 				beforeSend: function() {
@@ -35,22 +35,22 @@ function TeideController() {
 	this.createModel = function(each, model) {
 		this[each] = model;
 		this[each].accessToken = this.accessToken;
-		this[each].instanceUrl = this.instanceUrl;
+		this[each].instanceUrl = 'https://sfpxy.herokuapp.com';
 		this[each].tokenType = this.tokenType;
 	}
 	
-	//signin
+																						//signin
 	this.user;
 	this.buttonSignin = $('#buttonSignin');
 	this.buttonOut = $('.button-out');
 	this.checkboxRememberMe = $('input[type="checkbox"]');
 	this.sayHi = function() {
-		$('#signin span').removeClass('d-none');  
+		/* $('#signin span').removeClass('d-none');  */ //зачем удалять класс
 		$('.button-out').removeClass('d-none');
 		$('.button-enter').addClass('d-none');
 		$('.button-reg').addClass('d-none');
 		$('.hi-user').html('Добро пожаловать, ' + this.user.First_Name__c);
-		this.applyRole();
+		this.applyRole();   //есть уже в success
 	}
 	this.sayBye = function() {
 		$('#signin span').addClass('d-none');   
@@ -60,6 +60,9 @@ function TeideController() {
 		$('.hi-user').empty();
 		localStorage.removeItem('user');
 		localStorage.removeItem('futureOrder');
+		this.user = {};
+		$('.waiterOrders').addClass('d-none');
+		$('.chiefOrders').addClass('d-none');
 		$('form[name=formOrder]')[0].reset();
 	}
 	this.applyRole = function() {
@@ -115,6 +118,7 @@ function TeideController() {
 							
 						this.applyRole();
 					}
+					$('#signin form')[0].reset();
 					resolve(result);
 				},
 				error: function(error) {
@@ -311,6 +315,8 @@ function TeideController() {
 				}),
 				success: function(result) {
 					$('#tableOK').removeClass('d-none');
+					$('#booking form')[0].reset();
+					localStorage.removeItem('futureOrder');
 					resolve(result);
 				},
 				error: function(error) {
@@ -328,7 +334,7 @@ function TeideController() {
 	$(this.buttonReservation).on('click', this.reserveTable.bind(this));
 	
 	
-	//waiter
+																																	//waiter
 	this.chooseMeal = function() {
 		let mealId = $(this).attr('data-mealId');
 		if (teideController.waiterModel.newOrder.orderItems[mealId]) {
@@ -408,7 +414,7 @@ function TeideController() {
 		window.location.hash = 'NewOrder';  
 		teideController.waiterModel.orderMenuView.update();
 	}
-	//заказ передан клиенту - скрыть заказ 
+																												//заказ передан клиенту - скрыть заказ 
 	this.cleanOrder = function() {
 		let parentCard = $(this).parents('.card');
 		return new Promise((resolve, reject) => {    //отправояем инфо на сервер, что есть изменения

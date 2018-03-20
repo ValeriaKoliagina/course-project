@@ -229,25 +229,5 @@ Handlebars.registerHelper('if_eq', function(a, b, opts) {
 });
 
 
-//проверка сложности пароля
-/* $('#clientPassword').keyup(function(e) {
-     var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
-     var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
-     var enoughRegex = new RegExp("(?=.{6,}).*", "g");
-     if (false == enoughRegex.test($(this).val())) {
-             $('#passstrength').html('Короткий пароль');
-     } else if (strongRegex.test($(this).val())) {
-             $('#passstrength').className = 'ok';
-             $('#passstrength').html('Отличный пароль');
-     } else if (mediumRegex.test($(this).val())) {
-             $('#passstrength').className = 'alert';
-             $('#passstrength').html('Может посложнее?');
-     } else {
-             $('#passstrength').className = 'error';
-             $('#passstrength').html('Легкий пароль');
-     }
-     return true;
-}); */
-
 
 

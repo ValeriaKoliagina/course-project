@@ -67,7 +67,7 @@
 								<span class="hi-user text-light"></span>
 								<a class="btn btn-info button-enter" href="#Signin">Вход</a>
 								<a class="btn btn-info button-reg" href="#Signup">Регистрация</a>
-								<a class="btn btn-info d-none button-out" href="javascript:void(0);">Выход</a>
+								<a class="btn btn-info d-none button-out" href="#Main">Выход</a>
 							</div>
 							<div class="col-12 d-sm-block d-md-none">
 								<div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -102,18 +102,18 @@
 												<span class="fa fa-glass"></span><br/> Стек заказов
 											</a>
 										</li> 
-										<li class="nav-item d-sm-block d-md-none button-enter">
-											<a href="#Signin" class="nav-link text-center">
+										<li class="nav-item d-sm-block d-md-none">
+											<a href="#Signin" class="nav-link text-center button-enter">
 												<span class="fa fa-sign-in"></span><br/> Вход
 											</a>
 										</li>
-										<li class="nav-item d-sm-block d-md-none button-reg">
-											<a href="#Signup" class="nav-link text-center">
+										<li class="nav-item d-sm-block d-md-none">
+											<a href="#Signup" class="nav-link text-center button-reg">
 												<span class="fa fa-user-plus"></span><br/> Регистрация
 											</a>
 										</li>
-										<li class="nav-item d-sm-block d-md-none d-none button-out">
-											<a class="nav-link text-center" href="javascript:void(0);">
+										<li class="nav-item d-sm-block d-md-none">
+											<a class="nav-link text-center d-none button-out" href="#Main">
 												<span class="fa fa-sign-out"></span><br/> Выход
 											</a>
 										</li>
@@ -1311,20 +1311,20 @@
 			</div>
 			<footer>
 				<div class="container-fluid bg-dark text-info">
-					<div class="row d-flex justify-content-between">
+					<div class="row justify-content-between d-flex">
 						<div class="my-2 px-4">
 							<small><span class="font-weight-bold">Время работы:</span><br/>
 							Ежедневно с 10:00 до 02:00
 							</small>
 						</div>
 
-						<div class="my-2 px-4">
+						<div class="my-2 px-4 d-none d-sm-flex">
 							<small><span class="font-weight-bold">Наш адрес:</span><br/>
 							г.Минск, ул.Ресторанная, 37
 							</small>
 						</div>
 					</div>
-					<div class="d-flex mt-3 font-weight-normal font-italic mb-o">&copy; Валерия Колягина</div>
+					<small class="row justify-content-between d-flex mt-1 font-weight-normal font-italic mb-0 px-4">&copy; Валерия Колягина</small>
 				</div>
 			</footer>
 		</div>

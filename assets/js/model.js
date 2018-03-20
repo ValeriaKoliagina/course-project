@@ -21,7 +21,7 @@ function MenuModel() {
 					price:
 					weight:},{},{}]
 		}]*/
-	this.accessToken; //вопрос - как лучше хранить в контроллере(ссфлка на контроллер) или тут передать или вызывать функцию с параметрами и туда передавать каждый раз? Аааааааааааааааааааааааааааааа!!!
+	this.accessToken; 
 	this.instanceUrl;
 	this.tokenType;
 
@@ -39,7 +39,7 @@ function MenuModel() {
 					beforeSend: function() {
 						$('.gif').removeClass('d-none'); 
 					},
-					success: function(result) { //можно ли тут записать через стрелочную функцию 
+					success: function(result) { 
 						$('.gif').addClass('d-none'); 
 						let categories = [];
 						$.each((result), function(index, value) { //передали индекс и текущий элемент
