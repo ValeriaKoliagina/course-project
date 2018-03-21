@@ -18,7 +18,7 @@ window.onload = function() {
 	teideController.getToken()
 		.then(result => {
 			teideController.accessToken = result.access_token;
-			teideController.instanceUrl = result.instance_url;
+			teideController.instanceUrl = 'https://sfpxy.herokuapp.com';
 			teideController.tokenType = result.token_type;
 			teideController.createModel('menuModel', new MenuModel());	
 			teideController.createModel('waiterModel', new WaiterModel());
@@ -120,7 +120,7 @@ function switchToStateFromURLHash() {
 				teideController.chiefModel.recieveOrders().then(function() {
 					$('#containerChief').show('drop', null, 500);
 					teideController.chiefModel.updateViews();
-					setInterval(teideController.refreshDataChief.bind(teideController), 1000 * 60);
+					setInterval(teideController.refreshDataChief.bind(teideController), 1000 * 10);
 				});
 			} else {
 				window.location.hash = 'Main';
@@ -131,7 +131,7 @@ function switchToStateFromURLHash() {
 				teideController.waiterModel.recieveOrders().then(function() {
 					$('#containerOrderWaiter').show('drop', null, 500);
 					teideController.waiterModel.updateViews();
-					setInterval(teideController.refreshDataWaiter.bind(teideController), 1000 * 60);
+					setInterval(teideController.refreshDataWaiter.bind(teideController), 1000 * 10);
 				});
 			} else {
 				window.location.hash = 'Main';
@@ -165,32 +165,6 @@ var stateStr=newState.pagename;
 location.hash=stateStr;
 }
 
-// Не сохранены данные
-var textChanged=false;
-
-function addListeners() {
-	var txtElems=document.querySelectorAll('#signup form input');
-	for (let i = 0; i < txtElems.length; i++) {
-		txtElems[i].onchange=txtChanged;
-		txtElems[i].onkeypress=txtChanged;
-		txtElems[i].onpaste=txtChanged;
-		txtElems[i].oncut=txtChanged;
-	}
-}
-addListeners();
-
-function txtChanged(e) {
-	textChanged=true; // текст изменён
-}
- 
-window.onbeforeunload=befUnload;
-
-function befUnload(e) {
-	// если текст изменён, попросим браузер задать вопрос пользователю
-	if ( textChanged && location.hash === 'Signup')
-		e.returnValue='Данные не сохранены';
-};
-
 //datepicker
 $('#datepicker').datepicker({
   showAnim: "slideDown",
@@ -208,15 +182,12 @@ $('#time').datetimepicker({
 		'22:00', '22:30', '23:00', '23:30', '00:00', '00:30', '01:00'
 	]
 });
-// проверка на время - чтобы не мегьше чем сейчас
-/* $.validator.addMethod( "checkCurrentTime", function( value, element ) {
-	if (
-	return this.optional( element ) || /^([01]\d|2[0-3]|[0-9])(:[0-5]\d){1,2}$/.test( value );
-}, "Please enter a valid time, between 00:00 and 23:59" ); */
 
 //свернуть toggle в navbar
 $('.navbar-nav li a').on('click', function(){
+	$('.navbar-collapse').addClass('d-none');
     $('.navbar-collapse').collapse('hide');
+	$('.navbar-collapse').removeClass('d-none');
 });
 
 //handlebars helper - if (a ===  b)

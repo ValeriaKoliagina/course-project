@@ -12,8 +12,6 @@
 		<link rel="stylesheet" type="text/css" href="assets/js/jqueryui/jquery-ui.structure.min.css"> 	
 		<link rel="stylesheet" type="text/css" href="assets/css/jquery.datetimepicker.css">		
 		<link rel="stylesheet" type="text/css" href="assets/js/jqueryui/jquery-ui.theme.min.css"> 
-		<script src="assets/js/bootstrap/less.min.js" type="text/javascript"></script>
-		<!-- <script src="assets/js/jquery.min.js"></script> -->
 	</head>
 	<body>
 		<div class="wrapper">
@@ -125,44 +123,55 @@
 				</header>
 				
 
-				<section class="carousel slide" data-ride="carousel" id="slider">
-					<ul class="carousel-indicators">
-						<li data-target="#slider" data-slide-to="0"></li>
-						<li data-target="#slider" data-slide-to="1"></li>
-						<li data-target="#slider" data-slide-to="2"></li>
-					</ul>
-					<div class="carousel-inner">
-						<div class="carousel-item active">
-							<a href="#Menu" class="active">
-								<img src="assets/img/menu.png" alt="Меню">
-								<div class="carousel-caption">
-									<span class="h3">Меню</span>
-								</div>
-							</a>
-						</div>
-						<div class="carousel-item">
-							<a href="#TableReservation">
-								<img src="assets/img/restaurant.png" alt="Заказать столик">
-								<div class="carousel-caption">
-									<span class="h3">Заказать столик</span>
-								</div>
-							</a>
-						</div>
-						<div class="carousel-item">
-							<a href="#Contacts">
-								<img src="assets/img/location.png" alt="Наши контакты и месторасположение">
-								<div class="carousel-caption">
-									<span class="h3">Проверить месторасположение</span>
-								</div>
-							</a>
-						</div>
-					 </div>
-					<a class="carousel-control-prev" href="#slider" data-slide="prev">
-						<span class="carousel-control-prev-icon"></span>
-					</a>
-					<a class="carousel-control-next" href="#slider" data-slide="next">
-						<span class="carousel-control-next-icon"></span>
-					</a>
+				<section id="slider">
+					<div class="carousel slide" data-ride="carousel" id="slide-carousel">
+						<ul class="carousel-indicators">
+							<li data-target="#slide-carousel" data-slide-to="0"></li>
+							<li data-target="#slide-carousel" data-slide-to="1"></li>
+							<li data-target="#slide-carousel" data-slide-to="2"></li>
+						</ul>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<a href="#Menu" class="active">
+									<img src="assets/img/menu.png" alt="Меню" class="d-block w-100">
+									<div class="carousel-caption">
+										<span class="h3">Меню</span>
+									</div>
+								</a>
+							</div>
+							<div class="carousel-item">
+								<a href="#TableReservation">
+									<img src="assets/img/restaurant.png" alt="Заказать столик" class="d-block w-100">
+									<div class="carousel-caption">
+										<span class="h3">Заказать столик</span>
+									</div>
+								</a>
+							</div>
+							<div class="carousel-item">
+								<a href="#Contacts">
+									<img src="assets/img/location.png" alt="Наши контакты и месторасположение" class="d-block w-100">
+									<div class="carousel-caption">
+										<span class="h3">Проверить месторасположение</span>
+									</div>
+								</a>
+							</div>
+						 </div>
+						<a class="carousel-control-prev" href="#slide-carousel" data-slide="prev">
+							<span class="carousel-control-prev-icon"></span>
+						</a>
+						<a class="carousel-control-next" href="#slide-carousel" data-slide="next">
+							<span class="carousel-control-next-icon"></span>
+						</a>
+					</div>
+					<div class="d-block text-info m-4 text-justify font-italic">
+						<p>Ресторан El Teide назван так в честь вулкана на острове Тенерифе - самой высокой точки Испании. 
+					Высота вулкана состоялвяет 3718 м, относительная высота над дном Атлантического океана — 7500 м, является высочайшей вершиной в этом океане.
+					Остров Тенерифе является третьим по объёму вулканическим островом в мире.</p>
+						<p>Эксклюзивная испанская кухня, оригинальный интерьер и неповторимый стиль нашего ресторана призваны дарить посетителям такие же 
+					незабываемые впечатления, какие дарит этот завораживающий вулкан.
+					Мы выбираем самые качественные продукты и превращаем их в настоящие произведения искусства. </p>
+						<p>Приятного аппетита!</p>
+					</div>
 				</section>	
 				
 				<section id="menuCategories" class="my-4">
@@ -176,252 +185,7 @@
 
 		<!-- Меню -->
 				<section id="categoryMeals">
-				<!--здесь был template id=categoryMealsTemplate-->
-					<!-- <section id="starter" class="my-4">
-						<div class=" h2 text-dark my-3 text-center">Закуски</div>
-						<div class="menu-item mx-5 px-4 my-3">
-							<h5 class="menu-post">
-								<span class="menu-title">Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</span>
-								<span class="menu-dots"></span>
-								<span class="menu-price">50.00</span>
-							</h5>
-							<p class="my-0">(1/290)</p>
-						</div>
-						<div class="menu-item mx-5 px-4 my-3">
-							<h5 class="menu-post">
-								<span class="menu-title">Томлёный балантин из утки с овощами агродольче</span>
-								<span class="menu-dots"></span>
-								<span class="menu-price">20.00</span>
-							</h5>
-							<p class="my-0">(1/235)</p>
-						</div>
-						<div class="menu-item mx-5 px-4 my-3">
-							<h5 class="menu-post">
-								<span class="menu-title">Кальмар су-вид с теплым рататуем, зеленым салатом и винным соусом</span>
-								<span class="menu-dots"></span>
-								<span class="menu-price">30.00</span>
-							</h5>
-							<p class="my-0">(1/260)</p>
-						</div>
-						<div class="menu-item mx-5 px-4 my-3">
-							<h5 class="menu-post">
-								<span class="menu-title">Подкопчённый лосось с лимонно-мятным йогуртом, цуккини «scapeсe» и микс салатом</span>
-								<span class="menu-dots"></span>
-								<span class="menu-price">45.00</span>
-							</h5>
-							<p class="my-0">(1/310)</p>
-						</div>
-						<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
-							<a href="#Dessert" class="fa fa-chevron-left" ></a>
-							<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
-							<a href="#Soup" class="fa fa-chevron-right"></a>
-						</div>
-					</section>
-						
-					<section id="soup" class="my-4">
-						<div class=" h2 text-dark my-3 text-center">Паста и супы</div>
-						<div class="menu-item mx-5 px-4 my-3">
-							<h5 class="menu-post">
-								<span class="menu-title">Зелёные равиоли с уткой, хрустящим луком пореем и черным и белым соусом</span>
-								<span class="menu-dots"></span>
-								<span class="menu-price">20.00</span>
-							</h5>
-							<p class="my-0">(1/330)</p>
-						</div>
-						<div class="menu-item mx-5 px-4 my-3">
-							<h5 class="menu-post">
-								<span class="menu-title">Суп из белых грибов с нутом</span>
-								<span class="menu-dots"></span>
-								<span class="menu-price">25.00</span>
-							</h5>
-							<p class="my-0">(1/250)</p>
-						</div>
-						<div class="menu-item mx-5 px-4 my-3">
-							<h5 class="menu-post">
-								<span class="menu-title">Цветные тальятелле с морепродуктами и пеной из лайма</span>
-								<span class="menu-dots"></span>
-								<span class="menu-price">30.00</span>
-							</h5>
-							<p class="my-0">(1/300)</p>
-						</div>
-						<div class="menu-item mx-5 px-4 my-3">
-							<h5 class="menu-post">
-								<span class="menu-title">Паста «pacchero allo scoglio» с диким сибасом и соусом из свежих трав</span>
-								<span class="menu-dots"></span>
-								<span class="menu-price">45.00</span>
-							</h5>
-							<p class="my-0">(1/360)</p>
-						</div>
-						<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
-							<a href="#Starter" class="fa fa-chevron-left" ></a>
-							<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
-							<a href="#Fish" class="fa fa-chevron-right"></a>
-						</div>
-					</section>
-					
-					<section id="fish" class="my-4">
-						<div class=" h2 text-dark my-3 text-center">Блюда из рыбы</div>
-						<div class="menu-item mx-5 px-4 my-3">
-							<h5 class="menu-post">
-								<span class="menu-title">Дикий сибас на гриле с оливами таджаска, свежим шпинатом и свекольным соусом</span>
-								<span class="menu-dots"></span>
-								<span class="menu-price">80.00</span>
-							</h5>
-							<p class="my-0">(1/270)</p>
-						</div>
-						<div class="menu-item mx-5 px-4 my-3">
-							<h5 class="menu-post">
-								<span class="menu-title">Сэндвич из домашнего хлеба с мягким лобстером и картофелем </span>
-								<span class="menu-dots"></span>
-								<span class="menu-price">90.00</span>
-							</h5>
-							<p class="my-0">(1/525)</p>
-						</div>
-						<div class="menu-item mx-5 px-4 my-3">
-							<h5 class="menu-post">
-								<span class="menu-title">Конфи из дикой трески с цитрусовым картофельным пюре и салатом из сельдерея</span>
-								<span class="menu-dots"></span>
-								<span class="menu-price">40.00</span>
-							</h5>
-							<p class="my-0">(1/330)</p>
-						</div>
-						<div class="menu-item mx-5 px-4 my-3">
-							<h5 class="menu-post">
-								<span class="menu-title">Сибас в ароматической соли</span>
-								<span class="menu-dots"></span>
-								<span class="menu-price">20.00</span>
-							</h5>
-							<p class="my-0">(1/250)</p>
-						</div>
-						<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
-							<a href="#Soup" class="fa fa-chevron-left" ></a>
-							<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
-							<a href="#Meat" class="fa fa-chevron-right"></a>
-						</div>
-					</section>
-					
-					<section id="meat" class="my-4">
-						<div class=" h2 text-dark my-3 text-center">Блюда из мяса</div>
-						<div class="menu-item mx-5 px-4 my-3">
-							<h5 class="menu-post">
-								<span class="menu-title">Стейк Риб-ай с медовой морковью, грибами порто белло и рукколой</span>
-								<span class="menu-dots"></span>
-								<span class="menu-price">90.00</span>
-							</h5>
-							<p class="my-0">(1/420)</p>
-						</div>
-						<div class="menu-item mx-5 px-4 my-3">
-							<h5 class="menu-post">
-								<span class="menu-title">Говядина Веллингтон, запечённая в домашнем хлебе с грибами и пармской ветчиной</span>
-								<span class="menu-dots"></span>
-								<span class="menu-price">45.00</span>
-							</h5>
-							<p class="my-0">(1/410)</p>
-						</div>
-						<div class="menu-item mx-5 px-4 my-3">
-							<h5 class="menu-post">
-								<span class="menu-title">Филе телятины с горчичным соусом на подушке из краснокочанной капусты и кремом из цветной капусты</span>
-								<span class="menu-dots"></span>
-								<span class="menu-price">40.00</span>
-							</h5>
-							<p class="my-0">(1/400)</p>
-						</div>
-						<div class="menu-item mx-5 px-4 my-3">
-							<h5 class="menu-post">
-								<span class="menu-title">Каре ягнёнка «a modo mio» с пюре из топинамбура, зеленым салатом и соусом из розмарина</span>
-								<span class="menu-dots"></span>
-								<span class="menu-price">45.00</span>
-							</h5>
-							<p class="my-0">(1/410)</p>
-						</div>
-						<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
-							<a href="#Fish" class="fa fa-chevron-left" ></a>
-							<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
-							<a href="#Sidedish" class="fa fa-chevron-right"></a>
-						</div>
-					</section>
-					
-					<section id="sidedish" class="my-4">
-						<div class=" h2 text-dark my-3 text-center">Гарниры</div>
-						<div class="menu-item mx-5 px-4 my-3">
-							<h5 class="menu-post">
-								<span class="menu-title">Запечённый картофель с розмарином</span>
-								<span class="menu-dots"></span>
-								<span class="menu-price">15.00</span>
-							</h5>
-							<p class="my-0">(1/150)</p>
-						</div>
-						<div class="menu-item mx-5 px-4 my-3">
-							<h5 class="menu-post">
-								<span class="menu-title">Брокколи на пару с пряным маслом</span>
-								<span class="menu-dots"></span>
-								<span class="menu-price">10.00</span>
-							</h5>
-							<p class="my-0">(1/115)</p>
-						</div>
-						<div class="menu-item mx-5 px-4 my-3">
-							<h5 class="menu-post">
-								<span class="menu-title">Соте из шампиньонов</span>
-								<span class="menu-dots"></span>
-								<span class="menu-price">10.00</span>
-							</h5>
-							<p class="my-0">(1/110)</p>
-						</div>
-						<div class="menu-item mx-5 px-4 my-3">
-							<h5 class="menu-post">
-								<span class="menu-title">Зеленый салат с сыром горгонзола и грушей</span>
-								<span class="menu-dots"></span>
-								<span class="menu-price">10.00</span>
-							</h5>
-							<p class="my-0">(1/110)</p>
-						</div>
-						<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
-							<a href="#Meat" class="fa fa-chevron-left" ></a>
-							<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
-							<a href="#Dessert" class="fa fa-chevron-right"></a>
-						</div>
-					</section>
-					
-					<section id="dessert" class="my-4">
-						<div class=" h2 text-dark my-3 text-center">Десерты</div>
-						<div class="menu-item mx-5 px-4 my-3">
-							<h5 class="menu-post">
-								<span class="menu-title">«Ciocolatoso» Тёплый шоколадный пирог, арахисовое мороженое, шоколадный мусс и солёный бисквит</span>
-								<span class="menu-dots"></span>
-								<span class="menu-price">15.00</span>
-							</h5>
-							<p class="my-0">(1/220)</p>
-						</div>
-						<div class="menu-item mx-5 px-4 my-3">
-							<h5 class="menu-post">
-								<span class="menu-title">«Тирамису della mamma» Кофейный бисквит, сабайон с марсалой и какао-порошком</span>
-								<span class="menu-dots"></span>
-								<span class="menu-price">20.00</span>
-							</h5>
-							<p class="my-0">(1/220)</p>
-						</div>
-						<div class="menu-item mx-5 px-4 my-3">
-							<h5 class="menu-post">
-								<span class="menu-title">Классический чизкейк с ягодным соусом</span>
-								<span class="menu-dots"></span>
-								<span class="menu-price">15.00</span>
-							</h5>
-							<p class="my-0">(1/230)</p>
-						</div>
-						<div class="menu-item mx-5 px-4 my-3">
-							<h5 class="menu-post">
-								<span class="menu-title">Домашнее мороженое (крема антика, шоколад, прополис, миндаль)</span>
-								<span class="menu-dots"></span>
-								<span class="menu-price">5.00</span>
-							</h5>
-							<p class="my-0">(1/50)</p>
-						</div>  
-						<div class="d-flex justify-content-between align-items-center my-3 mx-5 px-4">
-							<a href="#Sidedish" class="fa fa-chevron-left" ></a>
-							<a class="btn btn-info" href="#Menu"><span class="h5">Меню</span></a>
-							<a href="#Starter" class="fa fa-chevron-right"></a>
-						</div>
-					</section> -->
+					<!--здесь был template id=categoryMealsTemplate-->	
 				</section>
 		<!-- Бронь столика -->
 				<section id="booking" class="my-4">
@@ -661,117 +425,6 @@
 		<!-- Вид для повара -->
 				<section id="containerChief" class="container my-4">
 					<!-- здесь был template id="containerChiefTemplate-->
-		<!-- 				<div class="card-deck my-3">
-							<div class="card mb-4 box-shadow">
-								<div class="card-header">
-									<h5 class="my-0">18:30</h5>
-								</div>
-								<button class="btn btn-dark btn-block font-weight-bold">Принять заказ</button>
-								<div class="card-body">
-									<h6 class="card-subtitle mb-2 text-muted">Столик №2</h6>
-									<div class="row">
-										<div class="card-text col-10">
-											<p>Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</p>
-										</div>
-										<div class="col-2 font-weight-bold">2</div>
-									</div>
-									<h6 class="card-title">Без лука</h6>
-									<h6 class="card-title text-danger">Привет от администратора</h6>
-								</div>
-								<div class="card-footer d-flex justify-content-between">
-									<button class="btn btn-info">В процессе</button>
-									<button class="btn btn-success">Готово</button>
-								</div>
-							</div>
-							
-								<div class="card mb-4 box-shadow">
-								<div class="card-header">
-									<h5 class="my-0">18:30</h5>
-								</div>
-								<button class="btn btn-dark btn-block font-weight-bold">Принять заказ</button>
-								<div class="card-body">
-									<h6 class="card-subtitle mb-2 text-muted">Столик №2</h6>
-									<div class="row">
-										<div class="card-text col-10">
-											<p>Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</p>
-										</div>
-										<div class="col-2 font-weight-bold">2</div>
-									</div>
-									<h6 class="card-title">Без лука</h6>
-									<h6 class="card-title text-danger">Привет от администратора</h6>
-								</div>
-								<div class="card-footer d-flex justify-content-between">
-									<button class="btn btn-info">В процессе</button>
-									<button class="btn btn-success">Готово</button>
-								</div>
-							</div>
-						
-							<div class="card mb-4 box-shadow">
-								<div class="card-header">
-									<h5 class="my-0">18:30</h5>
-								</div>
-								<button class="btn btn-dark btn-block font-weight-bold">Принять заказ</button>
-								<div class="card-body">
-									<h6 class="card-subtitle mb-2 text-muted">Столик №2</h6>
-									<div class="row">
-										<div class="card-text col-10">
-											<p>Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</p>
-										</div>
-										<div class="col-2 font-weight-bold">2</div>
-									</div>
-									<h6 class="card-title">Без лука</h6>
-									<h6 class="card-title text-danger">Привет от администратора</h6>
-								</div>
-								<div class="card-footer d-flex justify-content-between">
-									<button class="btn btn-info">В процессе</button>
-									<button class="btn btn-success">Готово</button>
-								</div>
-							</div>
-												
-							<div class="card mb-4 box-shadow">
-								<div class="card-header">
-									<h5 class="my-0">18:30</h5>
-								</div>
-								<button class="btn btn-dark btn-block font-weight-bold">Принять заказ</button>
-								<div class="card-body">
-									<h6 class="card-subtitle mb-2 text-muted">Столик №2</h6>
-									<div class="row">
-										<div class="card-text col-10">
-											<p>Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</p>
-										</div>
-										<div class="col-2 font-weight-bold">2</div>
-									</div>
-									<h6 class="card-title">Без лука</h6>
-									<h6 class="card-title text-danger">Привет от администратора</h6>
-								</div>
-								<div class="card-footer d-flex justify-content-between">
-									<button class="btn btn-info">В процессе</button>
-									<button class="btn btn-success">Готово</button>
-								</div>
-							</div>
-																
-							<div class="card mb-4 box-shadow">
-								<div class="card-header">
-									<h5 class="my-0">18:30</h5>
-								</div>
-								<button class="btn btn-dark btn-block font-weight-bold">Принять заказ</button>
-								<div class="card-body">
-									<h6 class="card-subtitle mb-2 text-muted">Столик №2</h6>
-									<div class="row">
-										<div class="card-text col-10">
-											<p>Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</p>
-										</div>
-										<div class="col-2 font-weight-bold">2</div>
-									</div>
-									<h6 class="card-title ">Без лука</h6>
-									<h6 class="card-title text-danger">Привет от администратора</h6>
-								</div>
-								<div class="card-footer d-flex justify-content-between">
-									<button class="btn btn-info">В процессе</button>
-									<button class="btn btn-success">Готово</button>
-								</div>
-							</div>
-						</div> -->
 				</section>
 				
 		<!-- Вид для официанта -->
@@ -781,177 +434,13 @@
 							<div class="col-md-6">
 								<aside>
 									<div id="accordion">
-									<!--Здесь был template id="accordionTemplate"-->
-										<!-- <div class="card">
-											<div class="card-header" id="starterWaiter" data-toggle="collapse" data-target="#collapseOne">
-												<h5 class="mb-0">
-													<button class="btn btn-link" aria-expanded="false" aria-controls="collapseOne">
-														<span class="h4">Закуски</span>
-													</button>
-												</h5>
-											</div>
-
-											<div id="collapseOne" class="collapse" aria-labelledby="starterWaiter" data-parent="#accordion">
-												<ul class="list-group">
-													<li class="list-group-item list-group-item-action">Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</li>
-													<li class="list-group-item list-group-item-action">Томлёный балантин из утки с овощами агродольче</li>
-													<li class="list-group-item list-group-item-action">Кальмар су-вид с теплым рататуем, зеленым салатом и винным соусом</li>
-													<li class="list-group-item list-group-item-action">Подкопчённый лосось с лимонно-мятным йогуртом, цуккини «scapeсe» и микс салатом</li>
-												</ul>
-											</div>
-										</div>
-										<div class="card">
-											<div class="card-header" id="soupWaiter" data-toggle="collapse" data-target="#collapseTwo">
-												<h5 class="mb-0">
-													<button class="btn btn-link collapsed" aria-expanded="false" aria-controls="collapseTwo">
-														<span class="h4">Паста и супы</span>
-													</button>
-												</h5>
-											</div>
-											<div id="collapseTwo" class="collapse" aria-labelledby="soupWaiter" data-parent="#accordion">
-												<ul class="list-group">
-													<li class="list-group-item list-group-item-action">Зелёные равиоли с уткой, хрустящим луком пореем и черным и белым соусом</li>
-													<li class="list-group-item list-group-item-action">Суп из белых грибов с нутом</li>
-													<li class="list-group-item list-group-item-action">Цветные тальятелле с морепродуктами и пеной из лайма</li>
-													<li class="list-group-item list-group-item-action">Паста «pacchero allo scoglio» с диким сибасом и соусом из свежих трав</li>
-												</ul>
-											</div>
-										</div>
-										<div class="card">
-											<div class="card-header" id="fishWaiter" data-toggle="collapse" data-target="#collapseThree">
-												<h5 class="mb-0">
-													<button class="btn btn-link collapsed" aria-expanded="false" aria-controls="collapseThree">
-														<span class="h4">Блюда из рыбы</span>
-													</button>
-												</h5>
-											</div>
-											<div id="collapseThree" class="collapse" aria-labelledby="fishWaiter" data-parent="#accordion">
-												<ul class="list-group">
-													<li class="list-group-item list-group-item-action">Дикий сибас на гриле с оливами таджаска, свежим шпинатом и свекольным соусом</li>
-													<li class="list-group-item list-group-item-action">Сэндвич из домашнего хлеба с мягким лобстером и картофелем</li>
-													<li class="list-group-item list-group-item-action">Конфи из дикой трески с цитрусовым картофельным пюре и салатом из сельдерея</li>
-													<li class="list-group-item list-group-item-action">Сибас в ароматической соли</li>
-												</ul>
-											</div>
-										</div>
-										<div class="card">
-											<div class="card-header" id="meatWaiter" data-toggle="collapse" data-target="#collapseFour">
-												<h5 class="mb-0">
-													<button class="btn btn-link collapsed" aria-expanded="false" aria-controls="collapseFour">
-														<span class="h4">Блюда из мяса</span>
-													</button>
-												</h5>
-											</div>
-											<div id="collapseFour" class="collapse" aria-labelledby="meatWaiter" data-parent="#accordion">
-												<ul class="list-group">
-													<li class="list-group-item list-group-item-action">Стейк Риб-ай с медовой морковью, грибами порто белло и рукколой</li>
-													<li class="list-group-item list-group-item-action">Говядина Веллингтон, запечённая в домашнем хлебе с грибами и пармской ветчиной</li>
-													<li class="list-group-item list-group-item-action">Филе телятины с горчичным соусом на подушке из краснокочанной капусты и кремом из цветной капусты</li>
-													<li class="list-group-item list-group-item-action">Каре ягнёнка «a modo mio» с пюре из топинамбура, зеленым салатом и соусом из розмарина</li>
-												</ul>
-											</div>
-										</div>
-										<div class="card">
-											<div class="card-header" id="sidedishWaiter" data-toggle="collapse" data-target="#collapseFive">
-												<h5 class="mb-0">
-													<button class="btn btn-link collapsed" aria-expanded="false" aria-controls="collapseFive">
-														<span class="h4">Гарниры</span>
-													</button>
-												</h5>
-											</div>
-											<div id="collapseFive" class="collapse" aria-labelledby="sidedishWaiter" data-parent="#accordion">
-												<ul class="list-group">
-													<li class="list-group-item list-group-item-action">Запечённый картофель с розмарином</li>
-													<li class="list-group-item list-group-item-action">Брокколи на пару с пряным маслом</li>
-													<li class="list-group-item list-group-item-action">Соте из шампиньонов</li>
-													<li class="list-group-item list-group-item-action">Зеленый салат с сыром горгонзола и грушей</li>
-												</ul>
-											</div>
-										</div>
-										<div class="card">
-											<div class="card-header" id="desertWaiter" data-toggle="collapse" data-target="#collapseSix">
-												<h5 class="mb-0">
-													<button class="btn btn-link collapsed" aria-expanded="false" aria-controls="collapseSix">
-														<span class="h4">Десерты</span>
-													</button>
-												</h5>
-											</div>
-											<div id="collapseSix" class="collapse" aria-labelledby="desertWaiter" data-parent="#accordion">
-												<ul class="list-group">
-													<li class="list-group-item list-group-item-action">«Ciocolatoso» Тёплый шоколадный пирог, арахисовое мороженое, шоколадный мусс и солёный бисквит</li>
-													<li class="list-group-item list-group-item-action">«Тирамису della mamma» Кофейный бисквит, сабайон с марсалой и какао-порошком</li>
-													<li class="list-group-item list-group-item-action">Классический чизкейк с ягодным соусом</li>
-													<li class="list-group-item list-group-item-action">Домашнее мороженое (крема антика, шоколад, прополис, миндаль)</li>
-												</ul>
-											</div>
-										</div> -->
+										<!--Здесь был template id="accordionTemplate"-->
 									</div>
 								</aside>
 							</div>
 
 							<div class="col-md-6" id="guestOrder">
 								<!-- Здесь был template id="guestOrderTemplate" -->
-								<!-- <div class="row my-3 no-gutters">
-									<div class="col-sm-6 my-2">
-										<span>Номер столика</span>
-										<select name="table-number">
-											<option value="0">№</option>
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-											<option value="4">4</option>
-											<option value="5">5</option>
-											<option value="6">6</option>
-											<option value="7">7</option>
-											<option value="8">8</option>
-										</select> 
-									</div>
-									<div class="col-sm-6 text-left text-sm-right my-2">
-										<label for="orderTime">Готовность, мин</label>
-										<input class="w-25" type="number" name="order-time" id="orderTime" value="0" step="15"/>
-									</div>
-								</div>
-								<ul class="list-group list-group-flush">
-									<li class="list-group-item">
-										<div class="row">
-											<div class="col-9">yhryhrthrthtrttt ttttttttttttttttt ttttttttt tttttt ttttttt tttt</div>
-											<input type="number" name="count" class="col-1 px-0 border-0" min="1" value="1"/>
-											<div class="col-2 d-flex align-items-center">
-												<button type="button" class="close" aria-label="Close">
-													<span aria-hidden="true">&times;</span>
-												</button>
-											</div>
-										</div>
-									</li>
-									<li class="list-group-item">
-										<div class="row">
-											<div class="col-9">Подкопчённый лосось с лимонно-мятным йогуртом, цуккини «scapeсe» и микс салатом</div>
-											<input type="number" name="count" class="col-1 px-0 border-0" min="1" value="1"/>
-											<div class="col-2 d-flex align-items-center">
-												<button type="button" class="close" aria-label="Close">
-													<span aria-hidden="true">&times;</span>
-												</button>
-											</div>
-										</div>
-									</li>
-									<li class="list-group-item">
-										<div class="row">
-											<div class="col-9">Подкопчённый лосось с лимонно-мятным йогуртом, цуккини «scapeсe» и микс салатом</div>
-											<input type="number" name="count" class="col-1 px-0 border-0" min="1" value="1"/>
-											<div class="col-2 d-flex align-items-center">
-												<button type="button" class="close" aria-label="Close">
-													<span aria-hidden="true">&times;</span>
-												</button>
-											</div>
-										</div>
-									</li>
-								</ul>
-								<div class="row">
-									<div class="my-4 col-12 w-100">
-										<textarea name="messageWaiter" id="messageWaiter" class="w-100 border border-info rounded p-2" placeholder="Примечания"></textarea>
-									</div>
-								</div>
-								<button type="submit" class="btn btn-info my-1">Оформить заказ</button> -->
 							</div>
 						</div>
 					</div>
@@ -959,164 +448,9 @@
 					
 				<section id="containerOrderWaiter" class="my-4">
 					<div class="container">
-						<a href="#NewOrder" class="btn btn-info btn-block mt-4">Добавить <span class="fa fa-plus"></span></a><br/>
+						<a href="#NewOrder" class="btn btn-info btn-block mt-4 add">Добавить <span class="fa fa-plus"></span></a><br/>
 						<div class="card-deck mb-3" id="orderListWaiter">
-						<!-- Здесь был template id="orderListWaiterTemplate"-->
-		<!-- 					<div class="card mb-4 box-shadow">
-								<div class="card-header d-flex justify-content-between">
-									<span class="h5 my-0">18:30</span>
-									<span class="fa fa-pencil-square-o text-right pt-1"></span>
-								</div>
-								<div class="card-body">
-									<h6 class="card-subtitle mb-2 text-muted">Столик №2</h6>
-									<div class="row">
-										<div class="card-text col-10">
-											<p>Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</p>
-										</div>
-										<div class="col-2 font-weight-bold">2</div>
-									</div>
-									<div class="row">
-										<div class="card-text col-10">
-											<p>Запечённый осьминог с ttt и крем-соусом из красного перца</p>
-										</div>
-										<div class="col-2 font-weight-bold">4</div>
-									</div>
-									<h6 class="card-title">Без лука</h6>
-									<h6 class="card-title text-danger">Привет от администратора</h6>
-									<div class="row mt-3 text-info font-weight-bold">
-										<div class="card-text col-7">Сумма</div>
-										<div class="card-text col-5">225.00</div>
-									</div>
-								</div>
-								<div class="card-footer d-flex justify-content-between">
-									<button class="btn btn-success btn-block">Готово</button>
-								</div>
-							</div>
-
-							<div class="card mb-4 box-shadow">
-								<div class="card-header d-flex justify-content-between">
-									<span class="h5 my-0">18:30</span>
-									<span class="fa fa-pencil-square-o text-right pt-1"></span>
-								</div>
-								<div class="card-body">
-									<h6 class="card-subtitle mb-2 text-muted">Столик №2</h6>
-									<div class="row">
-										<div class="card-text col-10">
-											<p>Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</p>
-										</div>
-										<div class="col-2 font-weight-bold">2</div>
-									</div>
-									<div class="row">
-										<div class="card-text col-10">
-											<p>Запечённый осьминог с ttt и крем-соусом из красного перца</p>
-										</div>
-										<div class="col-2 font-weight-bold">4</div>
-									</div>
-									<h6 class="card-title">Без лука</h6>
-									<h6 class="card-title text-danger">Привет от администратора</h6>
-									<div class="row mt-3 text-info font-weight-bold">
-										<div class="card-text col-7">Сумма</div>
-										<div class="card-text col-5">225.00</div>
-									</div>
-								</div>
-								<div class="card-footer d-flex justify-content-between">
-									<button class="btn btn-success btn-block">Готово</button>
-								</div>
-							</div>
-						
-							<div class="card mb-4 box-shadow">
-								<div class="card-header d-flex justify-content-between">
-									<span class="h5 my-0">18:30</span>
-									<span class="fa fa-pencil-square-o text-right pt-1"></span>
-								</div>
-								<div class="card-body">
-									<h6 class="card-subtitle mb-2 text-muted">Столик №2</h6>
-									<div class="row">
-										<div class="card-text col-10">
-											<p>Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</p>
-										</div>
-										<div class="col-2 font-weight-bold">2</div>
-									</div>
-									<div class="row">
-										<div class="card-text col-10">
-											<p>Запечённый осьминог с ttt и крем-соусом из красного перца</p>
-										</div>
-										<div class="col-2 font-weight-bold">4</div>
-									</div>
-									<h6 class="card-title">Без лука</h6>
-									<h6 class="card-title text-danger">Привет от администратора</h6>
-									<div class="row mt-3 text-info font-weight-bold">
-										<div class="card-text col-7">Сумма</div>
-										<div class="card-text col-5">225.00</div>
-									</div>
-								</div>
-								<div class="card-footer d-flex justify-content-between">
-									<button class="btn btn-success btn-block">Готово</button>
-								</div>
-							</div>
-												
-							<div class="card mb-4 box-shadow">
-								<div class="card-header d-flex justify-content-between">
-									<span class="h5 my-0">18:30</span>
-									<span class="fa fa-pencil-square-o text-right pt-1"></span>
-								</div>
-								<div class="card-body">
-									<h6 class="card-subtitle mb-2 text-muted">Столик №2</h6>
-									<div class="row">
-										<div class="card-text col-10">
-											<p>Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</p>
-										</div>
-										<div class="col-2 font-weight-bold">2</div>
-									</div>
-									<div class="row">
-										<div class="card-text col-10">
-											<p>Запечённый осьминог с ttt и крем-соусом из красного перца</p>
-										</div>
-										<div class="col-2 font-weight-bold">4</div>
-									</div>
-									<h6 class="card-title">Без лука</h6>
-									<h6 class="card-title text-danger">Привет от администратора</h6>
-									<div class="row mt-3 text-info font-weight-bold">
-										<div class="card-text col-7">Сумма</div>
-										<div class="card-text col-5">225.00</div>
-									</div>
-								</div>
-								<div class="card-footer d-flex justify-content-between">
-									<button class="btn btn-success btn-block">Готово</button>
-								</div>
-							</div>
-																
-							<div class="card mb-4 box-shadow">
-								<div class="card-header d-flex justify-content-between">
-									<span class="h5 my-0">18:30</span>
-									<span class="fa fa-pencil-square-o text-right pt-1"></span>
-								</div>
-								<div class="card-body">
-									<h6 class="card-subtitle mb-2 text-muted">Столик №2</h6>
-									<div class="row">
-										<div class="card-text col-10">
-											<p>Запечённый осьминог с хрустящим картофелем и крем-соусом из красного перца</p>
-										</div>
-										<div class="col-2 font-weight-bold">2</div>
-									</div>
-									<div class="row">
-										<div class="card-text col-10">
-											<p>Запечённый осьминог с ttt и крем-соусом из красного перца</p>
-										</div>
-										<div class="col-2 font-weight-bold">4</div>
-									</div>
-									<h6 class="card-title">Без лука</h6>
-									<h6 class="card-title text-danger">Привет от администратора</h6>
-									<div class="row mt-3 text-info font-weight-bold">
-										<div class="card-text col-7">Сумма</div>
-										<div class="card-text col-5">225.00</div>
-									</div>
-								</div>
-								<div class="card-footer d-flex justify-content-between">
-									<button class="btn btn-success btn-block">Готово</button>
-								</div>
-							</div> -->
-							
+							<!-- Здесь был template id="orderListWaiterTemplate"-->
 						</div>
 					</div>
 				</section>

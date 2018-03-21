@@ -40,17 +40,16 @@ function TeideController() {
 	}
 	
 																						//signin
-	this.user;
+	this.user;       //создается при signup  - управление доступом через роль
 	this.buttonSignin = $('#buttonSignin');
 	this.buttonOut = $('.button-out');
 	this.checkboxRememberMe = $('input[type="checkbox"]');
 	this.sayHi = function() {
-		/* $('#signin span').removeClass('d-none');  */ //зачем удалять класс
 		$('.button-out').removeClass('d-none');
 		$('.button-enter').addClass('d-none');
 		$('.button-reg').addClass('d-none');
 		$('.hi-user').html('Добро пожаловать, ' + this.user.First_Name__c);
-		this.applyRole();   //есть уже в success
+		this.applyRole();  
 	}
 	this.sayBye = function() {
 		$('#signin span').addClass('d-none');   
@@ -74,7 +73,7 @@ function TeideController() {
 			$('.waiterOrders').addClass('d-none');
 		} 
 	}
-	if (localStorage.getItem('user')) { 
+	if (localStorage.getItem('user')) { //для кнопки Запомнить меня (при обновлении страницы)
 		this.user = JSON.parse(localStorage.getItem('user'));
 		this.sayHi();
 	}
@@ -110,15 +109,14 @@ function TeideController() {
 							window.location.hash = 'Main';
 						}
 						this.sayHi();
-																		//чтобы работало без перезагрузки
+																		//чтобы работало без перезагрузки 
 							futureOrder.name = this.user['First_Name__c'];
 							futureOrder.email = this.user['Email__c'];
 							futureOrder.phone = this.user['Mobile__c'];
 							this.takeDataForOrder();
 							
-						this.applyRole();
+						$('#signin form')[0].reset();
 					}
-					$('#signin form')[0].reset();
 					resolve(result);
 				},
 				error: function(error) {
@@ -129,7 +127,7 @@ function TeideController() {
 	}
 	this.takeDataForOrder = function() {	// "Завязка на signin" - надо для брони столика
 		$('#booking input, #booking textarea').each(function(index, value) {
-			$(value).val(futureOrder[$(value).attr('id')]);
+			$(value).val(futureOrder[$(value).attr('id')]);    // id аналогичен свойству futureOrder  
 		});	
 	}
 	$(this.buttonSignin).on('click', this.checkUser.bind(this)); //this был button, передаем контекст контроллер
@@ -215,7 +213,7 @@ function TeideController() {
 		}	
 	});
 
-	//завязка на регистрации
+	//загрузка user 
 	if (localStorage.getItem('user')) { 
 		this.user = JSON.parse(localStorage.getItem('user'));
 		futureOrder.name = this.user['First_Name__c'];
@@ -351,7 +349,7 @@ function TeideController() {
 	}
 						
 	this.deleteItem = function() {	//close button
-		delete teideController.waiterModel.newOrder.orderItems[$(this).attr('data-mealId')]; //повторяем чтобы получать актуальный Id - так как неизвестно когда будет вызов
+		delete teideController.waiterModel.newOrder.orderItems[$(this).attr('data-mealId')]; 
 		teideController.waiterModel.updateViews();
 	}
 	this.countItems = function() {		//quantity change	
@@ -407,6 +405,17 @@ function TeideController() {
 			});
 		});
 	}
+	//добавить заказ
+	this.buttonAdd = $(' .add'); 
+	this.add = function() {
+		this.waiterModel.newOrder = {
+						table: '1',
+						timeShift: 0,
+						orderItems: {}
+					};
+		teideController.waiterModel.orderMenuView.update();
+	}
+	$(this.buttonAdd).on('click', this.add.bind(this));
 	
 	//редактировать заказ официантом
 	this.edit = function() {
@@ -414,7 +423,8 @@ function TeideController() {
 		window.location.hash = 'NewOrder';  
 		teideController.waiterModel.orderMenuView.update();
 	}
-																												//заказ передан клиенту - скрыть заказ 
+	
+	//заказ передан клиенту - скрыть заказ 
 	this.cleanOrder = function() {
 		let parentCard = $(this).parents('.card');
 		return new Promise((resolve, reject) => {    //отправояем инфо на сервер, что есть изменения
@@ -452,8 +462,7 @@ function TeideController() {
 	//обновлять данные для официанта автоматически
 	//обновлять через определенное время для повара
 	this.refreshDataWaiter = function() {
-		this.waiterModel.recieveOrdersTime();
-		this.waiterModel.updateViews();
+		this.waiterModel.recieveOrdersTime().then(function() {teideController.waiterModel.waiterMenuView.update();});
 	}
 	
 	//chief
@@ -496,7 +505,6 @@ function TeideController() {
 				}
 			}); 
 		});
-		teideController.chiefModel.updateViews();
 	}
 	
 	this.changeAllReverse = function() {    //кнопка "готово"
@@ -538,13 +546,11 @@ function TeideController() {
 				}
 			}); 
 		});
-		teideController.chiefModel.updateViews();
 	}
 	
 	//обновлять через определенное время для повара
 	this.refreshDataChief = function() {
-		this.chiefModel.recieveOrders();
-		this.chiefModel.updateViews();
+		this.chiefModel.recieveOrdersTime().then(function() {teideController.chiefModel.updateViews();});
 	}
 } 
 

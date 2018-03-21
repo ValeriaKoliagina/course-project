@@ -1,5 +1,3 @@
-//создать класс, который будет наследовать через prototype
-																					
 function MenuModel() {
 	this.globalMenuView = null;
 
@@ -282,8 +280,28 @@ function ChiefModel() {
 			});
 		});
 	}
-	
-
+	this.recieveOrdersTime = function() {
+		return new Promise((resolve, reject) => {
+			let ajaxHandlerScript=this.instanceUrl + '/services/apexrest/Order';	
+			$.ajax(ajaxHandlerScript, { 
+				method:'get', 
+				context: this,
+				headers: {
+					'Authorization': this.tokenType + ' ' + this.accessToken,
+					'Content-Type': 'application/json'
+				},
+				contentType: 'application/json',
+				crossDomain: true,
+				success: function(result) {
+					this.receivedOrders = result;
+					resolve(result);
+				},
+				error: function(error) {
+					reject(error);
+				}
+			});
+		});
+	}
 }
 
 
