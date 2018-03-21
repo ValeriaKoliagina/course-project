@@ -1,3 +1,7 @@
+html, 
+body {
+	height: 100%;
+}
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {  
 	.navbar-nav.h5 {font-size:1.25rem;} 
@@ -11,33 +15,38 @@
 	.navbar-nav.h5 {font-size:1.10rem;} 
 	.nav-item > a {font-size: 1.0rem;}
 	#order,
-	#orderAdministrator,
-#orderAdministrator2	{font-size: 0.95rem;}
+	#orderAdministrator {font-size: 0.95rem;}
 }
 @media (min-width: 577px) and (max-width: 767px) {  
 	.nav-item > a {font-size: 1.25rem;}
 	ul br {display: none;}
 	#order,
-	#orderAdministrator,
-#orderAdministrator2	{font-size: 0.9rem;}
+	#orderAdministrator {font-size: 0.9rem;}
 	.modal-body {font-size: 0.9rem;}
+	.carousel-caption span {
+		font-size: 1.5rem; 
+	}
 }
 @media (max-width: 576px) {
 	.nav-item > a {font-size: 1.25rem;}
 	ul br {display: none;}
 	#order,
-	#orderAdministrator,
-#orderAdministrator2	{font-size: 0.9rem;}
+	#orderAdministrator {font-size: 0.9rem;}
 	.modal-body {font-size: 0.8rem;}
+	.carousel-caption {
+		bottom: 5px;
+	}
+	.carousel-caption span{
+		font-size: 1.25rem; 
+	}
+	.carousel-indicators {
+		bottom: 0;
+	}
 }
 .nav-link span {font-size: 2.0rem;}
-.carousel-inner img {
-    width: 100%;
-	height: 100%;
-}
-.container-fluid .row a, 
-.nav-item.dropdown a {
-	text-decoration: none;
+
+a {
+	text-decoration: none !important;
 }
 .menu-post {
 	position: relative;
@@ -77,36 +86,69 @@
 	height: 15rem;
 	overflow-y: scroll;
 }
-#to-top {
-	bottom: 7rem;
-	display: block;
-    position: fixed;
-    text-align: center;
-    left: 2rem;
-    cursor: pointer;
-    z-index: 100;
-}
+
 .form-signin,
-.form-login {
+.form-signup {
     width: 100%;
     max-width: 330px;
     padding: 15px;
     margin: 0 auto;
 }
-/* #main-content,
+
 #containerChief {
-	display: none;
-} */
-#container-chief {
 	max-width: 960px;
 }
 .card-deck .card {
 	min-width: 250px;
 }
 .card-header,
-.list-group-item-action {
+.list-group-item-action,
+.fa-chevron-left,
+.fa-chevron-right {
 	cursor: pointer;
 }
 .card .btn-link {
 	text-decoration: none;
+}
+section,
+header,
+footer {
+	display: none;
+}
+
+section {
+	overflow: hidden;
+}
+
+input.error {
+	border: 1px solid #dc3545;
+}
+
+label.error {
+	color: #dc3545;
+	font-weight: normal;
+}
+.inProgressOrder {
+	background-color: rgba(23, 162,184, 0.4);
+}
+.completedOrder {
+	background-color: rgba(12, 247,10, 0.13);
+}
+.card-header {
+	min-height: 57px;
+}
+.gif {
+	top: 25%;
+	left: 25%;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.content {
+  flex: 1 0 auto;
+}
+footer {
+  flex: 0 0 auto;
 }
